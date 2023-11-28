@@ -13,7 +13,7 @@ body {
 }
 
 nav {
-    background-color: rgba(11.000000294297934, 94.0000019967556, 215.0000023841858, 1);
+    background-color: rgba(11, 94, 215, 1);
     width: 88px;
     height: 100%;
     position: absolute;
@@ -80,9 +80,9 @@ nav {
 }
 
 #menu_gu_icon {
-    background-color: rgba(34.00000177323818, 34.00000177323818, 34.00000177323818, 0.5);
+    background-color: rgba(34, 34, 34, 0.3);
     width: 88px;
-    height: 66px;
+    height: 88px;
     position: absolute;
     left: 0px;
     top: 5px;
@@ -98,6 +98,11 @@ nav {
     border-radius: 45px;
 }
 
+#menu_gu_icon:hover img {
+    transition: 0.2s;
+    transform: scale(1.1);
+}
+
 /* 행정동 선택 스타일 */
 #menu_dong {
     width: 88px;
@@ -109,7 +114,7 @@ nav {
 
 #menu_dong_icon {
     width: 88px;
-    height: 66px;
+    height: 88px;
     position: absolute;
     left: 0px;
     top: 5px;
@@ -125,6 +130,11 @@ nav {
     border-radius: 45px;
 }
 
+#menu_dong_icon:hover img {
+    transition: 0.2s;
+    transform: scale(1.1);
+}
+
 /* 상세 지도 선택 스타일 */
 #menu_detail {
     width: 88px;
@@ -136,7 +146,7 @@ nav {
 
 #menu_detail_icon {
     width: 88px;
-    height: 66px;
+    height: 88px;
     position: absolute;
     left: 0px;
     top: 5px;
@@ -152,6 +162,11 @@ nav {
     border-radius: 45px;
 }
 
+#menu_detail_icon:hover img {
+    transition: 0.2s;
+    transform: scale(1.1);
+}
+
 /* 주거지 추천 선택 스타일 */
 #menu_suggest {
     width: 88px;
@@ -163,7 +178,7 @@ nav {
 
 #menu_suggest_icon {
     width: 88px;
-    height: 66px;
+    height: 88px;
     position: absolute;
     left: 0px;
     top: 5px;
@@ -177,4 +192,9 @@ nav {
     left: 16.5px;
     top: 5.5px;
     border-radius: 45px;
+}
+
+#menu_suggest_icon:hover img {
+    transition: 0.2s;
+    transform: scale(1.1);
 }
