@@ -1,200 +1,150 @@
-html {
-    width: 100%;
-    height: 100%;
-    padding: 0px;
-    margin: 0px;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-body {
-    width: 100%;
-    height: 100%;
-    padding: 0px;
-    margin: 0px;
-}
-
-nav {
-    background-color: rgba(11, 94, 215, 1);
-    width: 88px;
-    height: 100%;
+#information {
+    display: flex;
     position: absolute;
-    left: 0px;
-    top: 0px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: 500ms;
 }
 
-#menu {
-    width: 100%;
-    height: 500px;
+/* 사이드 버튼 */
+#btn {
     position: absolute;
-    left: 0px;
-    top: 10px;
-}
-
-/* 홈 아이콘 스타일 */
-#menu_home {
-    width: 88px;
-    height: 88px;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-}
-
-#menu_home_icon img {
-    width: 66px;
-    height: 55px;
-    position: absolute;
-    left: 11px;
-    top: 9px;
-    border-radius: 5px;
-}
-
-#menu_division {
-    size: 20px;
-    width: 55px;
-    position: absolute;
-    left: 15.5px;
-    top: 70px;
-    border: 1px solid white;
-}
-
-/* 메뉴 전체 텍스트 스타일 */
-.menu_txt {
-    color: rgba(255, 255, 255, 1);
-    width: 88px;
-    height: 14px;
-    position: absolute;
-    left: 0px;
-    top: 75px;
-    font-family: Inter;
+    width: 33px;
+    height: 50px;
+    border: 3px solid #0B5ED7;
+    background: white;
+    color: #0B5ED7;
     text-align: center;
-    font-size: 12px;
-    letter-spacing: 0;
+    line-height: 40px;
+    border-radius: 7px;
+    left: 326px;
+    top: 450px;
+    box-shadow: 3px 3px 7px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* 지역구 선택 스타일 */
-#menu_gu {
-    width: 88px;
-    height: 90px;
+#btn:hover {
+    cursor: pointer;
+}
+
+/* 사이드 바 */
+#side-bar {
     position: absolute;
-    left: 0px;
-    top: 90px;
+    /* border: 2px solid #0B5ED7; */
+    background: white;
+    width: 333px;
+    height: 945px;
+    box-shadow: 1px 0px 10px 5px rgba(0, 0, 0, 0.3);
 }
 
-#menu_gu_icon {
-    background-color: rgba(34, 34, 34, 0.3);
-    width: 88px;
-    height: 88px;
+/* 검색 바 */
+.search-bar {
+    position: relative;
+    width: 300px;
+    height: 51px;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: #0B5ED7 4px solid;
+    border-radius: 3px;
+}
+
+.search-bar button {
+    height: 42px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10px;
+    background-color: #fff;
+    border: white;
+    cursor: pointer;
+}
+
+/* 검색 바 상세 */
+#inputSearch {
+    width: 80%;
     position: absolute;
-    left: 0px;
-    top: 5px;
-    border-radius: 10px;
 }
 
-#menu_gu_icon img {
-    width: 55px;
-    height: 55px;
+#inputSearch input {
+    width: 100%;
+    border: white;
+    border-radius: 8px;
+    padding: 13px 12px;
+    font-size: 14px;
+}
+
+#inputSearch input[type="text"]::placeholder {
+    color: #999;
+    /* 원하는 색상으로 변경 */
+    text-align: center;
+    font-size: 13px;
+    outline: none;
+}
+
+#inputSearch input:focus {
+    text-align: center;
+    outline: none;
+}
+
+/* 검색 바 버튼 */
+#btnSearch {
+    width: 20%;
+    height: 42px;
+    left: 254px;
     position: absolute;
-    left: 16.5px;
-    top: 5.5px;
-    border-radius: 45px;
 }
 
-#menu_gu_icon:hover img {
-    transition: 0.2s;
-    transform: scale(1.1);
+#btnSearch img {
+    margin-top: 5px;
+    width: 15px;
+    height: 15px;
 }
 
-/* 행정동 선택 스타일 */
-#menu_dong {
-    width: 88px;
-    height: 90px;
-    position: absolute;
-    left: 0px;
-    top: 180px;
+#btn-hide:hover {
+    cursor: pointer;
 }
 
-#menu_dong_icon {
-    width: 88px;
-    height: 88px;
-    position: absolute;
-    left: 0px;
-    top: 5px;
-    border-radius: 10px;
+/* 지역구 정보 */
+.gu-info {
+    width: 300px;
+    border: rgba(11, 94, 215, 0.50) 2px solid;
+    margin-top: 10px;
+    margin-left: 12px;
+    margin-right: 10px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 8px;
 }
 
-#menu_dong_icon img {
-    width: 55px;
-    height: 55px;
-    position: absolute;
-    left: 16.5px;
-    top: 5.5px;
-    border-radius: 45px;
+/* 지역구를 선택해주세요 */
+.gu-choose {
+    width: 300px;
+    border: rgba(11, 94, 215, 0.50) 2px solid;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-left: 12px;
+    margin-right: 10px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
 }
 
-#menu_dong_icon:hover img {
-    transition: 0.2s;
-    transform: scale(1.1);
+.gu-choose select {
+    width: 250px;
+    text-align: center;
+    font-size: 1em;
+    border: 1px solid rgba(11, 94, 215, 0.50);
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-/* 상세 지도 선택 스타일 */
-#menu_detail {
-    width: 88px;
-    height: 90px;
-    position: absolute;
-    left: 0px;
-    top: 270px;
-}
-
-#menu_detail_icon {
-    width: 88px;
-    height: 88px;
-    position: absolute;
-    left: 0px;
-    top: 5px;
-    border-radius: 10px;
-}
-
-#menu_detail_icon img {
-    width: 55px;
-    height: 55px;
-    position: absolute;
-    left: 16.5px;
-    top: 5.5px;
-    border-radius: 45px;
-}
-
-#menu_detail_icon:hover img {
-    transition: 0.2s;
-    transform: scale(1.1);
-}
-
-/* 주거지 추천 선택 스타일 */
-#menu_suggest {
-    width: 88px;
-    height: 90px;
-    position: absolute;
-    left: 0px;
-    top: 360px;
-}
-
-#menu_suggest_icon {
-    width: 88px;
-    height: 88px;
-    position: absolute;
-    left: 0px;
-    top: 5px;
-    border-radius: 10px;
-}
-
-#menu_suggest_icon img {
-    width: 55px;
-    height: 55px;
-    position: absolute;
-    left: 16.5px;
-    top: 5.5px;
-    border-radius: 45px;
-}
-
-#menu_suggest_icon:hover img {
-    transition: 0.2s;
-    transform: scale(1.1);
+select:focus {
+    outline: none;
 }
