@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#information {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: 500ms;
+}
+
+/* 버튼 */
+#btn {
+    position: absolute;
+    width: 33px;
+    height: 50px;
+    border: 3px solid #0B5ED7;
+    background: white;
+    color: #0B5ED7;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 7px;
+    left: 326px;
+    top: 450px;
+    box-shadow: 3px 3px 7px 3px rgba(0, 0, 0, 0.3);
+}
+
+#btn:hover {
+    cursor: pointer;
+}
+
+/* 패널 */
+#infoPanel {
+    position: absolute;
+    /* border: 2px solid #0B5ED7; */
+    background: white;
+    width: 333px;
+    height: 945px;
+    box-shadow: 1px 0px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+#map {
+    width: 1832px;
+    height: 945px;
+}
