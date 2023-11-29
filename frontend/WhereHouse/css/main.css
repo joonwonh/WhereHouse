@@ -1,3 +1,9 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 #information {
     display: flex;
     position: absolute;
@@ -137,4 +143,10 @@
     border: 1px solid rgba(11, 94, 215, 0.50);
     border-radius: 5px;
     cursor: pointer;
+}
+
+/* 지도 크기 */
+#map {
+    width: 1832px;
+    height: 945px;
 }

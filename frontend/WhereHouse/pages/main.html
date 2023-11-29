@@ -4,13 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d24dfa7488d79e7f12995de4945ddcfa">
+    </script>
     <link rel="stylesheet" href="/css/main.css">
-    <!-- favicon 로고 -->
-    <link rel="icon" href="/images/home_icon.png">
-    <title>WhereHouse</title>
+    <script src="/js/gu_map.js"></script>
 </head>
 
 <body>
+    <div id="map">
+    </div>
+
     <div id="information">
         <div id="btn">◀</div>
         <aside id="side-bar">
@@ -19,7 +22,7 @@
                     <input type="text" id="search" name="q" placeholder="지역구 명으로 검색 ex OO구">
                 </div>
                 <div id="btnSearch">
-                    <button type="submit"><img src="5.png" alt=""> </button>
+                    <button type="submit"><img src="/images/search_icon2.png" alt=""> </button>
                 </div>
             </div>
             <div class="gu-info">
@@ -57,24 +60,6 @@
             </div>
         </aside>
     </div>
-
-    <script>
-        var info = document.querySelector("#information");
-        var func = document.querySelector("#btn");
-
-
-        func.addEventListener("click", panelFunc);
-
-        function panelFunc() {
-            if (info.style.left === "-333px") {
-                info.style.left = "0px";
-                func.innerText = "◀";
-            } else {
-                info.style.left = "-333px";
-                func.innerText = "▶";
-            }
-        }
-    </script>
 </body>
 
 </html>

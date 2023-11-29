@@ -42,6 +42,7 @@
     box-shadow: 1px 0px 10px 5px rgba(0, 0, 0, 0.3);
 }
 
+/* 지도 크기 */
 #map {
     width: 1832px;
     height: 945px;
