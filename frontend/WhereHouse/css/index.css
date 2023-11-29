@@ -21,6 +21,13 @@ nav {
     top: 0px;
 }
 
+section {
+    height: 100%;
+    position: absolute;
+    left: 88px;
+    top: 0px;
+}
+
 #menu {
     width: 100%;
     height: 500px;
@@ -197,4 +204,9 @@ nav {
 #menu_suggest_icon:hover img {
     transition: 0.2s;
     transform: scale(1.1);
+}
+
+#kakao_map {
+    width: 1832px;
+    height: 945px;
 }
