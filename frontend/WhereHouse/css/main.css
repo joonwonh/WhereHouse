@@ -1,0 +1,140 @@
+#information {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: 500ms;
+}
+
+/* 사이드 버튼 */
+#btn {
+    position: absolute;
+    width: 33px;
+    height: 50px;
+    border: 3px solid #0B5ED7;
+    background: white;
+    color: #0B5ED7;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 7px;
+    left: 326px;
+    top: 450px;
+    box-shadow: 3px 3px 7px 3px rgba(0, 0, 0, 0.3);
+}
+
+#btn:hover {
+    cursor: pointer;
+}
+
+/* 사이드 바 */
+#side-bar {
+    position: absolute;
+    /* border: 2px solid #0B5ED7; */
+    background: white;
+    width: 333px;
+    height: 945px;
+    box-shadow: 1px 0px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* 검색 바 */
+.search-bar {
+    position: relative;
+    width: 300px;
+    height: 51px;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: #0B5ED7 4px solid;
+    border-radius: 3px;
+}
+
+.search-bar button {
+    height: 42px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10px;
+    background-color: #fff;
+    border: white;
+    cursor: pointer;
+}
+
+/* 검색 바 상세 */
+#inputSearch {
+    width: 80%;
+    position: absolute;
+}
+
+#inputSearch input {
+    width: 100%;
+    border: white;
+    border-radius: 8px;
+    padding: 13px 12px;
+    font-size: 14px;
+}
+
+#inputSearch input[type="text"]::placeholder {
+    color: #999;
+    /* 원하는 색상으로 변경 */
+    text-align: center;
+    font-size: 13px;
+    outline: none;
+}
+
+#inputSearch input:focus {
+    text-align: center;
+    outline: none;
+}
+
+/* 검색 바 버튼 */
+#btnSearch {
+    width: 20%;
+    height: 42px;
+    left: 254px;
+    position: absolute;
+}
+
+#btnSearch img {
+    margin-top: 5px;
+    width: 15px;
+    height: 15px;
+}
+
+#btn-hide:hover {
+    cursor: pointer;
+}
+
+/* 지역구 정보 */
+.gu-info {
+    width: 300px;
+    border: rgba(11, 94, 215, 0.50) 2px solid;
+    margin-top: 10px;
+    margin-left: 12px;
+    margin-right: 10px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 8px;
+}
+
+/* 지역구를 선택해주세요 */
+.gu-choose {
+    width: 300px;
+    border: rgba(11, 94, 215, 0.50) 2px solid;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-left: 12px;
+    margin-right: 10px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
+
+.gu-choose select {
+    width: 250px;
+    text-align: center;
+    font-size: 1em;
+    border: 1px solid rgba(11, 94, 215, 0.50);
+    border-radius: 5px;
+    cursor: pointer;
+}
