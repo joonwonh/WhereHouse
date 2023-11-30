@@ -84,13 +84,45 @@ section {
     letter-spacing: 0;
 }
 
+/* 주거지 추천 선택 스타일 */
+#menu_suggest {
+    width: 88px;
+    height: 90px;
+    position: absolute;
+    left: 0px;
+    top: 90px;
+}
+
+#menu_suggest_icon {
+    width: 88px;
+    height: 88px;
+    position: absolute;
+    left: 0px;
+    top: 5px;
+    border-radius: 10px;
+}
+
+#menu_suggest_icon img {
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    left: 16.5px;
+    top: 5.5px;
+    border-radius: 45px;
+}
+
+#menu_suggest_icon:hover img {
+    transition: 0.2s;
+    transform: scale(1.1);
+}
+
 /* 지역구 선택 스타일 */
 #menu_gu {
     width: 88px;
     height: 90px;
     position: absolute;
     left: 0px;
-    top: 90px;
+    top: 180px;
 }
 
 #menu_gu_icon {
@@ -113,38 +145,6 @@ section {
 }
 
 #menu_gu_icon:hover img {
-    transition: 0.2s;
-    transform: scale(1.1);
-}
-
-/* 행정동 선택 스타일 */
-#menu_dong {
-    width: 88px;
-    height: 90px;
-    position: absolute;
-    left: 0px;
-    top: 180px;
-}
-
-#menu_dong_icon {
-    width: 88px;
-    height: 88px;
-    position: absolute;
-    left: 0px;
-    top: 5px;
-    border-radius: 10px;
-}
-
-#menu_dong_icon img {
-    width: 55px;
-    height: 55px;
-    position: absolute;
-    left: 16.5px;
-    top: 5.5px;
-    border-radius: 45px;
-}
-
-#menu_dong_icon:hover img {
     transition: 0.2s;
     transform: scale(1.1);
 }
@@ -177,38 +177,6 @@ section {
 }
 
 #menu_detail_icon:hover img {
-    transition: 0.2s;
-    transform: scale(1.1);
-}
-
-/* 주거지 추천 선택 스타일 */
-#menu_suggest {
-    width: 88px;
-    height: 90px;
-    position: absolute;
-    left: 0px;
-    top: 360px;
-}
-
-#menu_suggest_icon {
-    width: 88px;
-    height: 88px;
-    position: absolute;
-    left: 0px;
-    top: 5px;
-    border-radius: 10px;
-}
-
-#menu_suggest_icon img {
-    width: 55px;
-    height: 55px;
-    position: absolute;
-    left: 16.5px;
-    top: 5.5px;
-    border-radius: 45px;
-}
-
-#menu_suggest_icon:hover img {
     transition: 0.2s;
     transform: scale(1.1);
 }
