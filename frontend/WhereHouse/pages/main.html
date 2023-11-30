@@ -16,6 +16,7 @@
 
     <div id="information">
         <div id="btn">◀</div>
+
         <aside id="side-bar">
             <div class="gu-info">
                 지역구 정보
@@ -51,28 +52,40 @@
                 </select>
             </div>
 
-            <div id="rent-fee">
-                <div class="rent-fee-inner">
+            <div id="average-charter">
+                <div id="charter">
                     평균 전세 가격
-                    <div id="rent-fee-check">
-                        <div id="rent-fee-check-jeon">
-                            <input type="radio" name="xxx" value="yyy" checked>전세
-                        </div>
-                        <div id="rent-fee-check-month">
-                            <input type="radio" name="xxx" value="yyy">월세
-                        </div>
-                    </div>
-                    <div id=""></div>
-                    <div id="deposit">
-                        보증금
-                    </div>
+                </div>
+                <div id="charter-deposit">
+                    보증금 : <span id="charter-deposit-fee">ex</span> 만원
+                </div>
+            </div>
+            <div id="average-monthly">
+                <div id="monthly">
+                    평균 월세 가격
+                </div>
+                <div id="monthly-deposit">
+                    보증금 : <span id="monthly-deposit-fee">ex</span> 만원
+                </div>
+                <div id="monthly-month">
+                    월세 : <span id="monthly-month-fee">ex</span> 만원
+                </div>                            
+            </div>
+            <div id="average-score">
+                안전 종합 점수
+            </div>
+            <div id="average-score">
+                편의 종합 점수
+            </div>
+            <div id="average-score">
+                인구 밀집 수치
+                <div id="population-rank">
+                    서대문구의 인구밀집 순위는 <span id="population-rank-num">위</span>입니다.
                 </div>
             </div>
             <div id="logo-img"><img src="/images/home_icon.png" alt=""></div>
-            <button id="showBtn">보기</button>
         </aside>
     </div>
-
 </body>
 
 </html>
