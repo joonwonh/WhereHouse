@@ -1,9 +1,20 @@
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    font-family: 'TheJamsil5Bold';
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-weight: bold;
-    
+
 }
 
 #information {
@@ -35,6 +46,10 @@
     cursor: pointer;
 }
 
+#btn span {
+    font-size: 13px;
+}
+
 /* 사이드 바 */
 #side-bar {
     position: absolute;
@@ -50,12 +65,14 @@
     background: #4690ff;
     color: #e9f2ff;
     margin: 0 auto;
-    width: 100%; height: 62px; line-height: 62px;
+    width: 100%;
+    height: 62px;
+    line-height: 62px;
     text-align: center;
     font-weight: bold;
     font-size: 1.2rem;
-    box-shadow : -2px 2px 2px 2px rgba(0, 0, 0, 0.3);
-} 
+    box-shadow: -2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
 
 /* 지역구를 선택해주세요 */
 .gu-choose {
@@ -79,7 +96,7 @@
     cursor: pointer;
 }
 
-#average-charter   {
+#average-charter {
     width: 300px;
     border: rgba(11, 94, 215, 0.50) 2px solid;
     border-radius: 8px;
@@ -90,14 +107,17 @@
     height: 114px;
     line-height: 50px;
 }
-#charter    {
+
+#charter {
     font-size: 20px;
-    
+
 }
-#charter-deposit    {
+
+#charter-deposit {
     /* font-size: 25px; */
 }
-#average-monthly    {
+
+#average-monthly {
     width: 300px;
     border: rgba(11, 94, 215, 0.50) 2px solid;
     border-radius: 8px;
@@ -130,9 +150,10 @@
     width: 1832px;
     height: 945px;
 }
-#logo-img img   {
+
+#logo-img img {
     width: 110px;
-    
+
     position: absolute;
     top: 840px;
     left: 110px;
