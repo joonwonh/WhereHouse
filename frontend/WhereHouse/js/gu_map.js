@@ -109,6 +109,8 @@ window.onload = function () {
             bar.style.border = "#D9D9D9 1px solid";
         } else {
             detail.innerText = "-";
+            bar.style.backgroundColor = "rgba(217, 217, 217, 0.80)";
+            bar.style.border = "rgba(0, 0, 0, 0.2) 2px solid";
             info.style.display = "block";
         }
 
