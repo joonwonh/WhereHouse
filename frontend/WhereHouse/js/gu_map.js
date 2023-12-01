@@ -29,7 +29,7 @@ window.onload = function () {
     /**
      * 구 별 인구 밀집도 데이터 
      */
-    
+
 
 
     for (var i = 0, len = areas.length; i < len; i++) {
@@ -102,13 +102,30 @@ window.onload = function () {
             func.innerText = "◀";
         }
     }
+    var info = document.querySelector("#population-shame-info");
+    var bar = document.querySelector("#population-shame-bar");
+    var detail = document.querySelector("#population-shame-btn");
+    detail.addEventListener("click", hideDetail);
+
+    function hideDetail() {
+        if (detail.innerText === "-") {
+            detail.innerText = "+";
+            info.style.display = "none";
+            bar.style.backgroundColor = "rgba(217,217,217,0.3)";
+            bar.style.border = "#D9D9D9 1px solid";
+        } else {
+            detail.innerText = "-";
+            info.style.display = "block";
+        }
+
+    }
 
     /**
      * 상세 비교 창 띄우기
      */
-    var showBtn = document.getElementById("showBtn");
+    // var showBtn = document.getElementById("showBtn");
 
-    showBtn.addEventListener("click", openWindow)
+    // showBtn.addEventListener("click", openWindow)
 
 }
 
@@ -119,3 +136,8 @@ function openWindow() {
     window.open('detail_window.html', 'detail_window',
         "top=10, left=10, width=500, height=600, status=no, menubar=no, toolbar=no, resizable=no, location=no");
 }
+
+function hideDetail() {
+    // document.querySelector('#population-shame-info').style.display="none";
+}
+
