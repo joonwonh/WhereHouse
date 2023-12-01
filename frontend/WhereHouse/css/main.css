@@ -112,6 +112,10 @@ body {
 
 }
 
+#monthly {
+    font-size: 20px;
+}
+
 #charter-deposit {
     /* font-size: 25px; */
 }
@@ -128,7 +132,42 @@ body {
     line-height: 50px;
 }
 
-.average-score {
+#average-score {
+    width: 300px;
+    border: rgba(11, 94, 215, 0.50) 2px solid;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-left: 12px;
+    margin-right: 10px;
+    text-align: center;
+    height: 230px;
+    line-height: 50px;
+}
+
+#average-score-inner {
+    display: flex;
+}
+
+#average-score-safety {
+    width: 100px;
+    height: 130px;
+    margin-left: 45px;
+    border: 1px solid black;
+}
+
+#average-score-convenience {
+    width: 100px;
+    height: 130px;
+    border: 1px solid black;
+}
+
+#average-score-inner-text {
+    display: flex;
+    margin-left: 70px;
+}
+
+
+#population {
     width: 300px;
     border: rgba(11, 94, 215, 0.50) 2px solid;
     border-radius: 8px;
