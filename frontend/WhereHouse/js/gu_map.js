@@ -32,18 +32,17 @@ window.onload = function () {
      */
 
     var populationArea = initPopulation();
-    console.log(populationArea);
 
     /**
      * 화면에 다각형 생성
      */
 
     for (var i = 0, len = areas.length; i < len; i++) {
-        displayArea(areas[i], populationArea[i].color);
+        displayArea(areas[i], populationArea[i]);
     }
 
     // 다각형을 생상하고 이벤트를 등록하는 함수입니다
-    function displayArea(area, color) {
+    function displayArea(area, population) {
 
         // 다각형을 생성합니다 
         var polygon = new kakao.maps.Polygon({
@@ -51,9 +50,9 @@ window.onload = function () {
             path: area.path,
             strokeWeight: 2,
             // strokeColor: 'rgba(11, 94, 215, 0.50)',
-            strokeColor: color,
+            strokeColor: population.color,
             strokeOpacity: 0.8,
-            fillColor: color,
+            fillColor: population.color,
             fillOpacity: 0.7
         });
 
@@ -62,16 +61,23 @@ window.onload = function () {
         });
 
         kakao.maps.event.addListener(polygon, 'mouseout', function () {
-            polygon.setOptions({ strokeWeight: 2, strokeColor: color });
-            polygon.setOptions({ fillColor: color });
+            polygon.setOptions({ strokeWeight: 2, strokeColor: population.color });
+            polygon.setOptions({ fillColor: population.color });
         });
 
         // 다각형에 click 이벤트를 등록하고 이벤트가 발생하면 다각형의 이름과 면적을 인포윈도우에 표시합니다 
         kakao.maps.event.addListener(polygon, 'click', function (mouseEvent) {
-            var content = '<div class="info">' +
-                '   <div class="title">' + area.name + '</div>' +
-                '   <div class="size">총 면적 : 약 ' + Math.floor(polygon.getArea()) + ' m<sup>2</sup></div>' +
-                '</div>';
+            var content = '<div class="info" style="width:300px"; height:"300px"; border: "1px solid blue;">'
+                + '<div class="title" style="text-align: center;">' + population.name + '</div>'
+                + '<div class="info_rank">'
+                + '<div id="price_rank">'
+                + '<div id="charter">전세 : <span id="charter_rank">1</span>위 / 25</div>'
+                + '<div id="deposit">보증금 : <span id="deposit_rank">1</span>위 / 25</div>'
+                + '<div id="monthly">월세 : <span id="monthly_rank">1</span>위 / 25</div></div>'
+                + '<div id="convenience">편의성 : <span id="convenience_rank">1</span>위 / 25</div>'
+                + '<div id="safety">안전성 : <span id="safety_rank">1</span>위 / 25</div>'
+                + '<div id="dense">밀집도 : <span id="dense_rank">1</span>위 / 25</div></div>';
+
 
             infowindow.setContent(content);
             infowindow.setPosition(mouseEvent.latLng);
@@ -115,51 +121,39 @@ window.onload = function () {
         }
 
     }
-
-    /**
-     * 상세 비교 창 띄우기
-    // var showBtn = document.getElementById("showBtn");
-
-    // showBtn.addEventListener("click", openWindow)
-    */
-
 }
 
 /**
- * 상세 비교 창 띄우는 함수
+ * 
+ * @returns [{name, population, idx}]
  */
-function openWindow() {
-    window.open('detail_window.html', 'detail_window',
-        "top=10, left=10, width=500, height=600, status=no, menubar=no, toolbar=no, resizable=no, location=no");
-}
-
 function initPopulation() {
     var populationArea = [];
-    populationArea.push({ name: "강동구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
-    populationArea.push({ name: "송파구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
-    populationArea.push({ name: "강남구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
-    populationArea.push({ name: "서초구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
-    populationArea.push({ name: "관악구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
-    populationArea.push({ name: "동작구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
-    populationArea.push({ name: "영등포구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
-    populationArea.push({ name: "금천구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
-    populationArea.push({ name: "구로구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
-    populationArea.push({ name: "강서구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
-    populationArea.push({ name: "양천구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
-    populationArea.push({ name: "마포구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
-    populationArea.push({ name: "서대문구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
-    populationArea.push({ name: "은평구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
-    populationArea.push({ name: "노원구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
-    populationArea.push({ name: "도봉구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
-    populationArea.push({ name: "강북구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
-    populationArea.push({ name: "성북구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
-    populationArea.push({ name: "중랑구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
-    populationArea.push({ name: "동대문구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
-    populationArea.push({ name: "광진구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
-    populationArea.push({ name: "성동구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
-    populationArea.push({ name: "용산구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
-    populationArea.push({ name: "중구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
-    populationArea.push({ name: "종로구", population: Math.floor(Math.random() * 40000) + 10000, idx: 0 });
+    populationArea.push({ name: "강동구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
+    populationArea.push({ name: "송파구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
+    populationArea.push({ name: "강남구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
+    populationArea.push({ name: "서초구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
+    populationArea.push({ name: "관악구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
+    populationArea.push({ name: "동작구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
+    populationArea.push({ name: "영등포구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
+    populationArea.push({ name: "금천구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
+    populationArea.push({ name: "구로구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
+    populationArea.push({ name: "강서구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
+    populationArea.push({ name: "양천구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
+    populationArea.push({ name: "마포구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
+    populationArea.push({ name: "서대문구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
+    populationArea.push({ name: "은평구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
+    populationArea.push({ name: "노원구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
+    populationArea.push({ name: "도봉구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
+    populationArea.push({ name: "강북구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
+    populationArea.push({ name: "성북구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
+    populationArea.push({ name: "중랑구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
+    populationArea.push({ name: "동대문구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
+    populationArea.push({ name: "광진구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
+    populationArea.push({ name: "성동구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
+    populationArea.push({ name: "용산구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
+    populationArea.push({ name: "중구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
+    populationArea.push({ name: "종로구", population: Math.floor(Math.random() * 40000) + 10000, color: "rgba(0,0,0,0)" });
 
     var max = populationArea[0].population;
     var min = populationArea[0].population;
