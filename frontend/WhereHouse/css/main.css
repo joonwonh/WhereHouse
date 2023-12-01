@@ -3,7 +3,18 @@
     margin: 0;
     box-sizing: border-box;
     font-weight: bold;
-    
+
+}
+
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    font-family: 'TheJamsil5Bold';
 }
 
 #information {
@@ -50,12 +61,14 @@
     background: #4690ff;
     color: #e9f2ff;
     margin: 0 auto;
-    width: 100%; height: 62px; line-height: 62px;
+    width: 100%;
+    height: 62px;
+    line-height: 62px;
     text-align: center;
     font-weight: bold;
     font-size: 1.2rem;
-    box-shadow : -2px 2px 2px 2px rgba(0, 0, 0, 0.3);
-} 
+    box-shadow: -2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
 
 /* 지역구를 선택해주세요 */
 .gu-choose {
@@ -79,7 +92,7 @@
     cursor: pointer;
 }
 
-#average-charter   {
+#average-charter {
     width: 300px;
     border: rgba(11, 94, 215, 0.50) 2px solid;
     border-radius: 8px;
@@ -90,14 +103,17 @@
     height: 114px;
     line-height: 50px;
 }
-#charter    {
+
+#charter {
     font-size: 20px;
-    
+
 }
-#charter-deposit    {
+
+#charter-deposit {
     /* font-size: 25px; */
 }
-#average-monthly    {
+
+#average-monthly {
     width: 300px;
     border: rgba(11, 94, 215, 0.50) 2px solid;
     border-radius: 8px;
@@ -109,7 +125,7 @@
     line-height: 50px;
 }
 
-#average-score {
+.average-score {
     width: 300px;
     border: rgba(11, 94, 215, 0.50) 2px solid;
     border-radius: 8px;
@@ -121,6 +137,91 @@
     line-height: 50px;
 }
 
+#population-shame {
+    background-color: rgba(217, 217, 217, 0.80);
+    position: absolute;
+    text-align: center;
+    top: 30px;
+    width: 254px;
+    height: 156px;
+    border: rgba(0, 0, 0, 0.20) 1px solid;
+    left: 1500px;
+    z-index: 1;
+}
+
+#population-shame-text {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: rgba(0, 0, 0, 0.20) 1px solid;
+}
+
+#population-shame-btn {
+    position: absolute;
+    left: 212px;
+    top: -10px;
+    width: 30px;
+    height: 50px;
+    font-size: 25px;
+    line-height: 45px;
+    margin-top: 10px;
+    border: 0px solid black;
+    cursor: pointer;
+}
+
+
+
+#population-shame-graph {
+    display: flex;
+    margin-left: 22px;
+}
+
+#population-shame-graph-1 {
+    width: 30px;
+    height: 30px;
+    border: 1px solid red;
+    background-color: rgba(255, 0, 0, 0.30);
+}
+#population-shame-graph-2 {
+    width: 30px;
+    height: 30px;
+    border: 1px solid red;
+    background-color: rgba(255, 0, 0, 0.30);
+}
+#population-shame-graph-3 {
+    width: 30px;
+    height: 30px;
+    border: 1px solid red;
+    background-color: rgba(255, 0, 0, 0.30);
+}
+
+#population-shame-graph-4 {
+    width: 30px;
+    height: 30px;
+    border: 1px solid red;
+    background-color: rgba(255, 0, 0, 0.40);
+}
+
+#population-shame-graph-5 {
+    width: 30px;
+    height: 30px;
+    border: 1px solid red;
+    background-color: rgba(255, 0, 0, 0.50);
+}
+
+#population-shame-graph-6 {
+    width: 30px;
+    height: 30px;
+    border: 1px solid red;
+    background-color: rgba(255, 0, 0, 0.60);
+}
+
+#population-shame-graph-7 {
+    width: 30px;
+    height: 30px;
+    border: 1px solid red;
+    background-color: rgba(255, 0, 0, 0.70);
+}
+
 
 
 
@@ -130,9 +231,10 @@
     width: 1832px;
     height: 945px;
 }
-#logo-img img   {
+
+#logo-img img {
     width: 110px;
-    
+
     position: absolute;
     top: 840px;
     left: 110px;
