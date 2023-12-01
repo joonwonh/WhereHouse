@@ -72,16 +72,36 @@
                     월세 : <span id="monthly-month-fee">ex</span> 만원
                 </div>
             </div>
-            <div class="average-score">
-                안전 종합 점수
+            <div id="average-score">
+                종합 점수
+
+                <div id="average-score-inner">
+                    <div id="average-score-safety">
+                        <div class="graphWrap">
+                            <div id="barChart" class="barChart">
+                                <div id="chartValue">0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="average-score-convenience">
+                        <div class="graphWrap">
+                            <div id="barChart" class="barChart">
+                                <div id="chartValue">0</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="average-score-inner-text">
+                    <p>안전성</p>
+                    <p style="margin-left: 58px;">편의성</p>
+                </div>
+
             </div>
-            <div class="average-score">
-                편의 종합 점수
-            </div>
-            <div class="average-score">
+
+            <div id="population">
                 인구 밀집 수치
                 <div id="population-rank">
-                    서대문구의 인구밀집 순위는 <span id="population-rank-num">위</span>입니다.
+                    <span id="population-rank-num"></span>
                 </div>
             </div>
             <div id="logo-img"><img src="/images/home_icon.png" alt=""></div>

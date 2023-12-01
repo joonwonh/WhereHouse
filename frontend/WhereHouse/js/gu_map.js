@@ -102,7 +102,8 @@ window.onload = function () {
             func.innerText = "◀";
         }
     }
-    var info = document.querySelector("#population-shame-info");
+
+    var shame_info = document.querySelector("#population-shame-info");
     var bar = document.querySelector("#population-shame-bar");
     var detail = document.querySelector("#population-shame-btn");
     detail.addEventListener("click", hideDetail);
@@ -110,16 +111,15 @@ window.onload = function () {
     function hideDetail() {
         if (detail.innerText === "-") {
             detail.innerText = "+";
-            info.style.display = "none";
+            shame_info.style.display = "none";
             bar.style.backgroundColor = "rgba(217,217,217,0.3)";
             bar.style.border = "#D9D9D9 1px solid";
         } else {
             detail.innerText = "-";
             bar.style.backgroundColor = "rgba(217, 217, 217, 0.80)";
             bar.style.border = "rgba(0, 0, 0, 0.2) 2px solid";
-            info.style.display = "block";
+            shame_info.style.display = "block";
         }
-
     }
 }
 
