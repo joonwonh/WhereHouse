@@ -34,11 +34,6 @@ window.onload = function () {
     var populationArea = initPopulation();
     console.log(populationArea);
 
-
-
-
-    //구 추가 및 최소+ 최대 / 7로 인덱싱 하고 그에 맞게 색 투명도 조절
-
     /**
      * 화면에 다각형 생성
      */
@@ -101,13 +96,30 @@ window.onload = function () {
             func.innerText = "◀";
         }
     }
+    var info = document.querySelector("#population-shame-info");
+    var bar = document.querySelector("#population-shame-bar");
+    var detail = document.querySelector("#population-shame-btn");
+    detail.addEventListener("click", hideDetail);
+
+    function hideDetail() {
+        if (detail.innerText === "-") {
+            detail.innerText = "+";
+            info.style.display = "none";
+            bar.style.backgroundColor = "rgba(217,217,217,0.3)";
+            bar.style.border = "#D9D9D9 1px solid";
+        } else {
+            detail.innerText = "-";
+            info.style.display = "block";
+        }
+
+    }
 
     /**
      * 상세 비교 창 띄우기
-    //  */
     // var showBtn = document.getElementById("showBtn");
 
     // showBtn.addEventListener("click", openWindow)
+    */
 
 }
 
