@@ -20,13 +20,17 @@ window.onload = function () {
         var name = element.properties.SIG_KOR_NM;
         var path = [];
         coor[0].forEach(point => {
-            console.log(point);
             path.push(new kakao.maps.LatLng(point[1], point[0]));
         })
         var area = { name, path };
         areas.push(area);
     });
-    console.log(areas);
+
+    /**
+     * 구 별 인구 밀집도 데이터 
+     */
+    
+
 
     for (var i = 0, len = areas.length; i < len; i++) {
         displayArea(areas[i]);
@@ -40,18 +44,16 @@ window.onload = function () {
             map: map, // 다각형을 표시할 지도 객체
             path: area.path,
             strokeWeight: 2,
-            strokeColor: '#004c80',
+            strokeColor: 'rgba(11, 94, 215, 0.50)',
             strokeOpacity: 0.8,
-            fillColor: '#fff',
+            fillColor: 'rgba(11, 94, 215, 0.50)',
             fillOpacity: 0.7
         });
 
         // 다각형에 mouseover 이벤트를 등록하고 이벤트가 발생하면 폴리곤의 채움색을 변경합니다 
         // 지역명을 표시하는 커스텀오버레이를 지도위에 표시합니다
         kakao.maps.event.addListener(polygon, 'mouseover', function (mouseEvent) {
-            polygon.setOptions({ fillColor: '#09f' });
-
-            customOverlay.setContent('<div class="area">' + area.name + '</div>');
+            polygon.setOptions({ fillColor: 'rgba(11, 94, 215, 0.70)' });
 
             customOverlay.setPosition(mouseEvent.latLng);
             customOverlay.setMap(map);

@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -13,6 +20,7 @@ html {
 }
 
 body {
+    font-family: 'TheJamsil5Bold';
     width: 100%;
     height: 100%;
     padding: 0px;
