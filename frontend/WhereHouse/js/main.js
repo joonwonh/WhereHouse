@@ -9,6 +9,13 @@ window.onload = function () {
         customOverlay = new kakao.maps.CustomOverlay({}),
         infowindow = new kakao.maps.InfoWindow({ removable: true });
 
+
+    /**
+    * 구 선택에 따른 이벤트
+    */
+    var selectGu = document.getElementById("gu_select");
+    selectGu.addEventListener("change", initInfo);
+
     /**
      * json 파싱 및 전처리
      */
@@ -67,17 +74,25 @@ window.onload = function () {
 
         // 다각형에 click 이벤트를 등록하고 이벤트가 발생하면 다각형의 이름과 면적을 인포윈도우에 표시합니다 
         kakao.maps.event.addListener(polygon, 'click', function (mouseEvent) {
-            var content = '<div class="info" style="width:300px"; height:"300px"; border: "1px solid blue;">'
-                + '<div class="title" style="text-align: center;">' + population.name + '</div>'
+            var content = '<div class="info">'
+                + '<div class="info_title">' + population.name + '</div>'
                 + '<div class="info_rank">'
-                + '<div id="price_rank">'
-                + '<div id="charter">전세 : <span id="charter_rank">1</span>위 / 25</div>'
-                + '<div id="deposit">보증금 : <span id="deposit_rank">1</span>위 / 25</div>'
-                + '<div id="monthly">월세 : <span id="monthly_rank">1</span>위 / 25</div></div>'
-                + '<div id="convenience">편의성 : <span id="convenience_rank">1</span>위 / 25</div>'
-                + '<div id="safety">안전성 : <span id="safety_rank">1</span>위 / 25</div>'
-                + '<div id="dense">밀집도 : <span id="dense_rank">1</span>위 / 25</div></div>';
+                + '<div class="info_content" id="info_price_rank">'
+                + '<div class="info_content" id="info_charter">전세 : <span id="info_charter_rank">1</span>위 / 25</div>'
+                + '<div class="info_content" id="info_deposit">보증금 : <span id="info_deposit_rank">1</span>위 / 25</div>'
+                + '<div class="info_content" id="info_monthly">월세 : <span id="info_monthly_rank">1</span>위 / 25</div></div>'
+                + '<div class="info_content" id="info_score">'
+                + '<div class="info_content" id="info_convenience">편의성 : <span id="info_conv_rank">1</span>위 / 25</div>'
+                + '<div class="info_content" id="info_safety">안전성 : <span id="info_safety_rank">1</span>위 / 25</div>'
+                + '<div class="info_content" id="info_dense">밀집도 : <span id="info_dense_rank">1</span>위 / 25</div></div></div>';
 
+            for (var i = 0; i < selectGu.options.length; i++) {
+                if (selectGu.options[i].value === population.name) {
+                    selectGu.options[i].selected = true;
+                    initInfo();
+                    break;
+                }
+            }
 
             infowindow.setContent(content);
             infowindow.setPosition(mouseEvent.latLng);
@@ -122,43 +137,44 @@ window.onload = function () {
         }
     }
 
-    /**
-     * 구 선택에 따른 이벤트
-     */
-    var selectGu = document.getElementById("gu_select");
-    selectGu.addEventListener("change", function () {
-        var div_charter = document.getElementById("average-charter");
-        var div_monthly = document.getElementById("average-monthly");
-        var div_score = document.getElementById("average-score");
-        var div_popul = document.getElementById("population");
 
-        if (this.selectedIndex === 0) {
-            div_charter.style.display = "none";
-            div_monthly.style.display = "none";
-            div_score.style.display = "none";
-            div_popul.style.display = "none";
-        } else {
-            div_charter.style.display = "block";
-            div_monthly.style.display = "block";
-            div_score.style.display = "block";
-            div_popul.style.display = "block";
-
-            //그래프 그리기
-            var safety_barChart = document.getElementById("safety_barChart");
-            var conv_barChart = document.getElementById("convenience_barChart");
-
-            var tmp1 = (Math.random() * 100 + 0);
-            var tmp2 = (Math.random() * 100 + 0);
-            document.getElementById("safety_value").innerText = Math.round(tmp1);
-            document.getElementById("convenience_value").innerText = Math.round(tmp2);
-            safety_barChart.style.height = (tmp1 + 15) + "px";
-            conv_barChart.style.height = (tmp2 + 15) + "px";
-        }
-    })
 }
 
 /**
- * 
+ * 지역구 선택 및 변경 시 정보를 다시 뿌려주는 함수
+ */
+function initInfo() {
+    var div_charter = document.getElementById("average-charter");
+    var div_monthly = document.getElementById("average-monthly");
+    var div_score = document.getElementById("average-score");
+    var div_popul = document.getElementById("population");
+
+    if (this.selectedIndex === 0) {
+        div_charter.style.display = "none";
+        div_monthly.style.display = "none";
+        div_score.style.display = "none";
+        div_popul.style.display = "none";
+    } else {
+        div_charter.style.display = "block";
+        div_monthly.style.display = "block";
+        div_score.style.display = "block";
+        div_popul.style.display = "block";
+
+        //그래프 그리기
+        var safety_barChart = document.getElementById("safety_barChart");
+        var conv_barChart = document.getElementById("convenience_barChart");
+
+        var tmp1 = (Math.random() * 100 + 0);
+        var tmp2 = (Math.random() * 100 + 0);
+        document.getElementById("safety_value").innerText = Math.round(tmp1);
+        document.getElementById("convenience_value").innerText = Math.round(tmp2);
+        safety_barChart.style.height = (tmp1 + 15) + "px";
+        conv_barChart.style.height = (tmp2 + 15) + "px";
+    }
+}
+
+/**
+ * 인구밀집도 시각화를 위한 임의 데이터 생성 함수
  * @returns [{name, population, idx}]
  */
 function initPopulation() {
