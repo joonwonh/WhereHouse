@@ -8,7 +8,8 @@
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d24dfa7488d79e7f12995de4945ddcfa">
     </script>
     <link rel="stylesheet" href="/css/main.css">
-    <script src="/js/gu_map.js"></script>
+    <link rel="stylesheet" href="/css/main_map.css">
+    <script src="/js/main.js"></script>
 </head>
 
 <body>
@@ -23,7 +24,7 @@
                 지역구 정보
             </div>
             <div class="gu-choose">
-                <select name="" id="">
+                <select name="" id="gu_select">
                     <option value="default">지역구를 선택해주세요</option>
                     <option value="강남구">강남구</option>
                     <option value="강동구">강동구</option>
@@ -52,7 +53,6 @@
                     <option value="중랑구">중랑구</option>
                 </select>
             </div>
-
             <div id="average-charter">
                 <div id="charter">
                     평균 전세 가격
@@ -73,37 +73,31 @@
                 </div>
             </div>
             <div id="average-score">
-                종합 점수
-
+                <div id="total_title">종합 점수</div>
                 <div id="average-score-inner">
                     <div id="average-score-safety">
-                        <div class="graphWrap">
-                            <div id="barChart" class="barChart">
-                                <div id="chartValue">0</div>
-                            </div>
+                        <div id="safety_barChart" class="barChart">
+                            <div id="safety_value">0</div>
                         </div>
                     </div>
                     <div id="average-score-convenience">
-                        <div class="graphWrap">
-                            <div id="barChart" class="barChart">
-                                <div id="chartValue">0</div>
-                            </div>
+                        <div id="convenience_barChart" class="barChart">
+                            <div id="convenience_value">0</div>
                         </div>
                     </div>
                 </div>
                 <div id="average-score-inner-text">
-                    <p>안전성</p>
-                    <p style="margin-left: 58px;">편의성</p>
+                    <div id="name_safety">안전성</div>
+                    <div id="name_convenience">편의성</div>
                 </div>
-
             </div>
-
             <div id="population">
                 인구 밀집 수치
                 <div id="population-rank">
                     <span id="population-rank-num"></span>
                 </div>
             </div>
+
             <div id="logo-img"><img src="/images/home_icon.png" alt=""></div>
         </aside>
     </div>
