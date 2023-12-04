@@ -170,12 +170,14 @@ window.onload = function () {
 function showCharter() {
     document.getElementById("charterInput").style.display = "block";
     document.getElementById("monthlyInput").style.display = "none";
+    document.querySelector(".select_need").style.height = "150px";
 }
 
 // 월세 선택 시 보여줄 화면
 function showMonthly() {
     document.getElementById("charterInput").style.display = "none";
     document.getElementById("monthlyInput").style.display = "block";
+    document.querySelector(".select_need").style.height = "200px";
 }
 
 // 추천 결과 페이지 전환
@@ -187,12 +189,17 @@ function showRecommend() {
 function showResult() {
     document.getElementById("user-input").style.display = "none";
     document.getElementById("recommend_result_page").style.display = "block";
+    document.getElementById("recommend_first_result").innerText = "서대문구";
+    document.getElementById("recommend_second_result").innerText = "영등포구";
+    document.getElementById("recommend_third_result").innerText = "은평구";
+
 }
 
 // 첫번째 추천결과창
 function showDetailFirst() {
     document.getElementById("recommend_first").style.display = "none";
     document.getElementById("recommend_first_info").style.display = "block";
+    document.getElementById("recommend_first_result").innerText = "서대문구";
 }
 
 function hideDetailFirst() {
@@ -204,6 +211,7 @@ function hideDetailFirst() {
 function showDetailSecond() {
     document.getElementById("recommend_second").style.display = "none";
     document.getElementById("recommend_second_info").style.display = "block";
+    document.getElementById("recommend_second_result").innerText = "영등포구";
 }
 
 function hideDetailSecond() {
@@ -215,15 +223,13 @@ function hideDetailSecond() {
 function showDetailThird() {
     document.getElementById("recommend_third").style.display = "none";
     document.getElementById("recommend_third_info").style.display = "block";
+    document.getElementById("recommend_third_result").innerText = "은평구";
 }
 
 function hideDetailThird() {
     document.getElementById("recommend_third").style.display = "block";
     document.getElementById("recommend_third_info").style.display = "none";
 }
-
-
-
 
 
 // 상세비교창 띄우기
