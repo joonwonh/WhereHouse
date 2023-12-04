@@ -9,13 +9,6 @@ window.onload = function () {
         customOverlay = new kakao.maps.CustomOverlay({}),
         infowindow = new kakao.maps.InfoWindow({ removable: true });
 
-
-    /**
-    * 구 선택에 따른 이벤트
-    */
-    var selectGu = document.getElementById("gu_select");
-    selectGu.addEventListener("change", initInfo);
-
     /**
      * json 파싱 및 전처리
      */
@@ -86,14 +79,6 @@ window.onload = function () {
                 + '<div class="info_content" id="info_safety">안전성 : <span id="info_safety_rank">1</span>위 / 25</div>'
                 + '<div class="info_content" id="info_dense">밀집도 : <span id="info_dense_rank">1</span>위 / 25</div></div></div>';
 
-            for (var i = 0; i < selectGu.options.length; i++) {
-                if (selectGu.options[i].value === population.name) {
-                    selectGu.options[i].selected = true;
-                    initInfo();
-                    break;
-                }
-            }
-
             infowindow.setContent(content);
             infowindow.setPosition(mouseEvent.latLng);
             infowindow.setMap(map);
@@ -118,68 +103,101 @@ window.onload = function () {
         }
     }
 
-    var shame_info = document.querySelector("#population-shame-info");
-    var bar = document.querySelector("#population-shame-bar");
-    var detail = document.querySelector("#population-shame-btn");
-    detail.addEventListener("click", hideDetail);
+    // 전세/월세 라디오 버튼 선택
 
-    function hideDetail() {
-        if (detail.innerText === "-") {
-            detail.innerText = "+";
-            shame_info.style.display = "none";
-            bar.style.backgroundColor = "rgba(217,217,217,0.3)";
-            bar.style.border = "#D9D9D9 1px solid";
-        } else {
-            detail.innerText = "-";
-            bar.style.backgroundColor = "rgba(217, 217, 217, 0.80)";
-            bar.style.border = "rgba(0, 0, 0, 0.2) 2px solid";
-            shame_info.style.display = "block";
-        }
+    var rentalType = document.querySelectorAll("input[name='rentalType']");
+
+    rentalType.forEach((radio) => {
+        radio.addEventListener("change", (e) => {
+            var current = e.currentTarget;
+            if (current.value === "charter") {
+                showCharter();
+            } else {
+                showMonthly();
+            }
+        })
     }
+    );
+
+    var safety = document.getElementById("myRange_safety");
+    var y = document.getElementById("safety_f");
+    safety.addEventListener("change", function () {
+        y.innerHTML = this.value + "단계";
+    });
+
+    var convenience = document.getElementById("myRange_convenience");
+    var c = document.getElementById("convenience_f");
+    convenience.addEventListener("change", function () {
+        c.innerHTML = this.value + "단계";
+    });
+
 }
 
-/**
- * 지역구 선택 및 변경 시 정보를 다시 뿌려주는 함수
- */
-function initInfo() {
-    var div_charter = document.getElementById("average-charter");
-    var div_monthly = document.getElementById("average-monthly");
-    var div_score = document.getElementById("average-score");
-    var div_popul = document.getElementById("population");
-
-    var charter_fee = document.getElementById("charter-deposit-fee");
-    var deposit_fee = document.getElementById("monthly-deposit-fee");
-    var monthly_fee = document.getElementById("monthly-month-fee");
-
-    if (this.selectedIndex === 0) {
-        div_charter.style.display = "none";
-        div_monthly.style.display = "none";
-        div_score.style.display = "none";
-        div_popul.style.display = "none";
-    } else {
-        div_charter.style.display = "block";
-        div_monthly.style.display = "block";
-        div_score.style.display = "block";
-        div_popul.style.display = "block";
-
-        // 전세/월세 가격 표시
-        charter_fee.innerText = Math.round(Math.random() * 1000 + 10000);
-        deposit_fee.innerText = Math.round(Math.random() * 1000 + 500);
-        monthly_fee.innerText = Math.round(Math.random() * 50 + 30);
-
-
-        //그래프 그리기
-        var safety_barChart = document.getElementById("safety_barChart");
-        var conv_barChart = document.getElementById("convenience_barChart");
-
-        var tmp1 = (Math.random() * 100 + 0);
-        var tmp2 = (Math.random() * 100 + 0);
-        document.getElementById("safety_value").innerText = Math.round(tmp1);
-        document.getElementById("convenience_value").innerText = Math.round(tmp2);
-        safety_barChart.style.height = (tmp1 + 15) + "px";
-        conv_barChart.style.height = (tmp2 + 15) + "px";
-    }
+// 전세 선택 시 보여줄 화면
+function showCharter() {
+    document.getElementById("charterInput").style.display = "block";
+    document.getElementById("monthlyInput").style.display = "none";
 }
+
+// 월세 선택 시 보여줄 화면
+function showMonthly() {
+    document.getElementById("charterInput").style.display = "none";
+    document.getElementById("monthlyInput").style.display = "block";
+}
+
+// 추천 결과 페이지 전환
+function showRecommend() {
+    document.getElementById("user-input").style.display = "block";
+    document.getElementById("recommend_result_page").style.display = "none";
+}
+
+function showResult() {
+    document.getElementById("user-input").style.display = "none";
+    document.getElementById("recommend_result_page").style.display = "block";
+}
+
+// 첫번째 추천결과창
+function showDetailFirst() {
+    document.getElementById("recommend_first").style.display = "none";
+    document.getElementById("recommend_first_info").style.display = "block";
+}
+
+function hideDetailFirst() {
+    document.getElementById("recommend_first").style.display = "block";
+    document.getElementById("recommend_first_info").style.display = "none";
+}
+
+// 두번째 추천결과창
+function showDetailSecond() {
+    document.getElementById("recommend_second").style.display = "none";
+    document.getElementById("recommend_second_info").style.display = "block";
+}
+
+function hideDetailSecond() {
+    document.getElementById("recommend_second").style.display = "block";
+    document.getElementById("recommend_second_info").style.display = "none";
+}
+
+// 세번째 추천결과창
+function showDetailThird() {
+    document.getElementById("recommend_third").style.display = "none";
+    document.getElementById("recommend_third_info").style.display = "block";
+}
+
+function hideDetailThird() {
+    document.getElementById("recommend_third").style.display = "block";
+    document.getElementById("recommend_third_info").style.display = "none";
+}
+
+
+
+
+
+// 상세비교창 띄우기
+function showComparison() {
+
+}
+
 
 /**
  * 인구밀집도 시각화를 위한 임의 데이터 생성 함수
