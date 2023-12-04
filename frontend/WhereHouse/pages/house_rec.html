@@ -10,12 +10,210 @@
     <link rel="stylesheet" href="/css/house_rec.css">
     <link rel="stylesheet" href="/css/main_map.css">
     <link rel="stylesheet" href="/css/main_map_info.css">
+    <link rel="stylesheet" href="/css/comp_modal.css">
     <script src="/js/house_rec.js"></script>
+
 </head>
 
 <body>
     <div id="map">
     </div>
+
+    <!-- 상세 비교 모달 창 -->
+    <div class="modal">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <div class="modal-title">
+                    상세 비교
+                    <button type="button" class="btn-close" id="modalCloseBtn">x</button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-content">
+                    <div id="convStore" class="modal-content-graph">
+                        <div id="convStore_title" class="bar_title">편의점 수</div>
+                        <div id="convStore_graph" class="container-graph">
+                            <div class="conv_graph_wrap" id="convStore_graph_gu1">
+                                <div class="conv_graph">
+                                    <div id="conv_bar1" class="conv_bar">
+                                        <div id="conv_value1">1</div>
+                                    </div>
+                                </div>
+                                <div class="label_gu1">서대문구</div>
+                            </div>
+                            <div class="conv_graph_wrap" id="convStore_graph_gu2">
+                                <div class="conv_graph">
+                                    <div id="conv_bar2" class="conv_bar">
+                                        <div id="conv_value2">2</div>
+                                    </div>
+                                </div>
+                                <div class="label_gu2">영등포구</div>
+                            </div>
+                            <div class="conv_graph_wrap" id="convStore_graph_gu3">
+                                <div class="conv_graph">
+                                    <div id="conv_bar3" class="conv_bar">
+                                        <div id="conv_value3">3</div>
+                                    </div>
+                                </div>
+                                <div class="label_gu3">은평구</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="cafe" class="modal-content-graph">
+                        <div id="cafe_title" class="bar_title">카페 수</div>
+                        <div id="cafe_graph" class="container-graph">
+                            <div class="cafe_graph_wrap" id="cafe_graph_gu1">
+                                <div class="cafe_graph">
+                                    <div id="cafe_bar1" class="cafe_bar">
+                                        <div id="cafe_value1">1</div>
+                                    </div>
+                                </div>
+                                <div class="label_gu1" id="cafe_label_gu1">서대문구</div>
+                            </div>
+                            <div class="cafe_graph_wrap" id="cafe_graph_gu2">
+                                <div class="cafe_graph">
+                                    <div id="cafe_bar2" class="cafe_bar">
+                                        <div id="cafe_value2">2</div>
+                                    </div>
+                                </div>
+                                <div class="label_gu2" id="cafe_label_gu2">영등포구</div>
+                            </div>
+                            <div class="cafe_graph_wrap" id="cafe_graph_gu3">
+                                <div class="cafe_graph">
+                                    <div id="cafe_bar3" class="cafe_bar">
+                                        <div id="cafe_value3">3</div>
+                                    </div>
+                                </div>
+                                <div class="label_gu3" id="cafe_label_gu3">은평구</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-content">
+                    <div id="cinema" class="modal-content-graph">
+                        <div id="cinema_title" class="bar_title">영화관 수</div>
+                        <div id="cinema_graph" class="container-graph">
+                            <div class="cinema_graph_wrap" id="cinema_graph_gu1">
+                                <div class="cinema_graph">
+                                    <div id="cinema_bar1" class="cafe_bar">
+                                        <div id="cinema_value1">1</div>
+                                    </div>
+                                </div>
+                                <div class="label_gu1">서대문구</div>
+                            </div>
+                            <div class="cinema_graph_wrap" id="cinema_graph_gu2">
+                                <div class="cinema_graph">
+                                    <div id="cinema_bar2" class="cafe_bar">
+                                        <div id="cinema_value2">2</div>
+                                    </div>
+                                </div>
+                                <div class="label_gu2">영등포구</div>
+                            </div>
+                            <div class="cinema_graph_wrap" id="cinema_graph_gu3">
+                                <div class="cinema_graph">
+                                    <div id="cinema_bar3" class="cafe_bar">
+                                        <div id="cinema_value3">3</div>
+                                    </div>
+                                </div>
+                                <div class="label_gu3">은평구</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="daiso" class="modal-content-graph">
+                        <div id="daiso_title" class="bar_title">다이소 수</div>
+                        <div id="daiso_graph" class="container-graph">
+                            <div class="daiso_graph_wrap" id="daiso_graph_gu1">
+                                <div class="daiso_graph">
+                                    <div id="daiso_bar1" class="daiso_bar">
+                                        <div id="daiso_value1">1</div>
+                                    </div>
+                                </div>
+                                <div class="label_gu1">서대문구</div>
+                            </div>
+                            <div class="daiso_graph_wrap" id="daiso_graph_gu2">
+                                <div class="daiso_graph">
+                                    <div id="daiso_bar2" class="daiso_bar">
+                                        <div id="daiso_value2">2</div>
+                                    </div>
+                                </div>
+                                <div class="label_gu2">영등포구</div>
+                            </div>
+                            <div class="daiso_graph_wrap" id="daiso_graph_gu3">
+                                <div class="daiso_graph">
+                                    <div id="daiso_bar3" class="daiso_bar">
+                                        <div id="daiso_value3">3</div>
+                                    </div>
+                                </div>
+                                <div class="label_gu3">은평구</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-content">
+                    <div id="policeOffice" class="modal-content-graph">
+                        <div id="policeOffice_title" class="bar_title">파출소 수</div>
+                        <div id="policeOffice_graph" class="container-graph">
+                            <div class="policeOffice_graph_wrap" id="policeOffice_graph_gu1">
+                                <div class="policeOffice_graph">
+                                    <div id="polliceOffice_bar1" class="policeOffice_bar">
+                                        <div id="polliceOffice_value1">1</div>
+                                    </div>
+                                </div>
+                                <div class="label_gu1">서대문구</div>
+                            </div>
+                            <div class="policeOffice_graph_wrap" id="policeOffice_graph_gu2">
+                                <div class="policeOffice_graph">
+                                    <div id="polliceOffice_bar2" class="policeOffice_bar">
+                                        <div id="polliceOffice_value2">2</div>
+                                    </div>
+                                </div>
+                                <div class="label_gu2">영등포구</div>
+                            </div>
+                            <div class="policeOffice_graph_wrap" id="policeOffice_graph_gu3">
+                                <div class="policeOffice_graph">
+                                    <div id="polliceOffice_bar3" class="policeOffice_bar">
+                                        <div id="polliceOffice_value3">3</div>
+                                    </div>
+                                </div>
+                                <div class="label_gu3">은평구</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="cctv" class="modal-content-graph">
+                        <div id="cctv_title" class="bar_title">CCTV 수</div>
+                        <div id="cctv_graph" class="container-graph">
+                            <div class="cctv_graph_wrap" id="cctv_graph_gu1">
+                                <div class="cctv_graph">
+                                    <div id="cctv_bar1" class="cctv_bar">
+                                        <div id="cctv_value1">1</div>
+                                    </div>
+                                </div>
+                                <div class="label_gu1">서대문구</div>
+                            </div>
+                            <div class="cctv_graph_wrap" id="cctv_graph_gu2">
+                                <div class="cctv_graph">
+                                    <div id="cctv_bar2" class="cctv_bar">
+                                        <div id="cctv_value2">2</div>
+                                    </div>
+                                </div>
+                                <div class="label_gu2">영등포구</div>
+                            </div>
+                            <div class="cctv_graph_wrap" id="cctv_graph_gu3">
+                                <div class="cctv_graph">
+                                    <div id="cctv_bar3" class="cctv_bar">
+                                        <div id="cctv_value3">3</div>
+                                    </div>
+                                </div>
+                                <div class="label_gu3">은평구</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 상세 비교 모달 창 끝 -->
 
     <div id="information">
         <div id="btn">◀</div>
@@ -143,13 +341,32 @@
 
                 <div id="recommend_comparison">
                     <div id="recommend_comparison_btn" onclick="showComparison()">
-                        <input type="button" disabled>
+                        <input type="button" id="compBtn">
                         상세 비교
                     </div>
                 </div>
             </div>
             <div id="logo-img"><img src="/images/home_icon.png" alt=""></div>
         </aside>
+    </div>
+    <div id="population-shame-bar">
+        <div id="population-shame-text">인구 밀집도 수치</div>
+        <div id="population-shame-btn">-</div>
+    </div>
+    <div id="population-shame-info">
+        <div id="population-shame-num">
+            <div id="population-shame-num-0">0</div>
+            <div id="population-shame-num-7">7</div>
+        </div>
+        <div id="population-shame-graph">
+            <div id="population-shame-graph-1"></div>
+            <div id="population-shame-graph-2"></div>
+            <div id="population-shame-graph-3"></div>
+            <div id="population-shame-graph-4"></div>
+            <div id="population-shame-graph-5"></div>
+            <div id="population-shame-graph-6"></div>
+            <div id="population-shame-graph-7"></div>
+        </div>
     </div>
 </body>
 

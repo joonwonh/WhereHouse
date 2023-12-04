@@ -119,6 +119,7 @@ window.onload = function () {
     }
     );
 
+    // 슬라이드 바 변경 이벤트
     var safety = document.getElementById("myRange_safety");
     var y = document.getElementById("safety_f");
     safety.addEventListener("change", function () {
@@ -130,6 +131,38 @@ window.onload = function () {
     convenience.addEventListener("change", function () {
         c.innerHTML = this.value + "단계";
     });
+
+    // 인구밀집도 인덱스 열고 닫기
+    var shame_info = document.querySelector("#population-shame-info");
+    var bar = document.querySelector("#population-shame-bar");
+    var detail = document.querySelector("#population-shame-btn");
+    detail.addEventListener("click", hideDetail);
+
+    function hideDetail() {
+        if (detail.innerText === "-") {
+            detail.innerText = "+";
+            shame_info.style.display = "none";
+            bar.style.backgroundColor = "rgba(217,217,217,0.3)";
+            bar.style.border = "#D9D9D9 1px solid";
+        } else {
+            detail.innerText = "-";
+            bar.style.backgroundColor = "rgba(217, 217, 217, 0.80)";
+            bar.style.border = "rgba(0, 0, 0, 0.2) 2px solid";
+            shame_info.style.display = "block";
+        }
+    }
+
+    // 상세보기 모달창 띄우기
+    var compBtn = document.getElementById("compBtn");
+    compBtn.addEventListener("click", showComparison);
+
+    // 상세보기 모달창 닫기
+    var modalCloseBtn = document.getElementById("modalCloseBtn");
+    modalCloseBtn.addEventListener("click", function () {
+        var modal = document.querySelector(".modal");
+        modal.style.display = "none";
+        modal.style.zIndex = 0;
+    })
 
 }
 
@@ -195,9 +228,11 @@ function hideDetailThird() {
 
 // 상세비교창 띄우기
 function showComparison() {
-
+    // 선택한 거주지가 1개 이상이면 보이도록 아니면 alert();
+    var modal = document.querySelector(".modal");
+    modal.style.display = "flex";
+    modal.style.zIndex = 1;
 }
-
 
 /**
  * 인구밀집도 시각화를 위한 임의 데이터 생성 함수
