@@ -96,11 +96,6 @@ body {
     cursor: pointer;
 }
 
-/* 전세, 월세, 점수, 인구를 감싸는 영역
-#wrap {
-    position: absolute;
-    width: 100%;
-} */
 
 /* 평균 전세 가격 */
 #average-charter {
@@ -113,6 +108,8 @@ body {
     text-align: center;
     height: 114px;
     line-height: 50px;
+    /* 초기에 안보이도록 */
+    display: none;
 }
 
 #charter {
@@ -139,6 +136,8 @@ body {
     text-align: center;
     height: 168px;
     line-height: 50px;
+    /* 초기에 안보이도록 */
+    display: none;
 }
 
 /* 종합 점수 */
@@ -154,6 +153,8 @@ body {
     margin-right: 10px;
     text-align: center;
     line-height: 40px;
+    /* 초기에 안보이도록 */
+    display: none;
 }
 
 #total_title {
@@ -285,6 +286,8 @@ body {
     margin-right: 10px;
     text-align: center;
     line-height: 50px;
+    /* 초기에 안보이도록 */
+    display: none;
 }
 
 #logo-img img {

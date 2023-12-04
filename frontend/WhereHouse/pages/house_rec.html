@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/json/mapData.json" type="text/javascript"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d24dfa7488d79e7f12995de4945ddcfa">
+    </script>
+    <link rel="stylesheet" href="/css/house_rec.css">
+    <link rel="stylesheet" href="/css/main_map.css">
+    <link rel="stylesheet" href="/css/main_map_info.css">
+    <script src="/js/house_rec.js"></script>
+</head>
+
+<body>
+    <div id="map">
+    </div>
+
+    <div id="information">
+        <div id="btn">◀</div>
+        <aside id="side-bar">
+            <!-- 사용자 입력창 -->
+            <div id="user-input">
+                <div class="house_recommend">
+                    주거지 추천
+                </div>
+                <div class="select_need">
+                    <p>전세 / 월세</p>
+                    <div id="check_need">
+                        <div id="charter">
+                            <input type="radio" name="rentalType" value="charter" onclick="showCharter()">전세
+                        </div>
+                        <div id="monthly">
+                            <input type="radio" name="rentalType" value="monthly" onclick="showMonthly()">월세
+                        </div>
+                    </div>
+
+                    <div id="rentInput">
+                        <!-- 전세를 선택한 경우 -->
+                        <div id="charterInput">
+                            <div>
+                                전세금:
+                                <input type="text" name="charterDeposit" placeholder="ex) 10000"> 만원
+                            </div>
+                        </div>
+
+                        <!-- 월세를 선택한 경우 -->
+                        <div id="monthlyInput">
+                            <div>
+                                보증금:
+                                <input type="text" name="monthlyDeposit" placeholder="ex) 10000"> 만원
+                            </div>
+                            <div>
+                                월세금:
+                                <input type="text" name="monthlyMonth" placeholder="ex) 40"> 만원
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 치안 편의 선택창 -->
+                <div class="safety_convenience">
+                    <p>안전성 / 편의성</p>
+                    <div class="slider">
+                        안전성
+                        <input type="range" min="0" max="10" value="0" id="myRange_safety"> <span id="safety_f"> 0
+                            단계</span>
+                    </div>
+                    <div class="slider">
+                        편의성
+                        <input type="range" min="0" max="10" value="0" id="myRange_convenience"> <span
+                            id="convenience_f"> 0 단계</span>
+                    </div>
+                </div>
+
+                <!-- 추천 결과 확인 -->
+                <div id="recommend_result">
+                    <div id="recommend_result_btn" onclick="showResult()">
+                        <input type="button" disabled>
+                        추천 결과 확인
+                    </div>
+                </div>
+            </div>
+            <div id="recommend_result_page">
+                <div class="house_recommend">
+                    주거지 추천
+                </div>
+                <div id="recommend_result_title">
+                    <p onclick="showRecommend()">◀</p> 주거지 추천 결과
+                </div>
+
+                <div id="recommend_first">
+                    <div class="recommend_inner_text">
+                        1. <span id="recommend_first_result">ex1</span>
+                        <input type="checkbox" name="first" value="first">
+                        <span id="recommend_first_btn" onclick="showDetailFirst()">▼</span>
+                    </div>
+                </div>
+                <div id="recommend_first_info">
+                    <div class="recommend_inner_text">
+                        1. <span id="recommend_first_result">ex1</span>
+                        <input type="checkbox" name="first" value="first">
+                        <span id="recommend_first_btn" onclick="hideDetailFirst()">▲</span>
+                    </div>
+                    <p>평균 보증금 : <span id="first_deposit_fee">ex</span> 만원</p>
+
+                </div>
+
+
+                <div id="recommend_second">
+                    <div class="recommend_inner_text">
+                        2. <span id="recommend_second_result">ex2</span>
+                        <input type="checkbox" name="second" value="second">
+                        <span id="recommend_second_btn" onclick="showDetailSecond()">▼</span>
+                    </div>
+                </div>
+                <div id="recommend_second_info">
+                    <div class="recommend_inner_text">
+                        2. <span id="recommend_second_result">ex2</span>
+                        <input type="checkbox" name="second" value="second">
+                        <span id="recommend_second_btn" onclick="hideDetailSecond()">▲</span>
+                    </div>
+                    평균 보증금 : <span id="second_deposit_fee">ex</span> 만원<br>
+                    평균 월세금 : <span id="second_month_fee">ex</span> 만원
+                </div>
+
+                <div id="recommend_third">
+                    <div class="recommend_inner_text">
+                        3. <span id="recommend_third_result">ex3</span>
+                        <input type="checkbox" name="third" value="third">
+                        <span id="recommend_third_btn" onclick="showDetailThird()">▼</span>
+                    </div>
+                </div>
+                <div id="recommend_third_info">
+                    <div class="recommend_inner_text">
+                        3. <span id="recommend_third_result">ex3</span>
+                        <input type="checkbox" name="third" value="third">
+                        <span id="recommend_third_btn" onclick="hideDetailThird()">▲</span>
+                    </div>
+                    평균 전세금 : <span id="third_deposit_fee">ex</span> 만원
+                </div>
+
+                <div id="recommend_comparison">
+                    <div id="recommend_comparison_btn" onclick="showComparison()">
+                        <input type="button" disabled>
+                        상세 비교
+                    </div>
+                </div>
+            </div>
+            <div id="logo-img"><img src="/images/home_icon.png" alt=""></div>
+        </aside>
+    </div>
+</body>
+
+</html>

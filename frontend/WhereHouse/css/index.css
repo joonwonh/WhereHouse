@@ -102,12 +102,14 @@ section {
 }
 
 #menu_suggest_icon {
+    background-color: rgba(34, 34, 34, 0.3);
     width: 88px;
     height: 88px;
     position: absolute;
     left: 0px;
     top: 5px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 #menu_suggest_icon img {
@@ -134,13 +136,13 @@ section {
 }
 
 #menu_gu_icon {
-    background-color: rgba(34, 34, 34, 0.3);
     width: 88px;
     height: 88px;
     position: absolute;
     left: 0px;
     top: 5px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 #menu_gu_icon img {
@@ -173,6 +175,7 @@ section {
     left: 0px;
     top: 5px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 #menu_detail_icon img {
@@ -189,7 +192,7 @@ section {
     transform: scale(1.1);
 }
 
-#kakao_map {
+#iframe_section {
     width: 1832px;
     height: 945px;
 }

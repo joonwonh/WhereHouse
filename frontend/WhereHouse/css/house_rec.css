@@ -1,0 +1,291 @@
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+} 
+body {
+    font-family: 'TheJamsil5Bold';
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+#information {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: 500ms;
+} 
+
+/* 사이드 버튼 */
+#btn {
+    position: absolute;
+    width: 33px;
+    height: 50px;
+    border: 3px solid #0B5ED7;
+    background: white;
+    color: #0B5ED7;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 7px;
+    left: 326px;
+    top: 450px;
+    box-shadow: 3px 3px 7px 3px rgba(0, 0, 0, 0.3);
+}
+
+#btn:hover {
+    cursor: pointer;
+}
+
+/* 사이드 바 */
+#side-bar {
+    position: absolute;
+    /* border: 2px solid #0B5ED7; */
+    background: white;
+    width: 333px;
+    height: 945px;
+    box-shadow: 1px 0px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* 주거지 추천 */
+.house_recommend {
+    background: #4690ff;
+    color: #e9f2ff;
+    margin: 0 auto;
+    width: 100%;
+    height: 62px;
+    line-height: 62px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: -2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* 전세/월세 선택 */
+.select_need {
+    width: 300px;
+    border: rgba(11, 94, 215, 0.50) 2px solid;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-left: 12px;
+    margin-right: 10px;
+    text-align: center;
+    height: 200px;
+    line-height: 50px;
+}
+.select_need p  {
+    font-size: 20px;
+}
+
+/* 전세 월세 선택 창 */
+#check_need {
+    width: 333px;
+    display: flex;
+    font-size: 17px;
+}
+#rentInput input[type=text] {
+    width: 100px;
+    border-radius: 3px;
+    border: 2px solid #dfdfdf;
+}
+#charter {
+    margin-left: 50px;
+
+}
+#charter input[type=radio]  {
+    margin-right: 10px;
+    cursor: pointer;
+    
+}
+#monthly {
+    margin-left: 70px;
+}
+#monthly input[type=radio]  {
+    margin-right: 10px;
+    cursor: pointer;
+}
+#charterInput,
+#monthlyInput {
+    display: none;
+}
+
+
+/* 치안/편의 선택 */
+.safety_convenience{
+    width: 300px;
+    border: rgba(11, 94, 215, 0.50) 2px solid;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-left: 12px;
+    margin-right: 10px;
+    text-align: center;
+    height: 200px;
+    line-height: 50px;
+}
+.safety_convenience p   {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+#slider{
+    width: 300px;
+    border: rgba(11, 94, 215, 0.50) 2px solid;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-left: 12px;
+    margin-right: 10px;
+    text-align: center;
+    height: 150px;
+    line-height: 50px;
+}
+#myRange_safety, #myRange_convenience   {
+    cursor: pointer;
+}
+
+
+/* 추천결과 확인 버튼 */
+#recommend_result, #recommend_comparison {
+    width: 190px;
+    margin-top: 10px;
+    margin-left: 66px;
+    margin-right: 10px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    border: rgba(11, 94, 215, 0.50) 2px solid;
+    background-color: rgba(11, 94, 215, 0.50);
+    border-radius: 40px;
+    cursor: pointer;
+}
+#recommend_result:hover, #recommend_comparison:hover {
+    background-color: #dfdfdf;
+}
+#recommend_result_btn input[type=button] ,#recommend_comparison input[type=button]  {
+    border: none;
+}
+
+#recommend_result_page  {
+    display: none;
+}
+
+#recommend_result_title {
+    display: flex;
+    width: 300px;
+    border: rgba(11, 94, 215, 0.50) 2px solid;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-left: 12px;
+    margin-right: 10px;
+    text-align: center;
+    height: 50px;
+    line-height: 47px;
+    font-size: 20px;
+}
+#recommend_result_title p   {
+    margin-left: 20px;
+    margin-right: 38px;
+    cursor: pointer;
+    color: #0B5ED7;
+    
+}
+
+.recommend_inner_text   {
+    margin-left: 100px;
+    font-size: 20px;
+}
+.recommend_inner_text input[type=checkbox]  {
+    margin-left: 30px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+
+#recommend_first    {
+    width: 300px;
+    border: rgba(11, 94, 215, 0.50) 2px solid;
+    border-radius: 8px;
+    margin-top: 5px;
+    margin-left: 12px;
+    margin-right: 10px;
+    height: 50px;
+    line-height: 47px;
+    font-size: 17px;
+}
+
+#recommend_first_btn, #recommend_second_btn, #recommend_third_btn    {
+    cursor: pointer;
+}
+#recommend_first_info   {
+    display: none;
+    width: 300px;
+    border: rgba(11, 94, 215, 0.50) 2px solid;
+    border-radius: 8px;
+    margin-top: 5px;
+    margin-left: 12px;
+    margin-right: 10px;
+    height: 210px;
+    line-height: 47px;
+    font-size: 17px;
+}
+
+#recommend_second    {
+    width: 300px;
+    border: rgba(11, 94, 215, 0.50) 2px solid;
+    border-radius: 8px;
+    margin-top: 5px;
+    margin-left: 12px;
+    margin-right: 10px;
+    height: 50px;
+    line-height: 47px;
+    font-size: 17px;
+}
+#recommend_second_info   {
+    display: none;
+    width: 300px;
+    border: rgba(11, 94, 215, 0.50) 2px solid;
+    border-radius: 8px;
+    margin-top: 5px;
+    margin-left: 12px;
+    margin-right: 10px;
+    height: 210px;
+    line-height: 47px;
+    font-size: 17px;
+}
+
+#recommend_third    {
+    width: 300px;
+    border: rgba(11, 94, 215, 0.50) 2px solid;
+    border-radius: 8px;
+    margin-top: 5px;
+    margin-left: 12px;
+    margin-right: 10px;
+    height: 50px;
+    line-height: 47px;
+    font-size: 17px;
+}
+#recommend_third_info   {
+    display: none;
+    width: 300px;
+    border: rgba(11, 94, 215, 0.50) 2px solid;
+    border-radius: 8px;
+    margin-top: 5px;
+    margin-left: 12px;
+    margin-right: 10px;
+    height: 210px;
+    line-height: 47px;
+    font-size: 17px;
+}
+
+
+#logo-img img {
+    width: 110px;
+    position: absolute;
+    top: 840px;
+    left: 110px;
+}
