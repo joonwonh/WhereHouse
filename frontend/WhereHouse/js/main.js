@@ -29,7 +29,7 @@ window.onload = function () {
         var path = [];
         coor[0].forEach(point => {
             path.push(new kakao.maps.LatLng(point[1], point[0]));
-        })
+        });
         var area = { name, path };
         areas.push(area);
     });
@@ -118,6 +118,7 @@ window.onload = function () {
         }
     }
 
+    // 인구밀집도 인덱스 열고 닫기
     var shame_info = document.querySelector("#population-shame-info");
     var bar = document.querySelector("#population-shame-bar");
     var detail = document.querySelector("#population-shame-btn");
