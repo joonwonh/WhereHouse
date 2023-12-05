@@ -1,4 +1,31 @@
+var guSpec = [];
+var guName = ["강남구", "강동구", "강북구", "강서구", "관악구", "광진구", "구로구", "금천구",
+    "노원구", "도봉구", "동대문구", "동작구", "마포구", "서대문구", "서초구", "성동구", "성북구",
+    "송파구", "양천구", "영등포구", "용산구", "은평구", "종로구", "중구", "중랑구"];
+
+function initGuSpec() {
+    guName.forEach(e => {
+        guSpec.push({
+            name: e,
+            charter: Math.floor(Math.random() * 10000) + 10000,
+            deposit: Math.floor(Math.random() * 500) + 500,
+            monthly: Math.floor(Math.random() * 10000) + 10000,
+            safety: Math.floor(Math.random() * 10) + 1,
+            convenience: Math.floor(Math.random() * 10) + 1,
+            convenienceStore: Math.floor(Math.random() * 100) + 100,
+            cafe: Math.floor(Math.random() * 100) + 100,
+            cinema: Math.floor(Math.random() * 100) + 100,
+            daiso: Math.floor(Math.random() * 100) + 100,
+            polliceOffice: Math.floor(Math.random() * 100) + 100,
+            cctv: Math.floor(Math.random() * 100) + 100,
+        });
+    })
+
+}
+
+
 window.onload = function () {
+    initGuSpec();
     var container = document.getElementById("map");
     var options = {
         center: new kakao.maps.LatLng(37.5642135, 127.0016985),
@@ -192,12 +219,38 @@ function showRecommend() {
 }
 
 function showResult() {
+    var rand = [];
+    while (rand.length < 3) {
+        var num = Math.floor(Math.random() * 25);
+        if (rand.indexOf(num) == -1) {
+            rand.push(num);
+        }
+    }
+
     document.getElementById("user-input").style.display = "none";
     document.getElementById("recommend_result_page").style.display = "block";
-    document.getElementById("recommend_first_result").innerText = "서대문구";
-    document.getElementById("recommend_second_result").innerText = "영등포구";
-    document.getElementById("recommend_third_result").innerText = "은평구";
 
+    var orders = ["first", "second", "third"];
+
+    for (var i = 0; i < rand.length; i++) {
+        var recommend_result = "recommend_" + orders[i] + "_result";
+
+        document.getElementById(recommend_result).innerText = guSpec[rand[i]].name;
+
+        var recommend_detail = recommend_result + "_detail";
+        document.getElementById(recommend_detail).innerText = guSpec[rand[i]].name;
+
+        var select_charter = orders[i] + "_charter_fee";
+        document.getElementById(select_charter).innerText = guSpec[rand[i]].charter;
+
+        var select_deposit = orders[i] + "_deposit_fee";
+        document.getElementById(select_deposit).innerText = guSpec[rand[i]].deposit;
+
+        var select_monthly = orders[i] + "_monthly_fee";
+        document.getElementById(select_monthly).innerText = guSpec[rand[i]].monthly;
+
+
+    }
 }
 
 
@@ -206,18 +259,17 @@ function showResult() {
 function showDetailFirst() {
     document.getElementById("recommend_first").style.display = "none";
     document.getElementById("recommend_first_info").style.display = "block";
-    document.getElementById("recommend_first_result").innerText = "서대문구";
 }
 
 function hideDetailFirst() {
     document.getElementById("recommend_first").style.display = "block";
     document.getElementById("recommend_first_info").style.display = "none";
 }
-function showFirstCharterFee()  {
+function showFirstCharterFee() {
     document.getElementById("select_first_charter").style.display = "block";
     document.getElementById("select_first_monthly").style.display = "none";
 }
-function showFirstMonthlyFee()  {
+function showFirstMonthlyFee() {
     document.getElementById("select_first_charter").style.display = "none";
     document.getElementById("select_first_monthly").style.display = "block";
 }
@@ -226,18 +278,17 @@ function showFirstMonthlyFee()  {
 function showDetailSecond() {
     document.getElementById("recommend_second").style.display = "none";
     document.getElementById("recommend_second_info").style.display = "block";
-    document.getElementById("recommend_second_result").innerText = "영등포구";
 }
 
 function hideDetailSecond() {
     document.getElementById("recommend_second").style.display = "block";
     document.getElementById("recommend_second_info").style.display = "none";
 }
-function showSecondCharterFee()  {
+function showSecondCharterFee() {
     document.getElementById("select_second_charter").style.display = "block";
     document.getElementById("select_second_monthly").style.display = "none";
 }
-function showSecondMonthlyFee()  {
+function showSecondMonthlyFee() {
     document.getElementById("select_second_charter").style.display = "none";
     document.getElementById("select_second_monthly").style.display = "block";
 }
@@ -246,18 +297,17 @@ function showSecondMonthlyFee()  {
 function showDetailThird() {
     document.getElementById("recommend_third").style.display = "none";
     document.getElementById("recommend_third_info").style.display = "block";
-    document.getElementById("recommend_third_result").innerText = "은평구";
 }
 
 function hideDetailThird() {
     document.getElementById("recommend_third").style.display = "block";
     document.getElementById("recommend_third_info").style.display = "none";
 }
-function showThirdCharterFee()  {
+function showThirdCharterFee() {
     document.getElementById("select_third_charter").style.display = "block";
     document.getElementById("select_third_monthly").style.display = "none";
 }
-function showThirdMonthlyFee()  {
+function showThirdMonthlyFee() {
     document.getElementById("select_third_charter").style.display = "none";
     document.getElementById("select_third_monthly").style.display = "block";
 }

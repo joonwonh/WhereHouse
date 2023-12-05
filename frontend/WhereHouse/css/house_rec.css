@@ -237,6 +237,8 @@ body {
     font-size: 17px;
 }
 
+
+
 #recommend_first_btn,
 #recommend_second_btn,
 #recommend_third_btn {
@@ -304,6 +306,11 @@ body {
     height: 210px;
     line-height: 47px;
     font-size: 17px;
+}
+
+/* 추천 결과 전세, 월세금 스타일 */
+.select_price {
+    text-align: center;
 }
 
 
