@@ -1,0 +1,90 @@
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+} 
+body    {
+    margin: 0;
+    height: 3000px;
+    background-color: #FFFFFF;
+}
+/* 네비바 */
+header  {
+    width: auto;
+    height: 62px;
+    display: flex;
+    background-color: #FFFFFF;
+
+}
+nav {
+    background-color: #FFFFFF;
+    display: flex;
+    position: fixed;
+    top: 0;
+    /* width: 100% */
+    left: 0;
+    right: 0;
+}
+#logo    {
+    margin-left: 680px;
+    margin-right: 250px;
+    background-color: #FFFFFF;
+    font-family: 'Courgette', cursive;
+    width: 600px;
+    height: 62px;
+    line-height: 62px;
+    text-align: center;
+    font-size: 40px;
+    color: black;
+}
+#logo a {
+    text-decoration: none;
+    color: inherit;
+}
+#map    {
+    font-family: 'TheJamsil5Bold';
+    margin-top: 10px;
+    color: black;
+    font-size: 20px;
+    width: 150px;
+    text-align: center;
+    height: 45px;
+    line-height: 43px;
+    border: #aaaaaa 1px solid;
+    background-color: #FFFFFF;
+    border-radius: 40px;
+    cursor: pointer;
+}
+#map a  {
+    text-decoration: none;
+    color: inherit;
+}
+#map:hover  {
+    background-color: black;
+    color: #FFFFFF;
+}
+#recommend  {
+    font-family: 'TheJamsil5Bold';
+    margin-top: 10px;
+    color: black;
+    font-size: 20px;
+    width: 150px;
+    margin-left: 40px;
+    margin-right: 10px;
+    text-align: center;
+    height: 45px;
+    line-height: 43px;
+    border: #aaaaaa 1px solid;
+    background-color: #FFFFFF;
+    border-radius: 40px;
+    cursor: pointer;
+}
+#recommend a    {
+    text-decoration: none;
+    color: inherit;
+}
+#recommend:hover  {
+    background-color: black;
+    color: #FFFFFF;
+}
