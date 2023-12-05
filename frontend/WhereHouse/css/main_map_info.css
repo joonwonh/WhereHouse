@@ -7,7 +7,7 @@
     text-align: center;
     width: 75%;
     margin: 12.5% auto;
-    border: 3px solid rgba(11, 94, 215, 0.5);
+    /* border: 3px solid rgba(11, 94, 215, 0.5); */
     border-radius: 10px;
     font-size: 25px;
     margin: 5px auto;
@@ -16,7 +16,7 @@
 .info_rank {
     text-align: center;
     margin: 5px 5px;
-    border: 3px solid rgba(11, 94, 215, 0.7);
+    /* border: 3px solid rgba(11, 94, 215, 0.7); */
     border-radius: 10px;
 }
 

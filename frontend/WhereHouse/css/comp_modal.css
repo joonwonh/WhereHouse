@@ -1,0 +1,420 @@
+/* 상세 비교 모달창 */
+.modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-self: center;
+    align-items: center;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-dialog {
+    margin: 0px auto;
+    position: absolute;
+    left: 500px;
+    width: 800px;
+    height: 800px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px -5px #000;
+}
+
+.modal-header {
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    top: 0;
+}
+
+.modal-title {
+    font-size: 1.2rem;
+    width: 100%;
+    height: 10%;
+    line-height: 70px;
+}
+
+.btn-close {
+    position: absolute;
+    top: 20px;
+    left: 95%;
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.modal-body {
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    top: 70px;
+}
+
+.modal-content {
+    width: 100%;
+    height: 32%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1%;
+    margin-top: 1%;
+
+}
+
+.modal-content-graph {
+    width: 45%;
+    border: 1px solid black;
+    border-radius: 30px;
+}
+
+.bar_title {
+    width: 100%;
+    height: 15%;
+    line-height: 35px;
+    border-radius: 30px;
+}
+
+.container-graph {
+    width: 100%;
+    height: 85%;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.label_gu1,
+.label_gu2,
+.label_gu3 {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    top: 100%;
+    line-height: 35px;
+}
+
+/* 편의점 수 */
+#convStore {
+    position: absolute;
+    width: 47%;
+    height: 32%;
+    top: 0;
+    left: 3%;
+}
+
+
+
+.conv_graph_wrap,
+.cafe_graph_wrap,
+.cinema_graph_wrap,
+.daiso_graph_wrap,
+.policeOffice_graph_wrap,
+.cctv_graph_wrap {
+    position: absolute;
+    height: 70%;
+    width: 33.3%;
+    display: flex;
+    justify-self: center;
+}
+
+.conv_graph,
+.cafe_graph,
+.cinema_graph,
+.daiso_graph,
+.policeOffice_graph,
+.cctv_graph {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+#convStore_graph_gu1,
+#cafe_graph_gu1,
+#cinema_graph_gu1,
+#daiso_graph_gu1,
+#policeOffice_graph_gu1,
+#cctv_graph_gu1 {
+    left: 0;
+}
+
+#convStore_graph_gu2,
+#cafe_graph_gu2,
+#cinema_graph_gu2,
+#daiso_graph_gu2,
+#policeOffice_graph_gu2,
+#cctv_graph_gu2 {
+    left: 33.3%;
+}
+
+#convStore_graph_gu3,
+#cafe_graph_gu3,
+#cinema_graph_gu3,
+#daiso_graph_gu3,
+#policeOffice_graph_gu3,
+#cctv_graph_gu3 {
+    left: 66.7%;
+}
+
+/* 카페 수 */
+#cafe {
+    position: absolute;
+    width: 47%;
+    height: 32%;
+    top: 0;
+    left: 51%;
+}
+
+/* 영화관 수 */
+#cinema {
+    position: absolute;
+    width: 47%;
+    height: 32%;
+    top: 34%;
+    left: 3%;
+}
+
+/* 다이소 수 */
+#daiso {
+    position: absolute;
+    width: 47%;
+    height: 32%;
+    top: 34%;
+    left: 51%;
+}
+
+/* 파출소 수 */
+#policeOffice {
+    position: absolute;
+    width: 47%;
+    height: 32%;
+    top: 68%;
+    left: 3%;
+}
+
+/* CCTV 수 */
+#cctv {
+    position: absolute;
+    width: 47%;
+    height: 32%;
+    top: 68%;
+    left: 51%;
+}
+
+/* 상세 비교 모달창 끝 */
+
+/* 모달창 내부 그래프 */
+/* 편의점 */
+.conv_bar {
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    width: 15px;
+    height: 150px;
+    perspective-origin: center bottom;
+    transform: translate(0%) scaleX(2);
+    background-color: #9999ff;
+    border-radius: 15px;
+    transition: height 0.25s;
+}
+
+.conv_bar::before {
+    position: absolute;
+    content: "";
+    left: 0%;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.conv_bar::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0%;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+/* 카페 */
+.cafe_bar {
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    width: 15px;
+    height: 150px;
+    perspective-origin: center bottom;
+    transform: translate(0%) scaleX(2);
+    background-color: rgb(80, 80, 163);
+    border-radius: 15px;
+    transition: height 0.25s;
+}
+
+.cafe_bar::before {
+    position: absolute;
+    content: "";
+    left: 0%;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.cafe_bar::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0%;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+/* 영화관 */
+.cinema_bar {
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    width: 15px;
+    height: 150px;
+    perspective-origin: center bottom;
+    transform: translate(0%) scaleX(2);
+    background-color: #5c5cbd;
+    border-radius: 15px;
+    transition: height 0.25s;
+}
+
+.cinema_bar::before {
+    position: absolute;
+    content: "";
+    left: 0%;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.cinema_bar::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0%;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+/* 영화관 */
+.daiso_bar {
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    width: 15px;
+    height: 150px;
+    perspective-origin: center bottom;
+    transform: translate(0%) scaleX(2);
+    background-color: #ad5cbd;
+    border-radius: 15px;
+    transition: height 0.25s;
+}
+
+.daiso_bar::before {
+    position: absolute;
+    content: "";
+    left: 0%;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.daiso_bar::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0%;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+/* 영화관 */
+.policeOffice_bar {
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    width: 15px;
+    height: 150px;
+    perspective-origin: center bottom;
+    transform: translate(0%) scaleX(2);
+    background-color: #5c91bd;
+    border-radius: 15px;
+    transition: height 0.25s;
+}
+
+.policeOffice_bar::before {
+    position: absolute;
+    content: "";
+    left: 0%;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.policeOffice_bar::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0%;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+/* 영화관 */
+.cctv_bar {
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    width: 15px;
+    height: 150px;
+    perspective-origin: center bottom;
+    transform: translate(0%) scaleX(2);
+    background-color: #5cbd9d;
+    border-radius: 15px;
+    transition: height 0.25s;
+}
+
+.cctv_bar::before {
+    position: absolute;
+    content: "";
+    left: 0%;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.cctv_bar::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0%;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.15);
+}
