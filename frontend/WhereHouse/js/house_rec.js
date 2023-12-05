@@ -106,14 +106,19 @@ window.onload = function () {
     // 전세/월세 라디오 버튼 선택
 
     var rentalType = document.querySelectorAll("input[name='rentalType']");
-
     rentalType.forEach((radio) => {
         radio.addEventListener("change", (e) => {
             var current = e.currentTarget;
             if (current.value === "charter") {
                 showCharter();
+                showFirstCharterFee();
+                showSecondCharterFee();
+                showThirdCharterFee();
             } else {
                 showMonthly();
+                showFirstMonthlyFee();
+                showSecondMonthlyFee();
+                showThirdMonthlyFee();
             }
         })
     }
@@ -156,6 +161,8 @@ function showResult() {
     document.getElementById("recommend_result_page").style.display = "block";
 }
 
+
+
 // 첫번째 추천결과창
 function showDetailFirst() {
     document.getElementById("recommend_first").style.display = "none";
@@ -165,6 +172,14 @@ function showDetailFirst() {
 function hideDetailFirst() {
     document.getElementById("recommend_first").style.display = "block";
     document.getElementById("recommend_first_info").style.display = "none";
+}
+function showFirstCharterFee()  {
+    document.getElementById("select_first_charter").style.display = "block";
+    document.getElementById("select_first_monthly").style.display = "none";
+}
+function showFirstMonthlyFee()  {
+    document.getElementById("select_first_charter").style.display = "none";
+    document.getElementById("select_first_monthly").style.display = "block";
 }
 
 // 두번째 추천결과창
@@ -177,6 +192,14 @@ function hideDetailSecond() {
     document.getElementById("recommend_second").style.display = "block";
     document.getElementById("recommend_second_info").style.display = "none";
 }
+function showSecondCharterFee()  {
+    document.getElementById("select_second_charter").style.display = "block";
+    document.getElementById("select_second_monthly").style.display = "none";
+}
+function showSecondMonthlyFee()  {
+    document.getElementById("select_second_charter").style.display = "none";
+    document.getElementById("select_second_monthly").style.display = "block";
+}
 
 // 세번째 추천결과창
 function showDetailThird() {
@@ -187,6 +210,14 @@ function showDetailThird() {
 function hideDetailThird() {
     document.getElementById("recommend_third").style.display = "block";
     document.getElementById("recommend_third_info").style.display = "none";
+}
+function showThirdCharterFee()  {
+    document.getElementById("select_third_charter").style.display = "block";
+    document.getElementById("select_third_monthly").style.display = "none";
+}
+function showThirdMonthlyFee()  {
+    document.getElementById("select_third_charter").style.display = "none";
+    document.getElementById("select_third_monthly").style.display = "block";
 }
 
 
