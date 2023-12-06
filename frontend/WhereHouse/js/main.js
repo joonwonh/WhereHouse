@@ -1,31 +1,31 @@
 var guInfo = [];
 
 function guInfoInit() {
-    guInfo.push({ name: "강동구", hPlace_cnt: 3 });
-    guInfo.push({ name: "송파구", hPlace_cnt: 0 });
-    guInfo.push({ name: "강남구", hPlace_cnt: 3 });
-    guInfo.push({ name: "서초구", hPlace_cnt: 0 });
-    guInfo.push({ name: "관악구", hPlace_cnt: 0 });
-    guInfo.push({ name: "동작구", hPlace_cnt: 0 });
-    guInfo.push({ name: "영등포구", hPlace_cnt: 0 });
-    guInfo.push({ name: "금천구", hPlace_cnt: 0 });
-    guInfo.push({ name: "구로구", hPlace_cnt: 0 });
-    guInfo.push({ name: "강서구", hPlace_cnt: 0 });
-    guInfo.push({ name: "양천구", hPlace_cnt: 0 });
-    guInfo.push({ name: "마포구", hPlace_cnt: 0 });
-    guInfo.push({ name: "서대문구", hPlace_cnt: 0 });
-    guInfo.push({ name: "은평구", hPlace_cnt: 0 });
-    guInfo.push({ name: "노원구", hPlace_cnt: 0 });
-    guInfo.push({ name: "도봉구", hPlace_cnt: 0 });
-    guInfo.push({ name: "강북구", hPlace_cnt: 1 });
-    guInfo.push({ name: "성북구", hPlace_cnt: 0 });
-    guInfo.push({ name: "중랑구", hPlace_cnt: 0 });
-    guInfo.push({ name: "동대문구", hPlace_cnt: 0 });
-    guInfo.push({ name: "광진구", hPlace_cnt: 0 });
-    guInfo.push({ name: "성동구", hPlace_cnt: 0 });
-    guInfo.push({ name: "용산구", hPlace_cnt: 0 });
-    guInfo.push({ name: "중구", hPlace_cnt: 0 });
-    guInfo.push({ name: "종로구", hPlace_cnt: 0 });
+    guInfo.push({ name: "강동구", hPlace_cnt: 3, place_name: ["천호동 로데오거리", "명일동 명리단길", "성내동 강풀만화거리"] });
+    guInfo.push({ name: "송파구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "강남구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "서초구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "관악구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "동작구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "영등포구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "금천구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "구로구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "강서구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "양천구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "마포구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "서대문구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "은평구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "노원구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "도봉구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "강북구", hPlace_cnt: 3, place_name: ["수유리 먹자골목", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "성북구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "중랑구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "동대문구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "광진구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "성동구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "용산구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "중구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "종로구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
 
 }
 
@@ -238,6 +238,7 @@ function initInfo(selected_name) {
         if (guInfo[i].name === selected_name) {
             for (var j = 1; j <= guInfo[i].hPlace_cnt; j++) {
                 document.getElementById("carousel-img" + j).src = "/" + imgPath + "/img" + j + ".jpg";
+                document.getElementById("carousel-caption" + j).innerText = guInfo[i].place_name[j - 1];
             }
             break;
         }

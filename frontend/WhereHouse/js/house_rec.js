@@ -19,16 +19,16 @@ function initGuSpec() {
         guSpec.push({
             name: e,
             charter: Math.floor(Math.random() * 10000) + 10000,
-            deposit: Math.floor(Math.random() * 500) + 500,
-            monthly: Math.floor(Math.random() * 10000) + 10000,
+            deposit: Math.floor(Math.random() * 1000) + 500,
+            monthly: Math.floor(Math.random() * 50) + 50,
             safety: Math.floor(Math.random() * 10) + 1,
             convenience: Math.floor(Math.random() * 10) + 1,
-            convenienceStore: Math.floor(Math.random() * 100) + 100,
-            cafe: Math.floor(Math.random() * 100) + 100,
-            cinema: Math.floor(Math.random() * 100) + 100,
-            daiso: Math.floor(Math.random() * 100) + 100,
-            polliceOffice: Math.floor(Math.random() * 100) + 100,
-            cctv: Math.floor(Math.random() * 100) + 100,
+            convenienceStore: Math.floor(Math.random() * 50) + 100,
+            cafe: Math.floor(Math.random() * 50) + 100,
+            cinema: Math.floor(Math.random() * 50) + 100,
+            daiso: Math.floor(Math.random() * 50) + 100,
+            polliceOffice: Math.floor(Math.random() * 50) + 100,
+            cctv: Math.floor(Math.random() * 50) + 100,
         });
     })
 
@@ -69,17 +69,6 @@ window.onload = function () {
      */
 
     populationArea = initPopulation();
-
-    /**
-     * 화면에 다각형 생성
-     */
-
-    // for (var i = 0, len = areas.length; i < len; i++) {
-    //     displayArea(areas[i], populationArea[i]);
-    // }
-
-    // 다각형을 생상하고 이벤트를 등록하는 함수입니다
-
 
     /** 
      * 패널 열고 닫기
@@ -230,6 +219,14 @@ function showMonthly() {
 function showRecommend() {
     document.getElementById("user-input").style.display = "block";
     document.getElementById("recommend_result_page").style.display = "none";
+
+    document.getElementById("recommend_first").style.display = "blcok";
+    document.getElementById("recommend_second").style.display = "blcok";
+    document.getElementById("recommend_third").style.display = "blcok";
+
+    document.getElementById("recommend_first_info").style.display = "none";
+    document.getElementById("recommend_second_info").style.display = "none";
+    document.getElementById("recommend_third_info").style.display = "none";
 }
 
 function showResult() {
@@ -241,6 +238,7 @@ function showResult() {
         polygon.setMap(null);
     })
 
+    polygons = []; //다각형 초기화
     while (rand.length < 3) {
         var num = Math.floor(Math.random() * 25);
         if (rand.indexOf(num) == -1) {
@@ -364,7 +362,61 @@ function showComparison() {
     // 선택한 거주지가 1개 이상이면 보이도록 아니면 alert();
     var modal = document.querySelector(".modal");
     modal.style.display = "flex";
-    modal.style.zIndex = 1;
+    modal.style.zIndex = 2;
+
+    var recommend_first_name = $("#recommend_first_result").text();
+    var recommend_second_name = $("#recommend_second_result").text();
+    var recommend_third_name = $("#recommend_third_result").text();
+
+    // 그래프의 구 이름 전체 초기화
+    $(".label_gu1").each((index, element) => {
+        element.innerText = recommend_first_name;
+    });
+
+    $(".label_gu2").each((index, element) => {
+        element.innerText = recommend_second_name;
+    });
+
+    $(".label_gu3").each((index, element) => {
+        element.innerText = recommend_third_name;
+    });
+
+    // 그래프 길이 및 값 초기화
+    for (var i = 0; i < guSpec.length; i++) {
+        if (guSpec[i].name === recommend_first_name) {
+            graphInit(guSpec[i], 1);
+            continue;
+        }
+        if (guSpec[i].name === recommend_second_name) {
+            graphInit(guSpec[i], 2);
+            continue;
+        }
+        if (guSpec[i].name === recommend_third_name) {
+            graphInit(guSpec[i], 3);
+            continue;
+        }
+    }
+}
+
+function graphInit(spec, num) {
+    var graph_name = ["conv_bar", "cafe_bar", "cinema_bar", "daiso_bar", "polliceOffice_bar", "cctv_bar"];
+    var graph_value = ["conv_value", "cafe_value", "cinema_value", "daiso_value", "polliceOffice_value", "cctv_value"];
+
+    document.getElementById("conv_bar" + num).style.height = spec.convenienceStore + "px";
+    document.getElementById("cafe_bar" + num).style.height = spec.cafe + "px";
+    document.getElementById("cinema_bar" + num).style.height = spec.cinema + "px";
+    document.getElementById("daiso_bar" + num).style.height = spec.daiso + "px";
+    document.getElementById("polliceOffice_bar" + num).style.height = spec.polliceOffice + "px";
+    document.getElementById("cctv_bar" + num).style.height = spec.cctv + "px";
+
+    document.getElementById("conv_value" + num).innerText = spec.convenienceStore;
+    document.getElementById("cafe_value" + num).innerText = spec.cafe;
+    document.getElementById("cinema_value" + num).innerText = spec.cinema;
+    document.getElementById("daiso_value" + num).innerText = spec.daiso;
+    document.getElementById("polliceOffice_value" + num).innerText = spec.polliceOffice;
+    document.getElementById("cctv_value" + num).innerText = spec.cctv;
+
+
 }
 
 /**
