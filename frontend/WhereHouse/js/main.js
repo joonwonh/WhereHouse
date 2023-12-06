@@ -1,4 +1,36 @@
+var guInfo = [];
+
+function guInfoInit() {
+    guInfo.push({ name: "강동구", hPlace_cnt: 3 });
+    guInfo.push({ name: "송파구", hPlace_cnt: 0 });
+    guInfo.push({ name: "강남구", hPlace_cnt: 3 });
+    guInfo.push({ name: "서초구", hPlace_cnt: 0 });
+    guInfo.push({ name: "관악구", hPlace_cnt: 0 });
+    guInfo.push({ name: "동작구", hPlace_cnt: 0 });
+    guInfo.push({ name: "영등포구", hPlace_cnt: 0 });
+    guInfo.push({ name: "금천구", hPlace_cnt: 0 });
+    guInfo.push({ name: "구로구", hPlace_cnt: 0 });
+    guInfo.push({ name: "강서구", hPlace_cnt: 0 });
+    guInfo.push({ name: "양천구", hPlace_cnt: 0 });
+    guInfo.push({ name: "마포구", hPlace_cnt: 0 });
+    guInfo.push({ name: "서대문구", hPlace_cnt: 0 });
+    guInfo.push({ name: "은평구", hPlace_cnt: 0 });
+    guInfo.push({ name: "노원구", hPlace_cnt: 0 });
+    guInfo.push({ name: "도봉구", hPlace_cnt: 0 });
+    guInfo.push({ name: "강북구", hPlace_cnt: 1 });
+    guInfo.push({ name: "성북구", hPlace_cnt: 0 });
+    guInfo.push({ name: "중랑구", hPlace_cnt: 0 });
+    guInfo.push({ name: "동대문구", hPlace_cnt: 0 });
+    guInfo.push({ name: "광진구", hPlace_cnt: 0 });
+    guInfo.push({ name: "성동구", hPlace_cnt: 0 });
+    guInfo.push({ name: "용산구", hPlace_cnt: 0 });
+    guInfo.push({ name: "중구", hPlace_cnt: 0 });
+    guInfo.push({ name: "종로구", hPlace_cnt: 0 });
+
+}
+
 window.onload = function () {
+    guInfoInit();
     var container = document.getElementById("map");
     var options = {
         center: new kakao.maps.LatLng(37.5642135, 127.0016985),
@@ -14,7 +46,10 @@ window.onload = function () {
     * 구 선택에 따른 이벤트
     */
     var selectGu = document.getElementById("gu_select");
-    selectGu.addEventListener("change", initInfo);
+    selectGu.addEventListener("change", () => {
+        var selected_name = $("#gu_select option:selected").val();
+        initInfo(selected_name);
+    });
 
     /**
      * json 파싱 및 전처리
@@ -89,7 +124,7 @@ window.onload = function () {
             for (var i = 0; i < selectGu.options.length; i++) {
                 if (selectGu.options[i].value === population.name) {
                     selectGu.options[i].selected = true;
-                    initInfo();
+                    initInfo(selectGu.options[i].value);
                     break;
                 }
             }
@@ -163,7 +198,7 @@ window.onload = function () {
 /**
  * 지역구 선택 및 변경 시 정보를 다시 뿌려주는 함수
  */
-function initInfo() {
+function initInfo(selected_name) {
     var div_score = document.getElementById("average-score");
     var div_hPlace = document.getElementById("hotPlace_wrap");
     var select_need = document.getElementById("select_need");
@@ -195,6 +230,17 @@ function initInfo() {
         document.getElementById("convenience_value").innerText = Math.round(tmp2);
         safety_barChart.style.height = (tmp1 + 15) + "px";
         conv_barChart.style.height = (tmp2 + 15) + "px";
+    }
+
+    var imgPath = "../images/hotPlace/" + selected_name;
+
+    for (var i = 0; i < guInfo.length; i++) {
+        if (guInfo[i].name === selected_name) {
+            for (var j = 1; j <= guInfo[i].hPlace_cnt; j++) {
+                document.getElementById("carousel-img" + j).src = "/" + imgPath + "/img" + j + ".jpg";
+            }
+            break;
+        }
     }
 }
 
