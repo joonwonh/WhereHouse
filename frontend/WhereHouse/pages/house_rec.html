@@ -9,6 +9,7 @@
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d24dfa7488d79e7f12995de4945ddcfa">
     </script>
     <link rel="stylesheet" href="/css/house_rec.css">
+    <link rel="stylesheet" href="/css//rec_graph.css">
     <link rel="stylesheet" href="/css/main_map.css">
     <link rel="stylesheet" href="/css/main_map_info.css">
     <link rel="stylesheet" href="/css/comp_modal.css">
@@ -309,6 +310,19 @@
                         평균 보증금 : <span id="first_deposit_fee">ex</span> 만원<br>
                         평균 월세금 : <span id="first_monthly_fee">ex</span> 만원
                     </div>
+                    <div class="result_graph_wrap">
+                        <div class="conv_wrap">
+                            <div class="result_label_conv">편의성</div>
+                            <div id="conv_first_graph" class="result_conv_graph">
+                            </div><span id="conv_first_value">&nbsp 2</span>
+                        </div>
+                        <div class="safety_wrap">
+                            <div class="result_label_safety">안전성</div>
+                            <div id="safety_first_graph" class="result_safety_graph">
+                            </div>
+                            <span id="safety_first_value">&nbsp 4</span>
+                        </div>
+                    </div>
                 </div>
 
 
@@ -332,6 +346,19 @@
                         평균 보증금 : <span id="second_deposit_fee">ex</span> 만원<br>
                         평균 월세금 : <span id="second_monthly_fee">ex</span> 만원
                     </div>
+                    <div class="result_graph_wrap">
+                        <div class="conv_wrap">
+                            <div class="result_label_conv">편의성</div>
+                            <div id="conv_second_graph" class="result_conv_graph">
+                            </div><span id="conv_second_value">&nbsp 2</span>
+                        </div>
+                        <div class="safety_wrap">
+                            <div class="result_label_safety">안전성</div>
+                            <div id="safety_second_graph" class="result_safety_graph">
+                            </div>
+                            <span id="safety_second_value">&nbsp 4</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div id="recommend_third">
@@ -354,6 +381,19 @@
                         평균 보증금 : <span id="third_deposit_fee">ex</span> 만원<br>
                         평균 월세금 : <span id="third_monthly_fee">ex</span> 만원
                     </div>
+                    <div class="result_graph_wrap">
+                        <div class="conv_wrap">
+                            <div class="result_label_conv">편의성</div>
+                            <div id="conv_third_graph" class="result_conv_graph">
+                            </div><span id="conv_third_value">&nbsp 2</span>
+                        </div>
+                        <div class="safety_wrap">
+                            <div class="result_label_safety">안전성</div>
+                            <div id="safety_third_graph" class="result_safety_graph">
+                            </div>
+                            <span id="safety_third_value">&nbsp 4</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div id="recommend_comparison">
@@ -363,7 +403,7 @@
                     </div>
                 </div>
             </div>
-            <div id="logo-img"><img src="/images/home_icon.png" alt=""></div>
+            <!-- <div id="logo-img"><img src="/images/home_icon.png" alt=""></div> -->
         </aside>
     </div>
     <div id="population-shame-bar">
