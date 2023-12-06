@@ -60,6 +60,10 @@ section {
     top: 0px;
 }
 
+#menu_home:hover {
+    cursor: pointer;
+}
+
 #menu_home_icon img {
     width: 66px;
     height: 55px;

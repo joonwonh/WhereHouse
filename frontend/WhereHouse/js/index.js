@@ -1,9 +1,14 @@
 window.onload = function () {
+    var menu_home = document.getElementById("menu_home");
     var menu_suggest_icon = document.getElementById("menu_suggest_icon");
     var menu_gu_icon = document.getElementById("menu_gu_icon");
     var menu_detail_icon = document.getElementById("menu_detail_icon");
 
     var iframeSection = document.getElementById("iframe_section");
+
+    menu_home.addEventListener("click", function () {
+        window.open("/pages/mainPage.html");
+    })
 
     menu_suggest_icon.addEventListener("click", () => clickMenu(1));
     menu_gu_icon.addEventListener("click", () => clickMenu(2));

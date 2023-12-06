@@ -1,0 +1,197 @@
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MBC1961GulimM';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/MBC1961GulimM.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.navbar {
+    padding: 20px;
+}
+
+#logo {
+    font-size: 40px;
+    line-height: 40px;
+    font-family: 'Courgette', cursive;
+}
+
+#nav-btn {
+    font-family: 'TheJamsil5Bold';
+    color: black;
+    font-size: 20px;
+    width: 150px;
+    text-align: center;
+    border: #aaaaaa 1px solid;
+    background-color: #FFFFFF;
+    border-radius: 40px;
+
+}
+
+#nav-btn:hover {
+    background-color: black;
+    color: #FFFFFF;
+}
+
+.navbar {
+    padding-top: 20px;
+    /* 네비게이션 바 상단 패딩 설정 */
+}
+
+.navbar-brand {
+    margin-right: auto;
+    /* 로고를 가운데로 정렬 */
+}
+
+.navbar-nav {
+    margin-left: auto;
+    /* 나머지 요소를 오른쪽으로 정렬 */
+}
+
+.container {
+    margin: 0;
+}
+
+.btn {
+    font-family: 'TheJamsil5Bold';
+
+    color: black;
+    font-size: 20px;
+    width: 150px;
+    text-align: center;
+    height: 45px;
+    line-height: 43px;
+    border: #aaaaaa 1px solid;
+    background-color: #FFFFFF;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.carousel-inner {
+    width: auto;
+    height: 100vh;
+    /* height: 860px; 이미지 높이 변경 */
+}
+
+.carousel-item {
+    width: auto;
+    height: 100%;
+}
+
+.d-block {
+    display: block;
+    width: auto;
+    height: 100%;
+}
+
+#inner_text h1 {
+    font-family: 'MBC1961GulimM';
+    color: rgb(230, 223, 223);
+    text-shadow: -1px 0px #787878, 0px 1px #787878, 1px 0px #787878, 0px -1px #787878;
+    font-size: 70px;
+}
+
+/* 첫번 째 사이트 설명 */
+#ani_left_to_right {
+    opacity: 0;
+    transition: all 2.5s;
+}
+
+#img_content {
+    margin-top: 48px;
+    transition: all 2.5s;
+}
+
+#site_page_innerText {
+    opacity: 0;
+    transition: all 3s;
+}
+
+#firstPage_text {
+    font-family: 'TheJamsil5Bold';
+    text-align: center;
+}
+
+#firstPage_text h3 {
+    font-size: 40px;
+}
+
+#first_introduce_text {
+    font-family: 'TheJamsil5Bold';
+}
+
+#first_introduce_text h2 {
+    line-height: 100px;
+}
+
+#first_introduce_text h5 {
+    line-height: 40px;
+    color: #565656;
+}
+
+#first_introduce_text h6 {
+    line-height: 30px;
+    color: #7b7b7b;
+}
+
+/* 두번 째 사이트 설명 */
+#secondPage_text {
+    font-family: 'TheJamsil5Bold';
+    text-align: center;
+}
+
+#secondPage_text h3 {
+    font-size: 40px;
+}
+
+#second_introduce_text {
+    font-family: 'TheJamsil5Bold';
+}
+
+#second_introduce_text h2 {
+    line-height: 100px;
+}
+
+#second_introduce_text h5 {
+    line-height: 40px;
+    color: #565656;
+}
+
+#second_introduce_text h6 {
+    line-height: 30px;
+    color: #7b7b7b;
+}
+
+#recommend_site_btn {
+    font-family: 'TheJamsil5Bold';
+    font-size: 45px;
+    text-align: center;
+
+}
+
+#recommend_site_btn .btn {
+    width: 400px;
+    height: 80px;
+    font-size: 40px;
+    line-height: 70px;
+    border: none;
+}
+
+#top_btn .btn {
+    font-family: 'TheJamsil5Bold';
+    line-height: 30px;
+}
+
+footer {
+    background-color: #ffffff;
+}
+
+#footer_text {
+    font-family: 'TheJamsil5Bold';
+}
