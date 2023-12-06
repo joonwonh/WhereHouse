@@ -196,11 +196,11 @@ function displayArea(area, population, isRecommend) {
             var content = '<div class="info">'
                 + '<div class="info_title">' + population.name + '</div>'
                 + '<div class="info_rank">'
-                + '<div class="info_content" id="info_price_rank">'
+                + '<div id="info_price_rank">'
                 + '<div class="info_content" id="info_charter">전세 : <span id="info_charter_rank">1</span>위 / 25</div>'
                 + '<div class="info_content" id="info_deposit">보증금 : <span id="info_deposit_rank">1</span>위 / 25</div>'
                 + '<div class="info_content" id="info_monthly">월세 : <span id="info_monthly_rank">1</span>위 / 25</div></div>'
-                + '<div class="info_content" id="info_score">'
+                + '<div id="info_score">'
                 + '<div class="info_content" id="info_convenience">편의성 : <span id="info_conv_rank">1</span>위 / 25</div>'
                 + '<div class="info_content" id="info_safety">안전성 : <span id="info_safety_rank">1</span>위 / 25</div>'
                 + '<div class="info_content" id="info_dense">밀집도 : <span id="info_dense_rank">1</span>위 / 25</div></div></div>';
@@ -289,9 +289,6 @@ function showResult() {
 
 function intervalFunc() {
     // 추천 결과 변경 시 다른 폴리곤에 적용되도록 수정해야함
-    console.log(polygons[recommendIdx[0]]);
-    console.log(polygons[recommendIdx[1]]);
-    console.log(polygons[recommendIdx[2]]);
     if (polygons[recommendIdx[0]].Eb[0].strokeColor == "none") {
         polygons[recommendIdx[0]].setOptions({ strokeColor: "rgba(255,0,0,1)" });
         polygons[recommendIdx[1]].setOptions({ strokeColor: "rgba(255,0,0,1)" });

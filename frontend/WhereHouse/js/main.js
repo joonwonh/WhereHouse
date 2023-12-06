@@ -77,11 +77,11 @@ window.onload = function () {
             var content = '<div class="info">'
                 + '<div class="info_title">' + population.name + '</div>'
                 + '<div class="info_rank">'
-                + '<div class="info_content" id="info_price_rank">'
+                + '<div id="info_price_rank">'
                 + '<div class="info_content" id="info_charter">전세 : <span id="info_charter_rank">1</span>위 / 25</div>'
                 + '<div class="info_content" id="info_deposit">보증금 : <span id="info_deposit_rank">1</span>위 / 25</div>'
                 + '<div class="info_content" id="info_monthly">월세 : <span id="info_monthly_rank">1</span>위 / 25</div></div>'
-                + '<div class="info_content" id="info_score">'
+                + '<div id="info_score">'
                 + '<div class="info_content" id="info_convenience">편의성 : <span id="info_conv_rank">1</span>위 / 25</div>'
                 + '<div class="info_content" id="info_safety">안전성 : <span id="info_safety_rank">1</span>위 / 25</div>'
                 + '<div class="info_content" id="info_dense">밀집도 : <span id="info_dense_rank">1</span>위 / 25</div></div></div>';
@@ -118,6 +118,27 @@ window.onload = function () {
         }
     }
 
+    // 전세/월세 라디오 버튼 선택
+
+    var rentalType = document.querySelectorAll("input[name='rentalType']");
+    rentalType.forEach((radio) => {
+        radio.addEventListener("change", (e) => {
+            var current = e.currentTarget;
+            if (current.value === "charter") {
+                document.getElementById("select_need").style.height = "17%";
+                document.getElementById("average-charter").style.display = "block";
+                document.getElementById("average-monthly").style.display = "none";
+                document.getElementById("hotPlace_wrap").style.top = "51%";
+            } else {
+                document.getElementById("select_need").style.height = "21%";
+                document.getElementById("average-charter").style.display = "none";
+                document.getElementById("average-monthly").style.display = "block";
+                document.getElementById("hotPlace_wrap").style.top = "55%";
+            }
+        })
+    }
+    );
+
     // 인구밀집도 인덱스 열고 닫기
     var shame_info = document.querySelector("#population-shame-info");
     var bar = document.querySelector("#population-shame-bar");
@@ -143,31 +164,26 @@ window.onload = function () {
  * 지역구 선택 및 변경 시 정보를 다시 뿌려주는 함수
  */
 function initInfo() {
-    var div_charter = document.getElementById("average-charter");
-    var div_monthly = document.getElementById("average-monthly");
     var div_score = document.getElementById("average-score");
-    var div_popul = document.getElementById("population");
+    var div_hPlace = document.getElementById("hotPlace_wrap");
+    var select_need = document.getElementById("select_need");
 
     var charter_fee = document.getElementById("charter-deposit-fee");
     var deposit_fee = document.getElementById("monthly-deposit-fee");
     var monthly_fee = document.getElementById("monthly-month-fee");
 
+    // 전세/월세 가격 표시
+    charter_fee.innerText = Math.round(Math.random() * 1000 + 10000);
+    deposit_fee.innerText = Math.round(Math.random() * 1000 + 500);
+    monthly_fee.innerText = Math.round(Math.random() * 50 + 30);
     if (this.selectedIndex === 0) {
-        div_charter.style.display = "none";
-        div_monthly.style.display = "none";
         div_score.style.display = "none";
-        div_popul.style.display = "none";
+        div_hPlace.style.display = "none";
+        select_need.style.display = "none";
     } else {
-        div_charter.style.display = "block";
-        div_monthly.style.display = "block";
         div_score.style.display = "block";
-        div_popul.style.display = "block";
-
-        // 전세/월세 가격 표시
-        charter_fee.innerText = Math.round(Math.random() * 1000 + 10000);
-        deposit_fee.innerText = Math.round(Math.random() * 1000 + 500);
-        monthly_fee.innerText = Math.round(Math.random() * 50 + 30);
-
+        div_hPlace.style.display = "block";
+        select_need.style.display = "block";
 
         //그래프 그리기
         var safety_barChart = document.getElementById("safety_barChart");
@@ -181,6 +197,7 @@ function initInfo() {
         conv_barChart.style.height = (tmp2 + 15) + "px";
     }
 }
+
 
 /**
  * 인구밀집도 시각화를 위한 임의 데이터 생성 함수
