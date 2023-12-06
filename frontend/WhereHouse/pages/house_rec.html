@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="/json/mapData.json" type="text/javascript"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d24dfa7488d79e7f12995de4945ddcfa">
     </script>
@@ -36,26 +37,26 @@
                             <div class="conv_graph_wrap" id="convStore_graph_gu1">
                                 <div class="conv_graph">
                                     <div id="conv_bar1" class="conv_bar">
-                                        <div id="conv_value1">1</div>
+                                        <div id="conv_value1" class="graph_value"></div>
                                     </div>
                                 </div>
-                                <div class="label_gu1">서대문구</div>
+                                <div class="label_gu1"></div>
                             </div>
                             <div class="conv_graph_wrap" id="convStore_graph_gu2">
                                 <div class="conv_graph">
                                     <div id="conv_bar2" class="conv_bar">
-                                        <div id="conv_value2">2</div>
+                                        <div id="conv_value2" class="graph_value"></div>
                                     </div>
                                 </div>
-                                <div class="label_gu2">영등포구</div>
+                                <div class="label_gu2"></div>
                             </div>
                             <div class="conv_graph_wrap" id="convStore_graph_gu3">
                                 <div class="conv_graph">
                                     <div id="conv_bar3" class="conv_bar">
-                                        <div id="conv_value3">3</div>
+                                        <div id="conv_value3" class="graph_value"></div>
                                     </div>
                                 </div>
-                                <div class="label_gu3">은평구</div>
+                                <div class="label_gu3"></div>
                             </div>
                         </div>
                     </div>
@@ -65,26 +66,26 @@
                             <div class="cafe_graph_wrap" id="cafe_graph_gu1">
                                 <div class="cafe_graph">
                                     <div id="cafe_bar1" class="cafe_bar">
-                                        <div id="cafe_value1">1</div>
+                                        <div id="cafe_value1" class="graph_value"></div>
                                     </div>
                                 </div>
-                                <div class="label_gu1" id="cafe_label_gu1">서대문구</div>
+                                <div class="label_gu1"></div>
                             </div>
                             <div class="cafe_graph_wrap" id="cafe_graph_gu2">
                                 <div class="cafe_graph">
                                     <div id="cafe_bar2" class="cafe_bar">
-                                        <div id="cafe_value2">2</div>
+                                        <div id="cafe_value2" class="graph_value"></div>
                                     </div>
                                 </div>
-                                <div class="label_gu2" id="cafe_label_gu2">영등포구</div>
+                                <div class="label_gu2"></div>
                             </div>
                             <div class="cafe_graph_wrap" id="cafe_graph_gu3">
                                 <div class="cafe_graph">
                                     <div id="cafe_bar3" class="cafe_bar">
-                                        <div id="cafe_value3">3</div>
+                                        <div id="cafe_value3" class="graph_value"></div>
                                     </div>
                                 </div>
-                                <div class="label_gu3" id="cafe_label_gu3">은평구</div>
+                                <div class="label_gu3" id="cafe_label_gu3"></div>
                             </div>
                         </div>
                     </div>
@@ -96,26 +97,26 @@
                             <div class="cinema_graph_wrap" id="cinema_graph_gu1">
                                 <div class="cinema_graph">
                                     <div id="cinema_bar1" class="cafe_bar">
-                                        <div id="cinema_value1">1</div>
+                                        <div id="cinema_value1" class="graph_value"></div>
                                     </div>
                                 </div>
-                                <div class="label_gu1">서대문구</div>
+                                <div class="label_gu1"></div>
                             </div>
                             <div class="cinema_graph_wrap" id="cinema_graph_gu2">
                                 <div class="cinema_graph">
                                     <div id="cinema_bar2" class="cafe_bar">
-                                        <div id="cinema_value2">2</div>
+                                        <div id="cinema_value2" class="graph_value"></div>
                                     </div>
                                 </div>
-                                <div class="label_gu2">영등포구</div>
+                                <div class="label_gu2"></div>
                             </div>
                             <div class="cinema_graph_wrap" id="cinema_graph_gu3">
                                 <div class="cinema_graph">
                                     <div id="cinema_bar3" class="cafe_bar">
-                                        <div id="cinema_value3">3</div>
+                                        <div id="cinema_value3" class="graph_value"></div>
                                     </div>
                                 </div>
-                                <div class="label_gu3">은평구</div>
+                                <div class="label_gu3"></div>
                             </div>
                         </div>
                     </div>
@@ -125,26 +126,26 @@
                             <div class="daiso_graph_wrap" id="daiso_graph_gu1">
                                 <div class="daiso_graph">
                                     <div id="daiso_bar1" class="daiso_bar">
-                                        <div id="daiso_value1">1</div>
+                                        <div id="daiso_value1" class="graph_value"></div>
                                     </div>
                                 </div>
-                                <div class="label_gu1">서대문구</div>
+                                <div class="label_gu1"></div>
                             </div>
                             <div class="daiso_graph_wrap" id="daiso_graph_gu2">
                                 <div class="daiso_graph">
                                     <div id="daiso_bar2" class="daiso_bar">
-                                        <div id="daiso_value2">2</div>
+                                        <div id="daiso_value2" class="graph_value"></div>
                                     </div>
                                 </div>
-                                <div class="label_gu2">영등포구</div>
+                                <div class="label_gu2"></div>
                             </div>
                             <div class="daiso_graph_wrap" id="daiso_graph_gu3">
                                 <div class="daiso_graph">
                                     <div id="daiso_bar3" class="daiso_bar">
-                                        <div id="daiso_value3">3</div>
+                                        <div id="daiso_value3" class="graph_value"></div>
                                     </div>
                                 </div>
-                                <div class="label_gu3">은평구</div>
+                                <div class="label_gu3"></div>
                             </div>
                         </div>
                     </div>
@@ -156,26 +157,26 @@
                             <div class="policeOffice_graph_wrap" id="policeOffice_graph_gu1">
                                 <div class="policeOffice_graph">
                                     <div id="polliceOffice_bar1" class="policeOffice_bar">
-                                        <div id="polliceOffice_value1">1</div>
+                                        <div id="polliceOffice_value1" class="graph_value"></div>
                                     </div>
                                 </div>
-                                <div class="label_gu1">서대문구</div>
+                                <div class="label_gu1"></div>
                             </div>
                             <div class="policeOffice_graph_wrap" id="policeOffice_graph_gu2">
                                 <div class="policeOffice_graph">
                                     <div id="polliceOffice_bar2" class="policeOffice_bar">
-                                        <div id="polliceOffice_value2">2</div>
+                                        <div id="polliceOffice_value2" class="graph_value"></div>
                                     </div>
                                 </div>
-                                <div class="label_gu2">영등포구</div>
+                                <div class="label_gu2"></div>
                             </div>
                             <div class="policeOffice_graph_wrap" id="policeOffice_graph_gu3">
                                 <div class="policeOffice_graph">
                                     <div id="polliceOffice_bar3" class="policeOffice_bar">
-                                        <div id="polliceOffice_value3">3</div>
+                                        <div id="polliceOffice_value3" class="graph_value"></div>
                                     </div>
                                 </div>
-                                <div class="label_gu3">은평구</div>
+                                <div class="label_gu3"></div>
                             </div>
                         </div>
                     </div>
@@ -185,26 +186,26 @@
                             <div class="cctv_graph_wrap" id="cctv_graph_gu1">
                                 <div class="cctv_graph">
                                     <div id="cctv_bar1" class="cctv_bar">
-                                        <div id="cctv_value1">1</div>
+                                        <div id="cctv_value1" class="graph_value"></div>
                                     </div>
                                 </div>
-                                <div class="label_gu1">서대문구</div>
+                                <div class="label_gu1"></div>
                             </div>
                             <div class="cctv_graph_wrap" id="cctv_graph_gu2">
                                 <div class="cctv_graph">
                                     <div id="cctv_bar2" class="cctv_bar">
-                                        <div id="cctv_value2">2</div>
+                                        <div id="cctv_value2" class="graph_value"></div>
                                     </div>
                                 </div>
-                                <div class="label_gu2">영등포구</div>
+                                <div class="label_gu2"></div>
                             </div>
                             <div class="cctv_graph_wrap" id="cctv_graph_gu3">
                                 <div class="cctv_graph">
                                     <div id="cctv_bar3" class="cctv_bar">
-                                        <div id="cctv_value3">3</div>
+                                        <div id="cctv_value3" class="graph_value"></div>
                                     </div>
                                 </div>
-                                <div class="label_gu3">은평구</div>
+                                <div class="label_gu3"></div>
                             </div>
                         </div>
                     </div>
@@ -230,7 +231,7 @@
                             <input type="radio" name="rentalType" value="charter" onclick="showCharter()">전세
                         </div>
                         <div id="monthly">
-                            <input type="radio" name="rentalType" value="monthly" onclick="showMonthly()">월세
+                            <input type="radio" checked name="rentalType" value="monthly" onclick="showMonthly()">월세
                         </div>
                     </div>
 

@@ -78,7 +78,7 @@ body {
     margin-left: 12px;
     margin-right: 10px;
     text-align: center;
-    height: 100px;
+    height: 200px;
     line-height: 50px;
 }
 
@@ -111,9 +111,12 @@ body {
     cursor: pointer;
 }
 
-#charterInput,
-#monthlyInput {
+#charterInput {
     display: none;
+}
+
+#monthlyInput {
+    display: block;
 }
 
 
@@ -216,36 +219,33 @@ body {
     margin-right: 20px;
 }
 
-
-#recommend_first {
-    width: 300px;
-    border: rgba(11, 94, 215, 0.50) 2px solid;
-    border-radius: 8px;
-    margin-top: 5px;
-    margin-left: 12px;
-    margin-right: 10px;
-    height: 50px;
-    line-height: 47px;
-    font-size: 17px;
-}
-
-
-
 #recommend_first_btn,
 #recommend_second_btn,
 #recommend_third_btn {
     cursor: pointer;
 }
 
-#recommend_first_info {
-    display: none;
+#recommend_first {
     width: 300px;
+    height: 50px;
     border: rgba(11, 94, 215, 0.50) 2px solid;
     border-radius: 8px;
     margin-top: 5px;
     margin-left: 12px;
     margin-right: 10px;
-    height: 210px;
+    line-height: 47px;
+    font-size: 17px;
+}
+
+#recommend_first_info {
+    display: none;
+    width: 300px;
+    height: auto;
+    border: rgba(11, 94, 215, 0.50) 2px solid;
+    border-radius: 8px;
+    margin-top: 5px;
+    margin-left: 12px;
+    margin-right: 10px;
     line-height: 47px;
     font-size: 17px;
 }
@@ -265,12 +265,12 @@ body {
 #recommend_second_info {
     display: none;
     width: 300px;
+    height: auto;
     border: rgba(11, 94, 215, 0.50) 2px solid;
     border-radius: 8px;
     margin-top: 5px;
     margin-left: 12px;
     margin-right: 10px;
-    height: 210px;
     line-height: 47px;
     font-size: 17px;
 }
@@ -290,12 +290,12 @@ body {
 #recommend_third_info {
     display: none;
     width: 300px;
+    height: auto;
     border: rgba(11, 94, 215, 0.50) 2px solid;
     border-radius: 8px;
     margin-top: 5px;
     margin-left: 12px;
     margin-right: 10px;
-    height: 210px;
     line-height: 47px;
     font-size: 17px;
 }
@@ -304,6 +304,13 @@ body {
 .select_price {
     text-align: center;
 }
+
+#select_first_charter,
+#select_second_charter,
+#select_third_charter {
+    display: none;
+}
+
 
 
 #logo-img img {
