@@ -88,9 +88,9 @@ body {
 
 /* 전세 월세 선택 창 */
 #check_need {
-    width: 333px;
     display: flex;
     font-size: 17px;
+    justify-content: space-around;
 }
 
 #rentInput input[type=text] {
@@ -99,19 +99,11 @@ body {
     border: 2px solid #dfdfdf;
 }
 
-#charter {
-    margin-left: 50px;
-
-}
 
 #charter input[type=radio] {
     margin-right: 10px;
     cursor: pointer;
 
-}
-
-#monthly {
-    margin-left: 70px;
 }
 
 #monthly input[type=radio] {
