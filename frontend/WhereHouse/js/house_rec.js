@@ -230,6 +230,14 @@ function showRecommend() {
 }
 
 function showResult() {
+    document.getElementById("recommend_first").style.display = "block";
+    document.getElementById("recommend_first_info").style.display = "none";
+    document.getElementById("recommend_second").style.display = "block";
+    document.getElementById("recommend_second_info").style.display = "none";
+    document.getElementById("recommend_third").style.display = "block";
+    document.getElementById("recommend_third_info").style.display = "none";
+
+
     var rand = [];
     recommendIdx = [];
     clearInterval(polygon_interval);
