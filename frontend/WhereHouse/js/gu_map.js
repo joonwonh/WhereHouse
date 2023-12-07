@@ -1,31 +1,31 @@
 var guInfo = [];
 
 function guInfoInit() {
-    guInfo.push({ name: "강동구", hPlace_cnt: 3, place_name: ["천호동 로데오거리", "명일동 명리단길", "성내동 강풀만화거리"] });
-    guInfo.push({ name: "송파구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
-    guInfo.push({ name: "강남구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
-    guInfo.push({ name: "서초구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
-    guInfo.push({ name: "관악구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
-    guInfo.push({ name: "동작구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
-    guInfo.push({ name: "영등포구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
-    guInfo.push({ name: "금천구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
-    guInfo.push({ name: "구로구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
-    guInfo.push({ name: "강서구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
-    guInfo.push({ name: "양천구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
-    guInfo.push({ name: "마포구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
-    guInfo.push({ name: "서대문구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
-    guInfo.push({ name: "은평구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
-    guInfo.push({ name: "노원구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
-    guInfo.push({ name: "도봉구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
-    guInfo.push({ name: "강북구", hPlace_cnt: 3, place_name: ["수유리 먹자골목", "강남역 먹자골목", "코엑스 별마당 도서관"] });
-    guInfo.push({ name: "성북구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
-    guInfo.push({ name: "중랑구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
-    guInfo.push({ name: "동대문구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
-    guInfo.push({ name: "광진구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
-    guInfo.push({ name: "성동구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
-    guInfo.push({ name: "용산구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
-    guInfo.push({ name: "중구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
-    guInfo.push({ name: "종로구", hPlace_cnt: 3, place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "강동구", place_name: ["천호동 로데오거리", "성내동 카페거리", "성내동 강풀만화거리"] });
+    guInfo.push({ name: "송파구", place_name: ["롯데월드 타워", "송리단길", "석촌호수"] });
+    guInfo.push({ name: "강남구", place_name: ["압구정동 로데오거리", "강남역 먹자골목", "코엑스 별마당 도서관"] });
+    guInfo.push({ name: "서초구", place_name: ["세빛섬", "예술의 전당", "양재천 카페거리"] });
+    guInfo.push({ name: "관악구", place_name: ["관악 별빛신사리", "낙성대 공원", "샤로수길"] });
+    guInfo.push({ name: "동작구", place_name: ["노량진 수산시장", "보라매공원", "신대방삼거리역 거리"] });
+    guInfo.push({ name: "영등포구", place_name: ["타임스퀘어", "여의도 한강공원", "더 현대 서울"] });
+    guInfo.push({ name: "금천구", place_name: ["호암산 숲길 공원", "가산 인크 커피", "금빛 공원"] });
+    guInfo.push({ name: "구로구", place_name: ["항동 푸른수목원", "구로 깔깔거리", "고척스카이돔"] });
+    guInfo.push({ name: "강서구", place_name: ["서울 식물원", "강서구청 먹자골목", "국립 항공 박물관"] });
+    guInfo.push({ name: "양천구", place_name: ["서서울 호수공원", "목동 로데오거리", "신정네거리역 거리"] });
+    guInfo.push({ name: "마포구", place_name: ["망원 한강공원", "합정 메세나폴리스", "홍대거리"] });
+    guInfo.push({ name: "서대문구", place_name: ["연희동거리", "신촌동거리", "디지털 미디어 시티"] });
+    guInfo.push({ name: "은평구", place_name: ["연신내 로데오거리", "불광천", "은평 한옥마을"] });
+    guInfo.push({ name: "노원구", place_name: ["노원역 문화의 거리 ", "노원 불빛 정원", "공릉동 국수거리"] });
+    guInfo.push({ name: "도봉구", place_name: ["쌍문역 쌍리단길", "창동역 포차거리", "서울 창포원"] });
+    guInfo.push({ name: "강북구", place_name: ["수유리 먹자골목", "강북구청 앞 거리", "우이천"] });
+    guInfo.push({ name: "성북구", place_name: ["성신여대 로데오거리", "석계역 포장마차", "성북천"] });
+    guInfo.push({ name: "중랑구", place_name: ["면목동 면리단길", "중랑천 벚꽃길", "상봉동 먹자골목"] });
+    guInfo.push({ name: "동대문구", place_name: ["청량리 먹자골목", "회기역 파전골목", "청량리 통닭골목"] });
+    guInfo.push({ name: "광진구", place_name: ["뚝섬 한강공원", "건대 맛의거리", "어린이대공원"] });
+    guInfo.push({ name: "성동구", place_name: ["서울숲", "뚝섬 한강공원", "마장동 먹자골목"] });
+    guInfo.push({ name: "용산구", place_name: ["한남동 카페거리", "이태원 거리", "남산서울타워"] });
+    guInfo.push({ name: "중구", place_name: ["명동거리", "신당 포차거리", "을지로 골목"] });
+    guInfo.push({ name: "종로구", place_name: ["경복궁", "인사동", "혜화 대학로"] });
 
 }
 
@@ -236,7 +236,7 @@ function initInfo(selected_name) {
 
     for (var i = 0; i < guInfo.length; i++) {
         if (guInfo[i].name === selected_name) {
-            for (var j = 1; j <= guInfo[i].hPlace_cnt; j++) {
+            for (var j = 1; j <= 3; j++) {
                 document.getElementById("carousel-img" + j).src = "/" + imgPath + "/img" + j + ".jpg";
                 document.getElementById("carousel-caption" + j).innerText = guInfo[i].place_name[j - 1];
             }
