@@ -1,34 +1,47 @@
 window.onload = function () {
-    var menu_home = document.getElementById("menu_home");
-    var menu_suggest_icon = document.getElementById("menu_suggest_icon");
-    var menu_gu_icon = document.getElementById("menu_gu_icon");
-    var menu_detail_icon = document.getElementById("menu_detail_icon");
-
-    var iframeSection = document.getElementById("iframe_section");
-
-    menu_home.addEventListener("click", function () {
-        window.open("/pages/mainPage.html");
+  // 이미지 opacity
+  let observer = new IntersectionObserver((e) => {
+    e.forEach((content) => {
+      if (content.isIntersecting) {
+        content.target.style.opacity = 1;
+      }
     })
+  })
+  let img = document.querySelectorAll("#ani_left_to_right");
+  observer.observe(img[0])  // html요소 감시
+  observer.observe(img[1])
+  observer.observe(img[2])
+  observer.observe(img[3])
+  observer.observe(img[4])
 
-    menu_suggest_icon.addEventListener("click", () => clickMenu(1));
-    menu_gu_icon.addEventListener("click", () => clickMenu(2));
-    menu_detail_icon.addEventListener("click", () => clickMenu(3));
+  // 이미지 아래서 위로
+  let observers = new IntersectionObserver((e) => {
+    e.forEach((content) => {
+      if (content.isIntersecting) {
+        content.target.style.marginTop = "0px";
+      }
+    })
+  })
+  let img_content = document.querySelectorAll("#img_content");
+  observers.observe(img_content[0])  // html요소 감시
+  observers.observe(img_content[1])
+  observers.observe(img_content[2])
+  observers.observe(img_content[3])
+  observers.observe(img_content[4])
 
-    function clickMenu(sel) {
-        menu_gu_icon.style.backgroundColor = "rgba(11, 94, 215, 1)";
-        menu_detail_icon.style.backgroundColor = "rgba(11, 94, 215, 1)";
-        menu_suggest_icon.style.backgroundColor = "rgba(11, 94, 215, 1)";
-
-        if (sel === 1) {
-            menu_suggest_icon.style.backgroundColor = "rgba(34, 34, 34, 0.3)";
-            iframeSection.src = "pages/house_rec.html";
-        } else if (sel === 2) {
-            menu_gu_icon.style.backgroundColor = "rgba(34, 34, 34, 0.3)";
-            iframeSection.src = "pages/main.html";
-        } else if (sel === 3) {
-            menu_detail_icon.style.backgroundColor = "rgba(34, 34, 34, 0.3)";
-            //상세 지도 ifram 로직
-        }
-    }
+  // 텍스트 opacity
+  let observerse = new IntersectionObserver((e) => {
+    e.forEach((content) => {
+      if (content.isIntersecting) {
+        content.target.style.opacity = 1;
+      }
+    })
+  })
+  let site_page_innerText = document.querySelectorAll("#site_page_innerText");
+  observerse.observe(site_page_innerText[0])  // html요소 감시
+  observerse.observe(site_page_innerText[1])
+  observerse.observe(site_page_innerText[2])
+  observerse.observe(site_page_innerText[3])
+  observerse.observe(site_page_innerText[4])
 }
 
