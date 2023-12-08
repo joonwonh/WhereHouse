@@ -35,6 +35,7 @@ function initGuSpec() {
 }
 
 
+
 window.onload = function () {
     initGuSpec();
     var container = document.getElementById("map");
@@ -47,9 +48,7 @@ window.onload = function () {
         customOverlay = new kakao.maps.CustomOverlay({}),
         infowindow = new kakao.maps.InfoWindow({ removable: true });
 
-    /**
-     * json 파싱 및 전처리
-     */
+    //json 파싱 및 전처리
     var locate = JSON.parse(JSON.stringify(mapData));
     var feat = locate.features;
     feat.forEach(element => {
@@ -64,15 +63,10 @@ window.onload = function () {
         areas.push(area);
     });
 
-    /**
-     * 구 별 인구 밀집도 데이터 
-     */
-
+    // 구 별 인구 밀집도 데이터 초기화
     populationArea = initPopulation();
 
-    /** 
-     * 패널 열고 닫기
-     */
+    // 패널 열고 닫기
     var info = document.querySelector("#information");
     var func = document.querySelector("#btn");
 
@@ -89,7 +83,6 @@ window.onload = function () {
     }
 
     // 전세/월세 라디오 버튼 선택
-
     var rentalType = document.querySelectorAll("input[name='rentalType']");
     rentalType.forEach((radio) => {
         radio.addEventListener("change", (e) => {
@@ -106,8 +99,7 @@ window.onload = function () {
                 showThirdMonthlyFee();
             }
         })
-    }
-    );
+    });
 
     // 슬라이드 바 변경 이벤트
     var safety = document.getElementById("myRange_safety");
@@ -153,15 +145,42 @@ window.onload = function () {
         modal.style.display = "none";
         modal.style.zIndex = 0;
     })
+
+
+    // 거주지 추천 결과에서 체크여부
+    var check_first = document.getElementById("check_first");
+    var check_second = document.getElementById("check_second");
+    var check_third = document.getElementById("check_third");
+    var check_first_info = document.getElementById("check_first_info");
+    var check_second_info = document.getElementById("check_second_info");
+    var check_third_info = document.getElementById("check_third_info");
+
+    check_first.addEventListener("change", function () {
+        check_first_info.checked = check_first.checked;
+    });
+    check_second.addEventListener("change", function () {
+        check_second_info.checked = check_second.checked;
+    });
+    check_third.addEventListener("change", function () {
+        check_third_info.checked = check_third.checked;
+    });
+    check_first_info.addEventListener("change", function () {
+        check_first.checked = check_first_info.checked;
+    });
+    check_second_info.addEventListener("change", function () {
+        check_second.checked = check_second_info.checked;
+    });
+    check_third_info.addEventListener("change", function () {
+        check_third.checked = check_third_info.checked;
+    });
 }
+// window.onload 끝
 
 function displayArea(area, population, isRecommend) {
-    // 다각형을 생성합니다 
     var polygon = new kakao.maps.Polygon({
-        map: map, // 다각형을 표시할 지도 객체
+        map: map,
         path: area.path,
         strokeWeight: 2,
-        // strokeColor: 'rgba(11, 94, 215, 0.50)',
         strokeColor: isRecommend ? population.color : "rgba(0,0,0,0.3)",
         strokeOpacity: 0.8,
         fillColor: isRecommend ? population.color : "rgba(255,255,255,0.1)",
@@ -172,7 +191,7 @@ function displayArea(area, population, isRecommend) {
 
     if (isRecommend) {
         kakao.maps.event.addListener(polygon, 'mouseover', function () {
-            polygon.setOptions({ strokeWeight: 5, strokeColor: "rgba(255, 0, 0, 1)" });//, fillColor: "rgba(255, 255, 255, 0)" });
+            polygon.setOptions({ strokeWeight: 5, strokeColor: "rgba(255, 0, 0, 1)" });
         });
 
         kakao.maps.event.addListener(polygon, 'mouseout', function () {
@@ -237,7 +256,6 @@ function showResult() {
     document.getElementById("recommend_third").style.display = "block";
     document.getElementById("recommend_third_info").style.display = "none";
 
-
     var rand = [];
     recommendIdx = [];
     clearInterval(polygon_interval);
@@ -294,7 +312,6 @@ function showResult() {
 }
 
 function intervalFunc() {
-    // 추천 결과 변경 시 다른 폴리곤에 적용되도록 수정해야함
     if (polygons[recommendIdx[0]].Eb[0].strokeColor == "none") {
         polygons[recommendIdx[0]].setOptions({ strokeColor: "rgba(255,0,0,1)" });
         polygons[recommendIdx[1]].setOptions({ strokeColor: "rgba(255,0,0,1)" });
@@ -367,39 +384,93 @@ function showThirdMonthlyFee() {
 
 // 상세비교창 띄우기
 function showComparison() {
-    // 선택한 거주지가 1개 이상이면 보이도록 아니면 alert();
-    var modal = document.querySelector(".modal");
-    modal.style.display = "flex";
-    modal.style.zIndex = 2;
+    var check_first = document.getElementById("check_first");
+    var check_second = document.getElementById("check_second");
+    var check_third = document.getElementById("check_third");
+
+    var isChecked = [check_first.checked, check_second.checked, check_third.checked];
+    var cnt = 0;
+
+    isChecked.forEach(e => {
+        if (e) {
+            cnt++;
+        }
+    });
+    var increaseLeft = 100 / cnt;
+
+    //선택된 구 개수에 따라서 그래프 위치 조정
+    if (cnt == 0) {
+        alert("1개 이상의 구를 선택해주세요");
+        return;
+    } else if (cnt == 1) {
+        $(".graph_bar").each((index, element) => {
+            element.style.left = "47.5%";
+        });
+    } else if (cnt == 2) {
+        $(".graph_bar").each((index, element) => {
+            element.style.left = "45%";
+        });
+    } else {
+        $(".graph_bar").each((index, element) => {
+            element.style.left = "42.5%";
+        });
+    }
 
     var recommend_first_name = $("#recommend_first_result").text();
     var recommend_second_name = $("#recommend_second_result").text();
     var recommend_third_name = $("#recommend_third_result").text();
+    var recommend_names = [recommend_first_name, recommend_second_name, recommend_third_name];
 
-    // 그래프의 구 이름 전체 초기화
-    $(".label_gu1").each((index, element) => {
-        element.innerText = recommend_first_name;
-    });
+    var orders = ["first", "second", "third"];
 
-    $(".label_gu2").each((index, element) => {
-        element.innerText = recommend_second_name;
-    });
+    // 체크박스 선택에 따른 동적 화면 변경
+    var preLeft = -increaseLeft;
+    for (var i = 0; i < 3; i++) {
+        var wraps = document.querySelectorAll("." + orders[i] + "_wrap");
 
-    $(".label_gu3").each((index, element) => {
-        element.innerText = recommend_third_name;
-    });
+        if (isChecked[i]) {
+            preLeft += increaseLeft;
+            $("." + orders[i] + "_wrap").each((index, div) => {
+                div.style.width = increaseLeft + "%";
+                div.style.left = preLeft + "%";
+                div.style.display = "block";
+            });
+
+            $(".label_gu" + (i + 1)).each((index, element) => {
+                element.innerText = recommend_names[i];
+                element.style.width = "100%";
+                element.display = "block";
+            });
+        } else {
+            $("." + orders[i] + "_wrap").each((index, div) => {
+                div.style.width = "0%";
+                div.style.display = "none";
+            });
+
+            $(".label_gu" + (i + 1)).each((index, element) => {
+                element.innerText = "";
+                element.style.width = "0%";
+                element.display = "none";
+            });
+
+        }
+    }
+
+    var modal = document.querySelector(".modal");
+    modal.style.display = "flex";
+    modal.style.zIndex = 2;
 
     // 그래프 길이 및 값 초기화
     for (var i = 0; i < guSpec.length; i++) {
-        if (guSpec[i].name === recommend_first_name) {
+        if (check_first.checked && guSpec[i].name === recommend_first_name) {
             graphInit(guSpec[i], 1);
             continue;
         }
-        if (guSpec[i].name === recommend_second_name) {
+        if (check_second.checked && guSpec[i].name === recommend_second_name) {
             graphInit(guSpec[i], 2);
             continue;
         }
-        if (guSpec[i].name === recommend_third_name) {
+        if (check_third.checked && guSpec[i].name === recommend_third_name) {
             graphInit(guSpec[i], 3);
             continue;
         }
@@ -423,8 +494,6 @@ function graphInit(spec, num) {
     document.getElementById("daiso_value" + num).innerText = spec.daiso;
     document.getElementById("polliceOffice_value" + num).innerText = spec.polliceOffice;
     document.getElementById("cctv_value" + num).innerText = spec.cctv;
-
-
 }
 
 /**

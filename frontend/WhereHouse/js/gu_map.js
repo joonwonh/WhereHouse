@@ -1,4 +1,6 @@
 var guInfo = [];
+
+//핫플레이스 캐러셀 데이터 초기화
 function guInfoInit() {
     guInfo.push({ name: "강동구", place_name: ["천호동 로데오거리", "성내동 카페거리", "성내동 강풀만화거리"] });
     guInfo.push({ name: "송파구", place_name: ["롯데월드 타워", "송리단길", "석촌호수"] });
@@ -25,9 +27,9 @@ function guInfoInit() {
     guInfo.push({ name: "용산구", place_name: ["한남동 카페거리", "이태원 거리", "남산서울타워"] });
     guInfo.push({ name: "중구", place_name: ["명동거리", "신당 포차거리", "을지로 골목"] });
     guInfo.push({ name: "종로구", place_name: ["경복궁", "인사동", "혜화 대학로"] });
-
 }
 
+//카카오맵 커스텀 오버레이
 var customOverlay;
 
 window.onload = function () {
@@ -41,18 +43,14 @@ window.onload = function () {
     var map = new kakao.maps.Map(container, options);
 
 
-    /**
-    * 구 선택에 따른 이벤트
-    */
+    // 구 선택에 따른 이벤트
     var selectGu = document.getElementById("gu_select");
     selectGu.addEventListener("change", () => {
         var selected_name = $("#gu_select option:selected").val();
         initInfo(selected_name);
     });
 
-    /**
-     * json 파싱 및 전처리
-     */
+    // json 파싱 및 전처리
     var locate = JSON.parse(JSON.stringify(mapData));
     var feat = locate.features;
     var areas = [];
@@ -68,29 +66,19 @@ window.onload = function () {
         areas.push(area);
     });
 
-    /**
-     * 구 별 인구 밀집도 데이터 
-     */
-
+    // 구 별 인구 밀집도 데이터 초기화
     var populationArea = initPopulation();
 
-    /**
-     * 화면에 다각형 생성
-     */
-
+    // 화면에 다각형 생성
     for (var i = 0, len = areas.length; i < len; i++) {
         displayArea(areas[i], populationArea[i]);
     }
 
-    // 다각형을 생상하고 이벤트를 등록하는 함수입니다
     function displayArea(area, population) {
-
-        // 다각형을 생성합니다 
         var polygon = new kakao.maps.Polygon({
-            map: map, // 다각형을 표시할 지도 객체
+            map: map,
             path: area.path,
             strokeWeight: 2,
-            // strokeColor: 'rgba(11, 94, 215, 0.50)',
             strokeColor: population.color,
             strokeOpacity: 0.8,
             fillColor: population.color,
@@ -98,7 +86,7 @@ window.onload = function () {
         });
 
         kakao.maps.event.addListener(polygon, 'mouseover', function () {
-            polygon.setOptions({ strokeWeight: 5, strokeColor: "rgba(255, 0, 0, 1)" });//, fillColor: "rgba(255, 255, 255, 0)" });
+            polygon.setOptions({ strokeWeight: 5, strokeColor: "rgba(255, 0, 0, 1)" });
         });
 
         kakao.maps.event.addListener(polygon, 'mouseout', function () {
@@ -106,7 +94,7 @@ window.onload = function () {
             polygon.setOptions({ fillColor: population.color });
         });
 
-        // 다각형에 click 이벤트를 등록하고 이벤트가 발생하면 다각형의 이름과 면적을 인포윈도우에 표시합니다 
+        // 다각형에 click 이벤트를 등록, 이벤트 시 커스텀 오버레이 표시 
         kakao.maps.event.addListener(polygon, 'click', function (mouseEvent) {
             var content = '<div class="info">'
                 + '<div class="info_title">' + population.name + '</div><hr>'
@@ -120,6 +108,7 @@ window.onload = function () {
                 + '<div class="info_content" id="info_safety">생활 안전 : <span id="info_safety_rank">1</span>위 / 25</div>'
                 + '<div class="info_content" id="info_dense">인구 밀집도 : <span id="info_dense_rank">1</span>위 / 25</div></div></div>';
 
+            // 기존 커스텀 오버레이 지우기
             if (customOverlay != null) {
                 customOverlay.setMap(null);
             }
@@ -142,9 +131,7 @@ window.onload = function () {
         });
     }
 
-    /** 
-     * 패널 열고 닫기
-     */
+    // 패널 열고 닫기
     var info = document.querySelector("#information");
     var func = document.querySelector("#btn");
 
@@ -161,7 +148,6 @@ window.onload = function () {
     }
 
     // 전세/월세 라디오 버튼 선택
-
     var rentalType = document.querySelectorAll("input[name='rentalType']");
     rentalType.forEach((radio) => {
         radio.addEventListener("change", (e) => {
@@ -178,8 +164,7 @@ window.onload = function () {
                 document.getElementById("hotPlace_wrap").style.top = "55%";
             }
         })
-    }
-    );
+    });
 
     // 인구밀집도 인덱스 열고 닫기
     var shame_info = document.querySelector("#population-shame-info");
