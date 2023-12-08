@@ -31,10 +31,10 @@ function initGuSpec() {
             cctv: Math.floor(Math.random() * 50) + 100,
         });
     })
-
 }
 
-
+//카카오맵 커스텀 오버레이
+var customOverlay;
 
 window.onload = function () {
     initGuSpec();
@@ -44,9 +44,7 @@ window.onload = function () {
         level: 8
     };
 
-    map = new kakao.maps.Map(container, options),
-        customOverlay = new kakao.maps.CustomOverlay({}),
-        infowindow = new kakao.maps.InfoWindow({ removable: true });
+    map = new kakao.maps.Map(container, options);
 
     //json 파싱 및 전처리
     var locate = JSON.parse(JSON.stringify(mapData));
@@ -202,22 +200,40 @@ function displayArea(area, population, isRecommend) {
         // 다각형에 click 이벤트를 등록하고 이벤트가 발생하면 다각형의 이름과 면적을 인포윈도우에 표시합니다 
         kakao.maps.event.addListener(polygon, 'click', function (mouseEvent) {
             var content = '<div class="info">'
-                + '<div class="info_title">' + population.name + '</div>'
+                + '<div id="info_close_wrap">'
+                + '<img src="../images/closeBtn.svg" alt="" srcset="" id="info_close_btn" onclick="infoClose()"></div>'
+                + '<div class="info_title">' + population.name + '</div><hr>'
                 + '<div class="info_rank">'
                 + '<div id="info_price_rank">'
-                + '<div class="info_content" id="info_charter">전세 : <span id="info_charter_rank">1</span>위 / 25</div>'
-                + '<div class="info_content" id="info_deposit">보증금 : <span id="info_deposit_rank">1</span>위 / 25</div>'
-                + '<div class="info_content" id="info_monthly">월세 : <span id="info_monthly_rank">1</span>위 / 25</div></div>'
+                + '<div class="info_content" id="info_charter">평균 전세금 : <span id="info_charter_rank">1</span>위 / 25</div>'
+                + '<div class="info_content" id="info_deposit">평균 보증금 : <span id="info_deposit_rank">1</span>위 / 25</div>'
+                + '<div class="info_content" id="info_monthly">평균 월세금 : <span id="info_monthly_rank">1</span>위 / 25</div></div>'
                 + '<div id="info_score">'
-                + '<div class="info_content" id="info_convenience">편의성 : <span id="info_conv_rank">1</span>위 / 25</div>'
-                + '<div class="info_content" id="info_safety">안전성 : <span id="info_safety_rank">1</span>위 / 25</div>'
-                + '<div class="info_content" id="info_dense">밀집도 : <span id="info_dense_rank">1</span>위 / 25</div></div></div>';
+                + '<div class="info_content" id="info_convenience">생활 편의 : <span id="info_conv_rank">1</span>위 / 25</div>'
+                + '<div class="info_content" id="info_safety">생활 안전 : <span id="info_safety_rank">1</span>위 / 25</div>'
+                + '<div class="info_content" id="info_dense">인구 밀집도 : <span id="info_dense_rank">1</span>위 / 25</div></div></div>';
 
-            infowindow.setContent(content);
-            infowindow.setPosition(mouseEvent.latLng);
-            infowindow.setMap(map);
+            // 기존 커스텀 오버레이 지우기
+            if (customOverlay != null) {
+                infoClose();
+            }
+
+
+            customOverlay = new kakao.maps.CustomOverlay({
+                content: content,
+                map: map,
+                position: mouseEvent.latLng
+            });
+
+            customOverlay.setMap(map);;
         });
     }
+}
+/**
+ * 커스텀 오버레이 정보창 닫기
+ */
+function infoClose() {
+    customOverlay.setMap(null);
 }
 
 // 전세 선택 시 보여줄 화면
@@ -398,7 +414,7 @@ function showComparison() {
     });
     var increaseLeft = 100 / cnt;
 
-    //선택된 구 개수에 따라서 그래프 위치 조정
+    //선택된 구 개수에 따라서 그래프
     if (cnt == 0) {
         alert("1개 이상의 구를 선택해주세요");
         return;
@@ -416,6 +432,7 @@ function showComparison() {
         });
     }
 
+
     var recommend_first_name = $("#recommend_first_result").text();
     var recommend_second_name = $("#recommend_second_result").text();
     var recommend_third_name = $("#recommend_third_result").text();
@@ -426,6 +443,7 @@ function showComparison() {
     // 체크박스 선택에 따른 동적 화면 변경
     var preLeft = -increaseLeft;
     for (var i = 0; i < 3; i++) {
+        // initGraphWrap(isChecked[i], i, recommend_names[i], 0, increaseLeft);
         var wraps = document.querySelectorAll("." + orders[i] + "_wrap");
 
         if (isChecked[i]) {
@@ -475,6 +493,10 @@ function showComparison() {
             continue;
         }
     }
+}
+
+function initGraphWrap(check_value, idx, recommend_name, preLeft, increaseLeft) {
+
 }
 
 function graphInit(spec, num) {
