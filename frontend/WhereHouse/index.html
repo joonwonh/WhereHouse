@@ -26,26 +26,41 @@
 <body class="bg-light">
 
     <!-- 네비 바 -->
-    <header class="bg-white text-black">
-        <nav class="navbar navbar-expand-lg fixed-top bg-white text-black">
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top bg-light">
             <div class="container-fluid">
-                <a id="logo" class="navbar-brand ms-5" href="index.html">Where House</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a id="nav_btn_gu_map" class="nav-link me-5" href="/pages/main.html">지 도</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="nav_btn_house_rec" class="nav-link me-5" href="/pages/main.html">거주지 추천</a>
-                        </li>
+              <a id="logo" class="navbar-brand ms-4 py-3" href="index.html">Where House</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end me-4" id="navbarScroll">
+                <ul class="navbar-nav navbar-nav-scroll" style="--bs-scroll-height: 300px;">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle me-5" id="nav_btn_house_rec" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      거주지 추천
+                    </a>
+                    <ul class="dropdown-menu me-5 dropdown-menu-end text-end" id="nav_btn_house_rec_dropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">드롭다운 메뉴 설명(?)</a></li>
                     </ul>
-                </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle me-4" id="nav_btn_gu_map" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      지도
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end me-4 text-end" id="nav_btn_gu_map_dropdown">
+                      <li><a class="dropdown-item" href="#">지역구 지도</a></li>
+                      <li><a class="dropdown-item" href="#">상세 지도</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">드롭다운 메뉴 설명(?)</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
             </div>
-        </nav>
+          </nav>
     </header>
 
     <!-- 캐러셀 -->
