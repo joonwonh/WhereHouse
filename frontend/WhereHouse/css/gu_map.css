@@ -83,7 +83,7 @@ body {
     margin-right: 10px;
     text-align: center;
     height: 50px;
-    line-height: 60px;
+    line-height:50px;
 }
 
 .gu-choose select {
@@ -106,21 +106,28 @@ body {
     margin-left: 12px;
     margin-right: 10px;
     text-align: center;
-    line-height: 50px;
-    font-size: 17px;
+    line-height: 40px;
     display: none;
 }
+#select_need p  {
+    line-height: 50px;
+    margin: 0;
+    font-size: 18px;
+}
+
 
 #charter,
 #monthly {
     height: 40px;
+    font-size: 15px;
 }
+
 
 #check_need {
     width: 100%;
     display: flex;
     font-size: 17px;
-    justify-content: space-around;
+
 }
 
 /* 평균 전세 가격 */

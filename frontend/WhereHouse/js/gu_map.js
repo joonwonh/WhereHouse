@@ -109,16 +109,16 @@ window.onload = function () {
         // 다각형에 click 이벤트를 등록하고 이벤트가 발생하면 다각형의 이름과 면적을 인포윈도우에 표시합니다 
         kakao.maps.event.addListener(polygon, 'click', function (mouseEvent) {
             var content = '<div class="info">'
-                + '<div class="info_title">' + population.name + '</div>'
+                + '<div class="info_title">' + population.name + '</div><hr>'
                 + '<div class="info_rank">'
                 + '<div id="info_price_rank">'
-                + '<div class="info_content" id="info_charter">전세 : <span id="info_charter_rank">1</span>위 / 25</div>'
-                + '<div class="info_content" id="info_deposit">보증금 : <span id="info_deposit_rank">1</span>위 / 25</div>'
-                + '<div class="info_content" id="info_monthly">월세 : <span id="info_monthly_rank">1</span>위 / 25</div></div>'
+                + '<div class="info_content" id="info_charter">평균 전세금 : <span id="info_charter_rank">1</span>위 / 25</div>'
+                + '<div class="info_content" id="info_deposit">평균 보증금 : <span id="info_deposit_rank">1</span>위 / 25</div>'
+                + '<div class="info_content" id="info_monthly">평균 월세금 : <span id="info_monthly_rank">1</span>위 / 25</div></div>'
                 + '<div id="info_score">'
-                + '<div class="info_content" id="info_convenience">편의성 : <span id="info_conv_rank">1</span>위 / 25</div>'
-                + '<div class="info_content" id="info_safety">안전성 : <span id="info_safety_rank">1</span>위 / 25</div>'
-                + '<div class="info_content" id="info_dense">밀집도 : <span id="info_dense_rank">1</span>위 / 25</div></div></div>';
+                + '<div class="info_content" id="info_convenience">생활 편의 : <span id="info_conv_rank">1</span>위 / 25</div>'
+                + '<div class="info_content" id="info_safety">생활 안전 : <span id="info_safety_rank">1</span>위 / 25</div>'
+                + '<div class="info_content" id="info_dense">인구 밀집도 : <span id="info_dense_rank">1</span>위 / 25</div></div></div>';
 
             if (customOverlay != null) {
                 customOverlay.setMap(null);
