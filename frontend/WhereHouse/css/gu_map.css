@@ -83,7 +83,7 @@ body {
     margin-right: 10px;
     text-align: center;
     height: 50px;
-    line-height:50px;
+    line-height: 50px;
 }
 
 .gu-choose select {
@@ -109,7 +109,8 @@ body {
     line-height: 40px;
     display: none;
 }
-#select_need p  {
+
+#select_need p {
     line-height: 50px;
     margin: 0;
     font-size: 18px;
@@ -118,10 +119,12 @@ body {
 
 #charter,
 #monthly {
-    height: 40px;
-    font-size: 15px;
+    margin-left: 62px;
 }
 
+#monthly-deposit    {
+    text-align: left;
+}
 
 #check_need {
     width: 100%;
@@ -328,8 +331,8 @@ body {
     display: none;
 }
 
-#hotPlace_wrap span {
-    font-size: 1.7rem;
+#hotPlace_title span {
+    font-size: 1.9rem;
 }
 
 #hotPlace_title {
@@ -341,7 +344,8 @@ body {
 #carousel-hotplace {
     position: absolute;
     width: 100%;
-    height: 80%;
+    height: 70%;
+    opacity: 0.9;
     top: 20%;
     margin: 0;
 }
@@ -367,6 +371,16 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
+    padding: 0;
+    border-radius: 40px;
+}
+#carousel-caption1,#carousel-caption2,#carousel-caption3  {
+    font-size: 1.7rem;
+    padding: 12px;
+    line-height: 10%;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 40px;
+
 }
 
 #logo-img img {
