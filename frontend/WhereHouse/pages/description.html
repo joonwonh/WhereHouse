@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="">
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <title>WhereHouse</title>
+</head>
+
+<body>
+    <!-- 네비 바 -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top bg-light border-bottom">
+            <div class="container-fluid">
+                <a id="logo" class="navbar-brand ms-4 py-3" href="index.html">Where House</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end me-4" id="navbarScroll">
+                    <ul class="navbar-nav navbar-nav-scroll" style="--bs-scroll-height: 300px;">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle me-5" id="nav_btn_house_rec" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                거주지 추천
+                            </a>
+                            <ul class="dropdown-menu me-5 dropdown-menu-end text-end" id="nav_btn_house_rec_dropdown">
+                                <li><a class="dropdown-item" href="pages/house_rec.html">직접 입력 추천</a></li>
+                                <li><a class="dropdown-item" href="pages/house_rec.html">가격 중심 추천</a></li>
+                                <li><a class="dropdown-item" href="pages/house_rec.html">생활 안전 중심 추천</a></li>
+                                <li><a class="dropdown-item" href="pages/house_rec.html">생활 편의 중심 추천</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle me-4" id="nav_btn_gu_map" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                지도
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end me-4 text-end" id="nav_btn_gu_map_dropdown">
+                                <li><a class="dropdown-item" href="pages/main.html">지역구 지도</a></li>
+                                <li><a class="dropdown-item" href="#">상세 지도</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+</body>
+
+</html>
