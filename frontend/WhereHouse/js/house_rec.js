@@ -48,9 +48,7 @@ window.onload = function () {
         customOverlay = new kakao.maps.CustomOverlay({}),
         infowindow = new kakao.maps.InfoWindow({ removable: true });
 
-    /**
-     * json 파싱 및 전처리
-     */
+    //json 파싱 및 전처리
     var locate = JSON.parse(JSON.stringify(mapData));
     var feat = locate.features;
     feat.forEach(element => {
@@ -65,15 +63,10 @@ window.onload = function () {
         areas.push(area);
     });
 
-    /**
-     * 구 별 인구 밀집도 데이터 
-     */
-
+    // 구 별 인구 밀집도 데이터 초기화
     populationArea = initPopulation();
 
-    /** 
-     * 패널 열고 닫기
-     */
+    // 패널 열고 닫기
     var info = document.querySelector("#information");
     var func = document.querySelector("#btn");
 
@@ -90,7 +83,6 @@ window.onload = function () {
     }
 
     // 전세/월세 라디오 버튼 선택
-
     var rentalType = document.querySelectorAll("input[name='rentalType']");
     rentalType.forEach((radio) => {
         radio.addEventListener("change", (e) => {
@@ -107,8 +99,7 @@ window.onload = function () {
                 showThirdMonthlyFee();
             }
         })
-    }
-    );
+    });
 
     // 슬라이드 바 변경 이벤트
     var safety = document.getElementById("myRange_safety");
@@ -183,16 +174,13 @@ window.onload = function () {
         check_third.checked = check_third_info.checked;
     });
 }
-
 // window.onload 끝
 
 function displayArea(area, population, isRecommend) {
-    // 다각형을 생성합니다 
     var polygon = new kakao.maps.Polygon({
-        map: map, // 다각형을 표시할 지도 객체
+        map: map,
         path: area.path,
         strokeWeight: 2,
-        // strokeColor: 'rgba(11, 94, 215, 0.50)',
         strokeColor: isRecommend ? population.color : "rgba(0,0,0,0.3)",
         strokeOpacity: 0.8,
         fillColor: isRecommend ? population.color : "rgba(255,255,255,0.1)",
@@ -203,7 +191,7 @@ function displayArea(area, population, isRecommend) {
 
     if (isRecommend) {
         kakao.maps.event.addListener(polygon, 'mouseover', function () {
-            polygon.setOptions({ strokeWeight: 5, strokeColor: "rgba(255, 0, 0, 1)" });//, fillColor: "rgba(255, 255, 255, 0)" });
+            polygon.setOptions({ strokeWeight: 5, strokeColor: "rgba(255, 0, 0, 1)" });
         });
 
         kakao.maps.event.addListener(polygon, 'mouseout', function () {
@@ -267,7 +255,6 @@ function showResult() {
     document.getElementById("recommend_second_info").style.display = "none";
     document.getElementById("recommend_third").style.display = "block";
     document.getElementById("recommend_third_info").style.display = "none";
-
 
     var rand = [];
     recommendIdx = [];
@@ -411,6 +398,7 @@ function showComparison() {
     });
     var increaseLeft = 100 / cnt;
 
+    //선택된 구 개수에 따라서 그래프 위치 조정
     if (cnt == 0) {
         alert("1개 이상의 구를 선택해주세요");
         return;
@@ -428,7 +416,6 @@ function showComparison() {
         });
     }
 
-
     var recommend_first_name = $("#recommend_first_result").text();
     var recommend_second_name = $("#recommend_second_result").text();
     var recommend_third_name = $("#recommend_third_result").text();
@@ -439,7 +426,6 @@ function showComparison() {
     // 체크박스 선택에 따른 동적 화면 변경
     var preLeft = -increaseLeft;
     for (var i = 0; i < 3; i++) {
-        // initGraphWrap(isChecked[i], i, recommend_names[i], 0, increaseLeft);
         var wraps = document.querySelectorAll("." + orders[i] + "_wrap");
 
         if (isChecked[i]) {
@@ -455,9 +441,6 @@ function showComparison() {
                 element.style.width = "100%";
                 element.display = "block";
             });
-
-
-
         } else {
             $("." + orders[i] + "_wrap").each((index, div) => {
                 div.style.width = "0%";
@@ -492,10 +475,6 @@ function showComparison() {
             continue;
         }
     }
-}
-
-function initGraphWrap(check_value, idx, recommend_name, preLeft, increaseLeft) {
-
 }
 
 function graphInit(spec, num) {
