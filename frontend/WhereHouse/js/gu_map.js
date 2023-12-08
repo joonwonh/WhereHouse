@@ -97,6 +97,8 @@ window.onload = function () {
         // 다각형에 click 이벤트를 등록, 이벤트 시 커스텀 오버레이 표시 
         kakao.maps.event.addListener(polygon, 'click', function (mouseEvent) {
             var content = '<div class="info">'
+                + '<div id="info_close_wrap">'
+                + '<img src="../images/closeBtn.svg" alt="" srcset="" id="info_close_btn" onclick="infoClose()"></div>'
                 + '<div class="info_title">' + population.name + '</div><hr>'
                 + '<div class="info_rank">'
                 + '<div id="info_price_rank">'
@@ -110,7 +112,7 @@ window.onload = function () {
 
             // 기존 커스텀 오버레이 지우기
             if (customOverlay != null) {
-                customOverlay.setMap(null);
+                infoClose();
             }
 
             for (var i = 0; i < selectGu.options.length; i++) {
@@ -185,6 +187,13 @@ window.onload = function () {
             shame_info.style.display = "block";
         }
     }
+}
+
+/**
+ * 커스텀 오버레이 정보창 닫기
+ */
+function infoClose() {
+    customOverlay.setMap(null);
 }
 
 /**
