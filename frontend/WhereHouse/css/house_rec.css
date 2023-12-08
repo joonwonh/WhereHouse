@@ -130,7 +130,7 @@ body {
     margin-left: 12px;
     margin-right: 10px;
     text-align: center;
-    height: 200px;
+    height: auto;
     line-height: 50px;
 }
 
@@ -324,7 +324,6 @@ body {
 }
 
 /* 안정성 편의성 텍스트*/
-
 #average-score-inner-text {
     position: absolute;
     margin: 0;
@@ -345,4 +344,12 @@ body {
     left: 50%;
     width: 50%;
     height: 100%;
+}
+
+/* 안전, 편의 슬라이드바 설명 */
+#descript_convenience,
+#descript_safety {
+    padding-left: 15%;
+    text-align: left;
+    color: #888686;
 }
