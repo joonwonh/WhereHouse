@@ -53,6 +53,13 @@
     margin-left: auto;
     /* 나머지 요소를 오른쪽으로 정렬 */
 }
+#nav_btn_house_rec, #nav_btn_gu_map  {
+    font-family: 'TheJamsil5Bold';
+    font-size: 1.3rem;
+}
+#nav_btn_house_rec_dropdown, #nav_btn_gu_map_dropdown  {
+    font-family: 'TheJamsil5Bold';
+}
 
 .container {
     margin: 0;
