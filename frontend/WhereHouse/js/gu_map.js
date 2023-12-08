@@ -1,5 +1,4 @@
 var guInfo = [];
-
 function guInfoInit() {
     guInfo.push({ name: "강동구", place_name: ["천호동 로데오거리", "성내동 카페거리", "성내동 강풀만화거리"] });
     guInfo.push({ name: "송파구", place_name: ["롯데월드 타워", "송리단길", "석촌호수"] });
@@ -29,6 +28,8 @@ function guInfoInit() {
 
 }
 
+var customOverlay;
+
 window.onload = function () {
     guInfoInit();
     var container = document.getElementById("map");
@@ -37,9 +38,7 @@ window.onload = function () {
         level: 8
     };
 
-    var map = new kakao.maps.Map(container, options),
-        customOverlay = new kakao.maps.CustomOverlay({}),
-        infowindow = new kakao.maps.InfoWindow({ removable: true });
+    var map = new kakao.maps.Map(container, options);
 
 
     /**
@@ -121,6 +120,10 @@ window.onload = function () {
                 + '<div class="info_content" id="info_safety">안전성 : <span id="info_safety_rank">1</span>위 / 25</div>'
                 + '<div class="info_content" id="info_dense">밀집도 : <span id="info_dense_rank">1</span>위 / 25</div></div></div>';
 
+            if (customOverlay != null) {
+                customOverlay.setMap(null);
+            }
+
             for (var i = 0; i < selectGu.options.length; i++) {
                 if (selectGu.options[i].value === population.name) {
                     selectGu.options[i].selected = true;
@@ -129,9 +132,13 @@ window.onload = function () {
                 }
             }
 
-            infowindow.setContent(content);
-            infowindow.setPosition(mouseEvent.latLng);
-            infowindow.setMap(map);
+            customOverlay = new kakao.maps.CustomOverlay({
+                content: content,
+                map: map,
+                position: mouseEvent.latLng
+            });
+
+            customOverlay.setMap(map);
         });
     }
 
