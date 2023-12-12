@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
@@ -62,14 +62,21 @@
             </div>
             <div id="select_need">
                 <p>평균 전세 / 월세 가격</p>
-                <div id="check_need">
+                <div class="btn-group check_need" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" name="rentalType" class="btn-check" id="btn_charter" autocomplete="off">
+                    <label for="btn_charter" class="btn btn-outline-primary">전세</label>
+                    <div style="width: 40px;"></div>
+                    <input type="radio" name="rentalType" class="btn-check" id="btn_monthly" autocomplete="off" checked>
+                    <label for="btn_monthly" class="btn btn-outline-primary">월세</label>
+                </div>
+                <!-- <div id="check_need">
                     <div id="charter">
                         <input class="btn btn-primary" name="rentalType" type="button" value="전세">
                     </div>
                     <div id="monthly">
                         <input type="button" class="btn btn-primary" checked name="rentalType" value="월세">
                     </div>
-                </div>
+                </div> -->
                 <div id="average-charter">
                     <div id="charter-deposit">
                         전세금 : <span id="charter-deposit-fee">ex</span> 만원

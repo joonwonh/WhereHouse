@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="/json/mapData.json" type="text/javascript"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d24dfa7488d79e7f12995de4945ddcfa">
     </script>
@@ -228,14 +229,22 @@
                 </div>
                 <div class="select_need">
                     <p>전세 / 월세</p>
-                    <div id="check_need">
+                    <div class="btn-group check_need" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" name="rentalType" class="btn-check" id="btn_charter" autocomplete="off">
+                        <label for="btn_charter" class="btn btn-outline-primary">전세</label>
+                        <div style="width: 40px;"></div>
+                        <input type="radio" name="rentalType" class="btn-check" id="btn_monthly" autocomplete="off"
+                            checked>
+                        <label for="btn_monthly" class="btn btn-outline-primary">월세</label>
+                    </div>
+                    <!-- <div id="check_need">
                         <div id="charter">
                             <input type="radio" name="rentalType" value="charter" onclick="showCharter()">전세
                         </div>
                         <div id="monthly">
                             <input type="radio" checked name="rentalType" value="monthly" onclick="showMonthly()">월세
                         </div>
-                    </div>
+                    </div> -->
 
                     <div id="rentInput">
                         <!-- 전세를 선택한 경우 -->
@@ -274,8 +283,8 @@
                             id="convenience_f"> 0 단계</span>
                     </div>
                     <div id="descript">
-                        <div id="descript_convenience">1</div>
-                        <div id="descript_safety">1</div>
+                        <div id="descript_convenience"></div>
+                        <div id="descript_safety"></div>
                     </div>
                 </div>
 
