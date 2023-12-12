@@ -120,6 +120,9 @@ body {
     display: block;
 }
 
+.inputPrice {
+    text-align: right;
+}
 
 /* 치안/편의 선택 */
 .safety_convenience {
