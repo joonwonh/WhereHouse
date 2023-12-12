@@ -85,7 +85,7 @@ window.onload = function () {
     rentalType.forEach((radio) => {
         radio.addEventListener("change", (e) => {
             var current = e.currentTarget;
-            if (current.value === "charter") {
+            if (current.getAttribute("id") === "btn_charter") {
                 showCharter();
                 showFirstCharterFee();
                 showSecondCharterFee();

@@ -154,7 +154,7 @@ window.onload = function () {
     rentalType.forEach((radio) => {
         radio.addEventListener("change", (e) => {
             var current = e.currentTarget;
-            if (current.value === "charter") {
+            if (current.getAttribute("id") === "btn_charter") {
                 document.getElementById("select_need").style.height = "17%";
                 document.getElementById("average-charter").style.display = "block";
                 document.getElementById("average-monthly").style.display = "none";
