@@ -146,6 +146,13 @@
     line-height: 30px;
     color: #7b7b7b;
 }
+/* 종합점수 보러가는 탭 */
+#show_score a {
+    text-decoration: none; 
+    color: inherit;
+    font-size: 1.7rem;
+}
+
 
 /* 두번 째 사이트 설명 */
 #secondPage_text {

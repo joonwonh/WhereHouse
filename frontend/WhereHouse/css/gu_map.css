@@ -95,7 +95,9 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
-
+.gu-choose select:focus {
+    outline: none;
+}
 /* 라디오 버튼 div */
 #select_need {
     width: 300px;
@@ -375,7 +377,7 @@ body {
     border-radius: 40px;
 }
 #carousel-caption1,#carousel-caption2,#carousel-caption3  {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     padding: 12px;
     line-height: 10%;
     background-color: rgba(0, 0, 0, 0.6);
