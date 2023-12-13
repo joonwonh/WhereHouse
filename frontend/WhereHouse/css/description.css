@@ -6,6 +6,10 @@
 }
 #sidenav    {
     opacity: 0;
+    color: white;
+    text-align: center;
+    background-color: rgba(0,0,0,0.5);
+    line-height: 10%;
 }
 section {
     font-family: 'TheJamsil5Bold';

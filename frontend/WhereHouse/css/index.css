@@ -60,6 +60,10 @@
 #nav_btn_house_rec_dropdown, #nav_btn_gu_map_dropdown  {
     font-family: 'TheJamsil5Bold';
 }
+#navbar_hr   {
+    margin: 3%;
+}
+
 
 .container {
     margin: 0;
