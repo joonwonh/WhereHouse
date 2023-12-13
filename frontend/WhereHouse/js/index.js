@@ -7,7 +7,7 @@ window.onload = function () {
       }
     })
   })
-  let img = document.querySelectorAll("#ani_left_to_right");
+  let img = document.querySelectorAll(".ani_left_to_right");
   observer.observe(img[0]); // html요소 감시
   observer.observe(img[1]);
   observer.observe(img[2]);
@@ -22,7 +22,7 @@ window.onload = function () {
       }
     })
   })
-  let img_content = document.querySelectorAll("#img_content");
+  let img_content = document.querySelectorAll(".img_content");
   observers.observe(img_content[0]);  // html요소 감시
   observers.observe(img_content[1]);
   observers.observe(img_content[2]);

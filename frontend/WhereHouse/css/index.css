@@ -105,12 +105,12 @@
 }
 
 /* 첫번 째 사이트 설명 */
-#ani_left_to_right {
+.ani_left_to_right {
     opacity: 0;
     transition: all 2.5s;
 }
 
-#img_content {
+.img_content {
     margin-top: 48px;
     transition: all 2.5s;
 }
