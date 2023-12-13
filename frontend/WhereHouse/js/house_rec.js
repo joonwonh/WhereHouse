@@ -26,7 +26,6 @@ function initGuSpec() {
             convenienceStore: Math.floor(Math.random() * 50) + 100,
             cafe: Math.floor(Math.random() * 50) + 100,
             cinema: Math.floor(Math.random() * 50) + 100,
-            daiso: Math.floor(Math.random() * 50) + 100,
             polliceOffice: Math.floor(Math.random() * 50) + 100,
             cctv: Math.floor(Math.random() * 50) + 100,
         });
@@ -502,20 +501,18 @@ function initGraphWrap(check_value, idx, recommend_name, preLeft, increaseLeft) 
 }
 
 function graphInit(spec, num) {
-    var graph_name = ["conv_bar", "cafe_bar", "cinema_bar", "daiso_bar", "polliceOffice_bar", "cctv_bar"];
-    var graph_value = ["conv_value", "cafe_value", "cinema_value", "daiso_value", "polliceOffice_value", "cctv_value"];
+    var graph_name = ["conv_bar", "cafe_bar", "cinema_bar", "polliceOffice_bar", "cctv_bar"];
+    var graph_value = ["conv_value", "cafe_value", "cinema_value", "polliceOffice_value", "cctv_value"];
 
     document.getElementById("conv_bar" + num).style.height = spec.convenienceStore + "px";
     document.getElementById("cafe_bar" + num).style.height = spec.cafe + "px";
     document.getElementById("cinema_bar" + num).style.height = spec.cinema + "px";
-    document.getElementById("daiso_bar" + num).style.height = spec.daiso + "px";
     document.getElementById("polliceOffice_bar" + num).style.height = spec.polliceOffice + "px";
     document.getElementById("cctv_bar" + num).style.height = spec.cctv + "px";
 
     document.getElementById("conv_value" + num).innerText = spec.convenienceStore;
     document.getElementById("cafe_value" + num).innerText = spec.cafe;
     document.getElementById("cinema_value" + num).innerText = spec.cinema;
-    document.getElementById("daiso_value" + num).innerText = spec.daiso;
     document.getElementById("polliceOffice_value" + num).innerText = spec.polliceOffice;
     document.getElementById("cctv_value" + num).innerText = spec.cctv;
 }
