@@ -53,15 +53,24 @@
     margin-left: auto;
     /* 나머지 요소를 오른쪽으로 정렬 */
 }
-#nav_btn_house_rec, #nav_btn_gu_map  {
+
+#nav_btn_house_rec,
+#nav_btn_gu_map {
     font-family: 'TheJamsil5Bold';
     font-size: 1.3rem;
 }
-#nav_btn_house_rec_dropdown, #nav_btn_gu_map_dropdown  {
+
+#nav_btn_house_rec_dropdown,
+#nav_btn_gu_map_dropdown {
     font-family: 'TheJamsil5Bold';
 }
-#navbar_hr   {
+
+#navbar_hr {
     margin: 3%;
+}
+
+.nav_item:hover {
+    color: red;
 }
 
 
@@ -114,7 +123,7 @@
     transition: all 2.5s;
 }
 
-.img_content {
+.img_content img {
     margin-top: 48px;
     transition: all 2.5s;
 }
@@ -150,11 +159,25 @@
     line-height: 30px;
     color: #7b7b7b;
 }
+
 /* 종합점수 보러가는 탭 */
 #show_score a {
-    text-decoration: none; 
-    color: inherit;
-    font-size: 1.7rem;
+    font-family: 'TheJamsil5Bold';
+    text-decoration: none;
+    color: rgb(0, 140, 255);
+    font-size: 2.7rem;
+}
+
+#trans_descript {
+    width: 400px;
+    height: 80px;
+    font-size: 2.7rem;
+    line-height: 70px;
+    border: none;
+}
+
+#trans_descript:hover {
+    color: white;
 }
 
 
