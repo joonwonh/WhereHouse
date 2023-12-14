@@ -1,5 +1,5 @@
 window.onload = function () {
-  // 이미지 opacity
+  //이미지 opacity
   let observer = new IntersectionObserver((e) => {
     e.forEach((content) => {
       if (content.isIntersecting) {
@@ -54,10 +54,54 @@ window.onload = function () {
   btn_gu_map.addEventListener("click", () => initStorage("gu_map"));
   btn_house_rec.addEventListener("click", () => initStorage("house_rec"));
   btn_rec.addEventListener("click", () => initStorage("house_rec"));
-}
+
 
 function initStorage(target) {
   localStorage.removeItem("target");
   localStorage.setItem("target", JSON.stringify(target));
 }
 
+// 추천 설명 창 번호 대로 숨기기
+
+var first_intro_btn = document.getElementById("first_intro_btn");
+var second_intro_btn = document.getElementById("second_intro_btn");
+var third_intro_btn = document.getElementById("third_intro_btn");
+var fourth_intro_btn = document.getElementById("fourth_intro_btn");
+var fifth_intro_btn = document.getElementById("fifth_intro_btn");
+
+var first_intro = document.getElementById("first_rec_intro");
+var second_intro = document.getElementById("second_rec_intro");
+var third_intro = document.getElementById("third_rec_intro");
+var fourth_intro = document.getElementById("fourth_rec_intro");
+var fifth_intro = document.getElementById("fifth_rec_intro");
+
+first_intro_btn.addEventListener("click", firstIntroduce);
+second_intro_btn.addEventListener("click", secondIntroduce);
+third_intro_btn.addEventListener("click", thirdIntroduce);
+fourth_intro_btn.addEventListener("click", fourthIntroduce);
+fifth_intro_btn.addEventListener("click", fifthIntroduce);
+
+function firstIntroduce() {
+  first_intro.style.display = "block";
+  second_intro.style.display = "none";
+  third_intro.style.display = "none";
+}
+function secondIntroduce() {
+  first_intro.style.display = "none";
+  second_intro.style.display = "block";
+  third_intro.style.display = "none";
+}
+function thirdIntroduce() {
+  first_intro.style.display = "none";
+  second_intro.style.display = "none";
+  third_intro.style.display = "block";
+}
+function fourthIntroduce() {
+  fourth_intro.style.display = "block";
+  fifth_intro.style.display = "none";
+}
+function fifthIntroduce() {
+  fourth_intro.style.display = "none";
+  fifth_intro.style.display = "block";
+}
+}

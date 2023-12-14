@@ -93,22 +93,38 @@
     cursor: pointer;
 }
 
-.carousel-inner {
+.main-carousel {
     width: auto;
     height: 100vh;
     /* height: 860px; 이미지 높이 변경 */
 }
 
-.carousel-item {
+.main-carousel-img {
     width: auto;
     height: 100%;
 }
-
-.d-block {
+ .d-block {
     display: block;
     width: auto;
     height: 100%;
 }
+
+/* 추천 버튼  1 2 3 */
+.card-body {
+    text-align: center;
+    font-family: 'TheJamsil5Bold';
+    padding: 0;
+}
+
+.card-title a   {
+    text-decoration: none;
+    font-size: 1.7rem;
+    color: rgba(0,0,0,0.6);
+}
+.card-title a:hover {
+    color: rgba(0,0,0);
+}
+
 
 #inner_text h1 {
     font-family: 'MBC1961GulimM';
@@ -117,16 +133,26 @@
     font-size: 70px;
 }
 
+
+/* 거주지 추천 소개 창 */
+#second_rec_intro   {
+    display: none;
+}
+#third_rec_intro    {
+    display: none;
+}
+#fifth_rec_intro    {
+    display: none;
+}
+
+
 /* 첫번 째 사이트 설명 */
 .ani_left_to_right {
     opacity: 0;
     transition: all 2.5s;
+    margin-top: 48px;
 }
 
-.img_content img {
-    margin-top: 48px;
-    transition: all 2.5s;
-}
 
 #site_page_innerText {
     opacity: 0;
