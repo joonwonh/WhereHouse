@@ -103,14 +103,14 @@ window.onload = function () {
     var y = document.getElementById("safety_f");
     safety.addEventListener("change", function () {
         y.innerHTML = this.value + "단계";
-        document.getElementById("descript_safety").innerText = this.value + "단계는 이러이러이러합니다."
+        document.getElementById("descript_safety").innerText = "안전 " + this.value + "단계는 이러이러이러합니다."
     });
 
     var convenience = document.getElementById("myRange_convenience");
     var c = document.getElementById("convenience_f");
     convenience.addEventListener("change", function () {
         c.innerHTML = this.value + "단계";
-        document.getElementById("descript_convenience").innerText = this.value + "단계는 이러이러이러합니다."
+        document.getElementById("descript_convenience").innerText = "편의 " + this.value + "단계는 이러이러이러합니다."
     });
 
     // 인구밀집도 인덱스 열고 닫기
