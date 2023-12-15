@@ -59,63 +59,48 @@ window.onload = function () {
   btn_rec.addEventListener("click", () => initStorage("house_rec"));
 
 
+  // 추천 설명 창 번호 대로 숨기기
+  var first_intro_btn = document.getElementById("first_intro_btn");
+  var second_intro_btn = document.getElementById("second_intro_btn");
+  var third_intro_btn = document.getElementById("third_intro_btn");
+
+  var fourth_intro_btn = document.getElementById("fourth_intro_btn");
+  var fifth_intro_btn = document.getElementById("fifth_intro_btn");
+  var sixth_intro_btn = document.getElementById("sixth_intro_btn");
+
+  var first_intro = document.getElementById("first_rec_intro");
+  var second_intro = document.getElementById("second_rec_intro");
+  var third_intro = document.getElementById("third_rec_intro");
+  var fourth_intro = document.getElementById("fourth_rec_intro");
+  var fifth_intro = document.getElementById("fifth_rec_intro");
+  var sixth_intro = document.getElementById("sixth_rec_intro");
+
+  first_intro_btn.addEventListener("click", () => { houseRecIntroduce("block", "none", "none", 1) });
+  second_intro_btn.addEventListener("click", () => { houseRecIntroduce("none", "block", "none", 2) });
+  third_intro_btn.addEventListener("click", () => { houseRecIntroduce("none", "none", "block", 3) });
+  fourth_intro_btn.addEventListener("click", () => { mapIntroduce("block", "none", "none", 4) });
+  fifth_intro_btn.addEventListener("click", () => { mapIntroduce("none", "block", "none", 5) });
+  sixth_intro_btn.addEventListener("click", () => { mapIntroduce("none", "none", "block", 6) });
+
+  function houseRecIntroduce(value1, value2, value3, sel) {
+    first_intro.style.display = value1;
+    second_intro.style.display = value2;
+    third_intro.style.display = value3;
+    first_intro_btn.style.border = sel === 1 ? "3px solid rgba(0,0,0,0.6)" : "none";
+    second_intro_btn.style.border = sel === 2 ? "3px solid rgba(0,0,0,0.6)" : "none";
+    third_intro_btn.style.border = sel === 3 ? "3px solid rgba(0,0,0,0.6)" : "none";
+  }
+  function mapIntroduce(value1, value2, value3, sel) {
+    fourth_intro.style.display = value1;
+    fifth_intro.style.display = value2;
+    sixth_intro.style.display = value3;
+    fourth_intro_btn.style.border = sel === 4 ? "3px solid rgba(0,0,0,0.6)" : "none";
+    fifth_intro_btn.style.border = sel === 5 ? "3px solid rgba(0,0,0,0.6)" : "none";
+    sixth_intro_btn.style.border = sel === 6 ? "3px solid rgba(0,0,0,0.6)" : "none";
+  }
+}
+
 function initStorage(target) {
   localStorage.removeItem("target");
   localStorage.setItem("target", JSON.stringify(target));
-}
-
-// 추천 설명 창 번호 대로 숨기기
-
-var first_intro_btn = document.getElementById("first_intro_btn");
-var second_intro_btn = document.getElementById("second_intro_btn");
-var third_intro_btn = document.getElementById("third_intro_btn");
-var fourth_intro_btn = document.getElementById("fourth_intro_btn");
-var fifth_intro_btn = document.getElementById("fifth_intro_btn");
-var sixth_intro_btn = document.getElementById("sixth_intro_btn");
-
-var first_intro = document.getElementById("first_rec_intro");
-var second_intro = document.getElementById("second_rec_intro");
-var third_intro = document.getElementById("third_rec_intro");
-var fourth_intro = document.getElementById("fourth_rec_intro");
-var fifth_intro = document.getElementById("fifth_rec_intro");
-var sixth_intro = document.getElementById("sixth_rec_intro");
-
-first_intro_btn.addEventListener("click", firstIntroduce);
-second_intro_btn.addEventListener("click", secondIntroduce);
-third_intro_btn.addEventListener("click", thirdIntroduce);
-fourth_intro_btn.addEventListener("click", fourthIntroduce);
-fifth_intro_btn.addEventListener("click", fifthIntroduce);
-sixth_intro_btn.addEventListener("click", sixthIntroduce);
-
-function firstIntroduce() {
-  first_intro.style.display = "block";
-  second_intro.style.display = "none";
-  third_intro.style.display = "none";
-}
-function secondIntroduce() {
-  first_intro.style.display = "none";
-  second_intro.style.display = "block";
-  third_intro.style.display = "none";
-}
-function thirdIntroduce() {
-  first_intro.style.display = "none";
-  second_intro.style.display = "none";
-  third_intro.style.display = "block";
-}
-function fourthIntroduce() {
-  fourth_intro.style.display = "block";
-  fifth_intro.style.display = "none";
-  sixth_intro.style.display = "none";
-}
-function fifthIntroduce() {
-  fourth_intro.style.display = "none";
-  fifth_intro.style.display = "block";
-  sixth_intro.style.display = "none";
-}
-function sixthIntroduce() {
-  fourth_intro.style.display = "none";
-  fifth_intro.style.display = "none";
-  sixth_intro.style.display = "block";
-}
-
 }

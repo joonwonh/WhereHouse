@@ -1,6 +1,5 @@
 window.onload = function () {
   var first_page = document.getElementById("first_page");
-  console.log(first_page);
   var side_menu = document.getElementById("sidenav");
 
   // 텍스트 opacity
@@ -73,4 +72,16 @@ window.onload = function () {
   observerse.observe(site_page_innerText[2]);
   observerse.observe(site_page_innerText[3]);
   observerse.observe(site_page_innerText[4]);
+
+  // 상단 네비게이션 바 선택에 필요한 a 태그
+  var btn_gu_map = document.getElementById("nav_btn_gu_map");
+  var btn_house_rec = document.getElementById("nav_btn_house_rec");
+
+  btn_gu_map.addEventListener("click", () => initStorage("gu_map"));
+  btn_house_rec.addEventListener("click", () => initStorage("house_rec"));
+}
+
+function initStorage(target) {
+  localStorage.removeItem("target");
+  localStorage.setItem("target", JSON.stringify(target));
 }

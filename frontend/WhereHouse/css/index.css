@@ -11,6 +11,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 .container {
     margin: 0;
 }
@@ -78,9 +79,14 @@
     color: red;
 }
 
+.card-body {
+    border-radius: 5px;
+}
+
 .card-body:hover {
     cursor: pointer;
 }
+
 
 /* 케러셀 디자인 */
 .main-carousel {
@@ -88,15 +94,18 @@
     height: 100vh;
     /* height: 860px; 이미지 높이 변경 */
 }
+
 .main-carousel-img {
     width: auto;
     height: 100%;
 }
- .d-block {
+
+.d-block {
     display: block;
     width: auto;
     height: 100%;
 }
+
 .inner_text h1 {
     font-family: 'MBC1961GulimM';
     color: rgb(230, 223, 223);
@@ -119,32 +128,42 @@
     border-radius: 40px;
     cursor: pointer;
 }
+
 .card-body {
     text-align: center;
     font-family: 'TheJamsil5Bold';
     padding: 0;
 }
-.card-title a   {
+
+.card-title a {
     text-decoration: none;
     font-size: 1.7rem;
-    color: rgba(0,0,0,0.6);
+    color: rgba(0, 0, 0, 0.6);
 }
-.card-title a:hover {
-    color: rgba(0,0,0);
+
+/* .card-title a:hover {
+    color: rgba(0, 0, 0);
+} */
+
+.card-body:hover .card-title a {
+    color: rgba(0, 0, 0);
 }
 
 
 /* 거주지 추천 소개 창 */
-#second_rec_intro   {
+#second_rec_intro {
     display: none;
 }
-#third_rec_intro    {
+
+#third_rec_intro {
     display: none;
 }
-#fifth_rec_intro    {
+
+#fifth_rec_intro {
     display: none;
 }
-#sixth_rec_intro   {
+
+#sixth_rec_intro {
     display: none;
 }
 
@@ -155,27 +174,34 @@
     transition: all 2.5s;
     margin-top: 48px;
 }
+
 .site_page_innerText {
     opacity: 0;
     transition: all 3s;
 }
+
 #firstPage_text {
     font-family: 'TheJamsil5Bold';
     text-align: center;
 }
+
 #firstPage_text h3 {
     font-size: 40px;
 }
+
 .first_introduce_text {
     font-family: 'TheJamsil5Bold';
 }
+
 .first_introduce_text h2 {
     line-height: 100px;
 }
+
 .first_introduce_text h5 {
     line-height: 40px;
     color: #565656;
 }
+
 .first_introduce_text h6 {
     line-height: 30px;
     color: #7b7b7b;
@@ -183,10 +209,11 @@
 
 
 /* 추천페이지 보러가는 탭 */
-#btn_rec    {
+#btn_rec {
     color: rgb(0, 140, 255);
 }
-#btn_rec:hover    {
+
+#btn_rec:hover {
     color: white;
 }
 
@@ -198,6 +225,7 @@
     color: rgb(0, 140, 255);
     font-size: 2.5rem;
 }
+
 #trans_descript {
     width: 400px;
     height: 80px;
@@ -205,6 +233,7 @@
     line-height: 70px;
     border: none;
 }
+
 #trans_descript:hover {
     color: white;
 }
@@ -215,28 +244,35 @@
     font-family: 'TheJamsil5Bold';
     text-align: center;
 }
+
 #secondPage_text h3 {
     font-size: 40px;
 }
+
 .second_introduce_text {
     font-family: 'TheJamsil5Bold';
 }
+
 .second_introduce_text h2 {
     line-height: 100px;
 }
+
 .second_introduce_text h5 {
     line-height: 40px;
     color: #565656;
 }
+
 .second_introduce_text h6 {
     line-height: 30px;
     color: #7b7b7b;
 }
+
 #recommend_site_btn {
     font-family: 'TheJamsil5Bold';
     font-size: 45px;
     text-align: center;
 }
+
 #recommend_site_btn .btn {
     width: 400px;
     height: 80px;
