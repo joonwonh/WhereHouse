@@ -86,17 +86,50 @@ window.onload = function () {
     first_intro.style.display = value1;
     second_intro.style.display = value2;
     third_intro.style.display = value3;
-    first_intro_btn.style.border = sel === 1 ? "3px solid rgba(0,0,0,0.6)" : "none";
-    second_intro_btn.style.border = sel === 2 ? "3px solid rgba(0,0,0,0.6)" : "none";
-    third_intro_btn.style.border = sel === 3 ? "3px solid rgba(0,0,0,0.6)" : "none";
+
+    first_intro_btn.style.border = "none";
+    second_intro_btn.style.border = "none";
+    third_intro_btn.style.border = "none";
+
+    document.querySelectorAll(".rec_intro_title").forEach(e => {
+      e.style.color = "rgba(0,0,0,0.6)";
+    })
+
+    if (sel === 1) {
+      first_intro_btn.style.border = "3px solid rgba(0,0,0,0.6)";
+      document.getElementById("first_card").style.color = "black";
+    } else if (sel === 2) {
+      second_intro_btn.style.border = "3px solid rgba(0,0,0,0.6)";
+      document.getElementById("second_card").style.color = "black";
+    } else {
+      third_intro_btn.style.border = "3px solid rgba(0,0,0,0.6)";
+      document.getElementById("third_card").style.color = "black";
+
+    }
   }
   function mapIntroduce(value1, value2, value3, sel) {
     fourth_intro.style.display = value1;
     fifth_intro.style.display = value2;
     sixth_intro.style.display = value3;
-    fourth_intro_btn.style.border = sel === 4 ? "3px solid rgba(0,0,0,0.6)" : "none";
-    fifth_intro_btn.style.border = sel === 5 ? "3px solid rgba(0,0,0,0.6)" : "none";
-    sixth_intro_btn.style.border = sel === 6 ? "3px solid rgba(0,0,0,0.6)" : "none";
+
+    fourth_intro_btn.style.border = "none";
+    fifth_intro_btn.style.border = "none";
+    sixth_intro_btn.style.border = "none";
+
+    document.querySelectorAll(".map_intro_title").forEach(e => {
+      e.style.color = "rgba(0,0,0,0.6)";
+    });
+
+    if (sel === 4) {
+      fourth_intro_btn.style.border = "3px solid rgba(0,0,0,0.6)";
+      document.getElementById("fourth_card").style.color = "black";
+    } else if (sel === 5) {
+      fifth_intro_btn.style.border = "3px solid rgba(0,0,0,0.6)";
+      document.getElementById("fifth_card").style.color = "black";
+    } else {
+      sixth_intro_btn.style.border = "3px solid rgba(0,0,0,0.6)";
+      document.getElementById("sixth_card").style.color = "black";
+    }
   }
 }
 
