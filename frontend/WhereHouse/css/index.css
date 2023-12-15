@@ -141,10 +141,6 @@
     color: rgba(0, 0, 0, 0.6);
 }
 
-/* .card-title a:hover {
-    color: rgba(0, 0, 0);
-} */
-
 .card-body:hover .card-title a {
     color: rgba(0, 0, 0);
 }
