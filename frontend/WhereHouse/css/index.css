@@ -11,7 +11,11 @@
     font-weight: normal;
     font-style: normal;
 }
+.container {
+    margin: 0;
+}
 
+/* 네비 바 */
 .navbar {
     padding: 20px;
 }
@@ -55,12 +59,13 @@
 }
 
 #nav_btn_house_rec,
+#nav_btn_data_script,
 #nav_btn_gu_map {
     font-family: 'TheJamsil5Bold';
     font-size: 1.3rem;
 }
 
-#nav_btn_house_rec_dropdown,
+.nav_btn_house_rec_dropdown,
 #nav_btn_gu_map_dropdown {
     font-family: 'TheJamsil5Bold';
 }
@@ -73,14 +78,36 @@
     color: red;
 }
 
-
-.container {
-    margin: 0;
+.card-body:hover {
+    cursor: pointer;
 }
 
+/* 케러셀 디자인 */
+.main-carousel {
+    width: auto;
+    height: 100vh;
+    /* height: 860px; 이미지 높이 변경 */
+}
+.main-carousel-img {
+    width: auto;
+    height: 100%;
+}
+ .d-block {
+    display: block;
+    width: auto;
+    height: 100%;
+}
+.inner_text h1 {
+    font-family: 'MBC1961GulimM';
+    color: rgb(230, 223, 223);
+    text-shadow: -1px 0px #787878, 0px 1px #787878, 1px 0px #787878, 0px -1px #787878;
+    font-size: 70px;
+}
+
+
+/* 추천 버튼  1 2 3 */
 .btn {
     font-family: 'TheJamsil5Bold';
-
     color: black;
     font-size: 20px;
     width: 150px;
@@ -92,30 +119,11 @@
     border-radius: 40px;
     cursor: pointer;
 }
-
-.main-carousel {
-    width: auto;
-    height: 100vh;
-    /* height: 860px; 이미지 높이 변경 */
-}
-
-.main-carousel-img {
-    width: auto;
-    height: 100%;
-}
- .d-block {
-    display: block;
-    width: auto;
-    height: 100%;
-}
-
-/* 추천 버튼  1 2 3 */
 .card-body {
     text-align: center;
     font-family: 'TheJamsil5Bold';
     padding: 0;
 }
-
 .card-title a   {
     text-decoration: none;
     font-size: 1.7rem;
@@ -123,14 +131,6 @@
 }
 .card-title a:hover {
     color: rgba(0,0,0);
-}
-
-
-#inner_text h1 {
-    font-family: 'MBC1961GulimM';
-    color: rgb(230, 223, 223);
-    text-shadow: -1px 0px #787878, 0px 1px #787878, 1px 0px #787878, 0px -1px #787878;
-    font-size: 70px;
 }
 
 
@@ -144,6 +144,9 @@
 #fifth_rec_intro    {
     display: none;
 }
+#sixth_rec_intro   {
+    display: none;
+}
 
 
 /* 첫번 째 사이트 설명 */
@@ -152,48 +155,49 @@
     transition: all 2.5s;
     margin-top: 48px;
 }
-
-
-#site_page_innerText {
+.site_page_innerText {
     opacity: 0;
     transition: all 3s;
 }
-
 #firstPage_text {
     font-family: 'TheJamsil5Bold';
     text-align: center;
 }
-
 #firstPage_text h3 {
     font-size: 40px;
 }
-
-#first_introduce_text {
+.first_introduce_text {
     font-family: 'TheJamsil5Bold';
 }
-
-#first_introduce_text h2 {
+.first_introduce_text h2 {
     line-height: 100px;
 }
-
-#first_introduce_text h5 {
+.first_introduce_text h5 {
     line-height: 40px;
     color: #565656;
 }
-
-#first_introduce_text h6 {
+.first_introduce_text h6 {
     line-height: 30px;
     color: #7b7b7b;
 }
+
+
+/* 추천페이지 보러가는 탭 */
+#btn_rec    {
+    color: rgb(0, 140, 255);
+}
+#btn_rec:hover    {
+    color: white;
+}
+
 
 /* 종합점수 보러가는 탭 */
 #show_score a {
     font-family: 'TheJamsil5Bold';
     text-decoration: none;
     color: rgb(0, 140, 255);
-    font-size: 2.7rem;
+    font-size: 2.5rem;
 }
-
 #trans_descript {
     width: 400px;
     height: 80px;
@@ -201,7 +205,6 @@
     line-height: 70px;
     border: none;
 }
-
 #trans_descript:hover {
     color: white;
 }
@@ -212,36 +215,28 @@
     font-family: 'TheJamsil5Bold';
     text-align: center;
 }
-
 #secondPage_text h3 {
     font-size: 40px;
 }
-
-#second_introduce_text {
+.second_introduce_text {
     font-family: 'TheJamsil5Bold';
 }
-
-#second_introduce_text h2 {
+.second_introduce_text h2 {
     line-height: 100px;
 }
-
-#second_introduce_text h5 {
+.second_introduce_text h5 {
     line-height: 40px;
     color: #565656;
 }
-
-#second_introduce_text h6 {
+.second_introduce_text h6 {
     line-height: 30px;
     color: #7b7b7b;
 }
-
 #recommend_site_btn {
     font-family: 'TheJamsil5Bold';
     font-size: 45px;
     text-align: center;
-
 }
-
 #recommend_site_btn .btn {
     width: 400px;
     height: 80px;
@@ -250,15 +245,19 @@
     border: none;
 }
 
+
+/* 탑 버튼 */
 #top_btn .btn {
     font-family: 'TheJamsil5Bold';
     line-height: 30px;
 }
 
+
+/* 푸터 */
 footer {
     background-color: #ffffff;
 }
 
-#footer_text {
+.footer_text {
     font-family: 'TheJamsil5Bold';
 }
