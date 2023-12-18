@@ -58,7 +58,7 @@ window.onload = function () {
   btn_house_rec.addEventListener("click", () => initStorage("house_rec"));
   // btn_rec.addEventListener("click", () => initStorage("house_rec"));
 
-
+  // 거주지 추천 소개, 지도 소개 전환
   var intro_rec_page_btn = document.getElementById("intro_rec_page_btn");
   var intro_map_page_btn = document.getElementById("intro_map_page_btn");
   var intro_rec_page = document.getElementById("intro_rec_page");
@@ -67,11 +67,16 @@ window.onload = function () {
   intro_rec_page_btn.addEventListener("click", function () {
     intro_rec_page.style.display = "block";
     intro_map_page.style.display = "none";
+    intro_rec_page_btn.style.color = "black";
+    intro_map_page_btn.style.color = "#7b7b7b";
+
   })
 
   intro_map_page_btn.addEventListener("click", function () {
     intro_map_page.style.display = "block";
     intro_rec_page.style.display = "none";
+    intro_map_page_btn.style.color = "black";
+    intro_rec_page_btn.style.color = "#7b7b7b";
   })
 
 
@@ -113,12 +118,15 @@ window.onload = function () {
 
     if (sel === 1) {
       first_intro_btn.style.border = "3px solid rgba(0,0,0,0.6)";
+      first_intro_btn.style.borderRadius = "50px";
       document.getElementById("first_card").style.color = "black";
     } else if (sel === 2) {
       second_intro_btn.style.border = "3px solid rgba(0,0,0,0.6)";
+      second_intro_btn.style.borderRadius = "50px";
       document.getElementById("second_card").style.color = "black";
     } else {
       third_intro_btn.style.border = "3px solid rgba(0,0,0,0.6)";
+      third_intro_btn.style.borderRadius = "50px";
       document.getElementById("third_card").style.color = "black";
 
     }
@@ -138,12 +146,15 @@ window.onload = function () {
 
     if (sel === 4) {
       fourth_intro_btn.style.border = "3px solid rgba(0,0,0,0.6)";
+      fourth_intro_btn.style.borderRadius = "50px";
       document.getElementById("fourth_card").style.color = "black";
     } else if (sel === 5) {
       fifth_intro_btn.style.border = "3px solid rgba(0,0,0,0.6)";
+      fifth_intro_btn.style.borderRadius = "50px";
       document.getElementById("fifth_card").style.color = "black";
     } else {
       sixth_intro_btn.style.border = "3px solid rgba(0,0,0,0.6)";
+      sixth_intro_btn.style.borderRadius = "50px";
       document.getElementById("sixth_card").style.color = "black";
     }
   }
