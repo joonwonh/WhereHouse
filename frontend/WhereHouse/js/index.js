@@ -56,7 +56,23 @@ window.onload = function () {
 
   btn_gu_map.addEventListener("click", () => initStorage("gu_map"));
   btn_house_rec.addEventListener("click", () => initStorage("house_rec"));
-  btn_rec.addEventListener("click", () => initStorage("house_rec"));
+  // btn_rec.addEventListener("click", () => initStorage("house_rec"));
+
+
+  var intro_rec_page_btn = document.getElementById("intro_rec_page_btn");
+  var intro_map_page_btn = document.getElementById("intro_map_page_btn");
+  var intro_rec_page = document.getElementById("intro_rec_page");
+  var intro_map_page = document.getElementById("intro_map_page");
+
+  intro_rec_page_btn.addEventListener("click", function () {
+    intro_rec_page.style.display = "block";
+    intro_map_page.style.display = "none";
+  })
+
+  intro_map_page_btn.addEventListener("click", function () {
+    intro_map_page.style.display = "block";
+    intro_rec_page.style.display = "none";
+  })
 
 
   // 추천 설명 창 번호 대로 숨기기

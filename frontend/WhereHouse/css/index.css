@@ -163,6 +163,29 @@
     display: none;
 }
 
+.intro_btn  {
+    cursor: pointer;
+}
+.intro_btn:hover    {
+    color: black;
+}
+
+/* 카드 섹션 3 */
+#section3   {
+    font-family: 'TheJamsil5Bold';
+}
+
+.cbody-text  {
+    text-align: left;
+}
+.card-text  {
+    color: #7b7b7b;
+}
+.card_btn   {
+    width: 25vh;
+}
+
+
 
 /* 첫번 째 사이트 설명 */
 .ani_left_to_right {
@@ -179,6 +202,7 @@
 #firstPage_text {
     font-family: 'TheJamsil5Bold';
     text-align: center;
+    color: #808080;
 }
 
 #firstPage_text h3 {
@@ -204,17 +228,17 @@
 }
 
 
-/* 추천페이지 보러가는 탭 */
+/* 추천페이지 보러가는 탭 
 #btn_rec {
     color: rgb(0, 140, 255);
 }
 
 #btn_rec:hover {
     color: white;
-}
+}*/
 
 
-/* 종합점수 보러가는 탭 */
+/* 종합점수 보러가는 탭 
 #show_score a {
     font-family: 'TheJamsil5Bold';
     text-decoration: none;
@@ -232,10 +256,14 @@
 
 #trans_descript:hover {
     color: white;
-}
+}*/
 
 
 /* 두번 째 사이트 설명 */
+#intro_map_page {
+    display: none;
+}
+
 #secondPage_text {
     font-family: 'TheJamsil5Bold';
     text-align: center;
