@@ -117,20 +117,26 @@
 #start_text {
     font-family: 'TheJamsil5Bold';
 }
-.section_logo   {
+
+.section_logo {
     border: 10px solid rgba(11, 94, 215, 1);
     background-color: white;
-    border-radius: 1000px;
+    border-radius: 100%;
     width: 20vh;
     height: 32vh;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
-.section_logo img   {
+
+.section_logo img {
     text-align: center;
     width: 80%;
     height: 80%;
 }
-#section_logo_text  {
+
+#section_logo_text {
     font-family: 'TheJamsil5Bold';
 
 }
@@ -169,7 +175,8 @@
 
 
 /* 거주지 추천 소개 창 */
-#section2, #section3   {
+#section2,
+#section3 {
     border: 2px solid #dfdfdf;
     border-radius: 20px;
     background-color: white;
@@ -194,34 +201,40 @@
     display: none;
 }
 
-.intro_btn  {
+.intro_btn {
     cursor: pointer;
 }
-.intro_btn:hover    {
+
+.intro_btn:hover {
     color: black;
 }
+
 #intro_rec_page_btn {
     color: black;
 }
 
-#score_link_text  {
+#score_link_text {
     font-family: 'TheJamsil5Bold';
 }
+
 #score_link_btn {
     font-family: 'TheJamsil5Bold';
 }
 
 /* 카드 섹션 3 */
-#section_card  {
+#section_card {
     font-family: 'TheJamsil5Bold';
 }
-.cbody-text  {
+
+.cbody-text {
     text-align: left;
 }
-.card-text  {
+
+.card-text {
     color: #7b7b7b;
 }
-.card_btn   {
+
+.card_btn {
     width: 27vh;
     height: 5vh;
 }
