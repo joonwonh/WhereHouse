@@ -69,7 +69,6 @@ window.onload = function () {
     intro_map_page.style.display = "none";
     intro_rec_page_btn.style.color = "black";
     intro_map_page_btn.style.color = "#7b7b7b";
-
   })
 
   intro_map_page_btn.addEventListener("click", function () {

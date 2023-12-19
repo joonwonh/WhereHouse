@@ -116,14 +116,14 @@
 /* 섹션 1 */
 #start_text {
     font-family: 'TheJamsil5Bold';
+    font-size: 3rem;
 }
 
 .section_logo {
     border: 10px solid rgba(11, 94, 215, 1);
     background-color: white;
     border-radius: 100%;
-    width: 20vh;
-    height: 32vh;
+    height: 30vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -132,7 +132,7 @@
 
 .section_logo img {
     text-align: center;
-    width: 80%;
+    width: 70%;
     height: 80%;
 }
 
@@ -222,7 +222,7 @@
 }
 
 /* 카드 섹션 3 */
-#section_card {
+.section_card {
     font-family: 'TheJamsil5Bold';
 }
 
@@ -232,6 +232,7 @@
 
 .card-text {
     color: #7b7b7b;
+    font-size: 1.1rem;
 }
 
 .card_btn {
