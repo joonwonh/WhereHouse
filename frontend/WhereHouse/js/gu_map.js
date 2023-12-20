@@ -200,6 +200,9 @@ function infoClose() {
  * 지역구 선택 및 변경 시 정보를 다시 뿌려주는 함수
  */
 function initInfo(selected_name) {
+    if (customOverlay != null) {
+        infoClose();
+    }
     var div_score = document.getElementById("average-score");
     var div_hPlace = document.getElementById("hotPlace_wrap");
     var select_need = document.getElementById("select_need");
@@ -212,7 +215,7 @@ function initInfo(selected_name) {
     charter_fee.innerText = Math.round(Math.random() * 1000 + 10000);
     deposit_fee.innerText = Math.round(Math.random() * 1000 + 500);
     monthly_fee.innerText = Math.round(Math.random() * 50 + 30);
-    if (this.selectedIndex === 0) {
+    if (selected_name === "default") {
         div_score.style.display = "none";
         div_hPlace.style.display = "none";
         select_need.style.display = "none";
