@@ -79,6 +79,12 @@ window.onload = function () {
 
   btn_gu_map.addEventListener("click", () => initStorage("gu_map"));
   btn_house_rec.addEventListener("click", () => initStorage("house_rec"));
+
+  var guBtn = document.getElementById("gu_btn");
+  var detailBtn = document.getElementById("detail_btn");
+
+  guBtn.addEventListener("click", () => { initStorage("gu_map") });
+  detailBtn.addEventListener("click", () => { initStorage("detail_map") });
 }
 
 function initStorage(target) {

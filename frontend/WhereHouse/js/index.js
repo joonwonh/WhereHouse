@@ -56,7 +56,18 @@ window.onload = function () {
 
   btn_gu_map.addEventListener("click", () => initStorage("gu_map"));
   btn_house_rec.addEventListener("click", () => initStorage("house_rec"));
-  // btn_rec.addEventListener("click", () => initStorage("house_rec"));
+
+  var do_suggest_btn = document.getElementById("do_suggest_btn");
+  var do_map_btn = document.getElementById("do_map_btn");
+
+  do_suggest_btn.addEventListener("click", () => initStorage("house_rec"));
+  do_map_btn.addEventListener("click", () => initStorage("gu_map"));
+
+  var guBtn = document.getElementById("gu_btn");
+  var detailBtn = document.getElementById("detail_btn");
+
+  guBtn.addEventListener("click", ()=>{initStorage("gu_map")});
+  detailBtn.addEventListener("click", ()=>{initStorage("detail_map")});
 
   // 거주지 추천 소개, 지도 소개 전환
   var intro_rec_page_btn = document.getElementById("intro_rec_page_btn");
