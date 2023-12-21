@@ -180,8 +180,8 @@ window.onload = function () {
     var btn_safety = document.getElementById("btn_safety");
     var btn_conv = document.getElementById("btn_convenience");
 
-    btn_safety.addEventListener("click", () => selectModal(1, btn_safety, btn_conv));
-    btn_conv.addEventListener("click", () => selectModal(2, btn_safety, btn_conv));
+    btn_safety.addEventListener("click", () => selectModal(1));
+    btn_conv.addEventListener("click", () => selectModal(2));
 
     // 모달창 안전시설 버튼
     var pollice_content_btn = document.getElementById("pollice_content_btn");
@@ -253,17 +253,17 @@ function initConv(num) {
     }
 }
 
-function selectModal(num, btn_safety, btn_conv) {
+function selectModal(num) {
     if (num === 1) {
         document.getElementById("modal-select-conv").style.display = "none";
         document.getElementById("modal-select-safety").style.display = "flex";
-        btn_safety.style.color = "#000";
-        btn_conv.style.color = "#7b7b7b";
+        document.getElementById("btn_safety").style.color = "#000";
+        document.getElementById("btn_convenience").style.color = "#7b7b7b";
     } else {
         document.getElementById("modal-select-conv").style.display = "flex";
         document.getElementById("modal-select-safety").style.display = "none";
-        btn_safety.style.color = "#7b7b7b";
-        btn_conv.style.color = "#000";
+        document.getElementById("btn_safety").style.color = "#7b7b7b";
+        document.getElementById("btn_convenience").style.color = "#000";
     }
 }
 
@@ -573,7 +573,9 @@ function showComparison(selMenu) {
     var modal = document.querySelector(".modal");
     modal.style.display = "flex";
     modal.style.zIndex = 2;
-
+    selectModal(1);
+    initConv(1);
+    initSafety(1);
     searchGu("safety", "pollice");
 }
 
