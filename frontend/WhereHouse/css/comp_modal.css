@@ -13,10 +13,10 @@
     position: fixed;
     top: 0;
     left: 0;
-    display: block;
+    display: none;
     justify-self: center;
     align-items: center;
-    z-index: 2;
+    z-index: 0;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -89,6 +89,7 @@
     justify-content: space-evenly;
     align-items: center;
     background-color: #fff;
+    border-radius: 10px;
     border: none;
 }
 
@@ -123,12 +124,13 @@
     font-family: 'TheJamsil5Bold';
     position: absolute;
     top: 11.2%;
-    width: 100%;
+    width: 98%;
     height: 10%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     background-color: white;
+    border-radius: 10px;
     font-size: 1.2rem;
 }
 
@@ -280,10 +282,10 @@
 
 #content_graph_container {
     position: absolute;
-    width: 90%;
+    width: 98%;
     height: 95%;
     top: 0%;
-    left: 4%;
+    left: 1%;
     background-color: white;
     border: 1px solid rgb(203, 203, 203);
 }
@@ -296,7 +298,7 @@
     position: absolute;
     bottom: 0;
     left: 45%;
-    width: 15px;
+    width: 20px;
     height: 150px;
     perspective-origin: center bottom;
     transform: translate(0%) scaleX(2);
@@ -309,7 +311,7 @@
     position: absolute;
     content: "";
     left: 0%;
-    width: 15px;
+    width: 20px;
     height: 15px;
     border-radius: 100%;
     background-color: rgba(255, 255, 255, 0.25);
@@ -320,7 +322,7 @@
     content: "";
     bottom: 0;
     left: 0%;
-    width: 15px;
+    width: 20px;
     height: 15px;
     border-radius: 100%;
     background-color: rgba(0, 0, 0, 0.15);
@@ -329,6 +331,6 @@
 /* 그래프 위 값 */
 .graph_value {
     position: absolute;
-    left: -25%;
+    left: -10%;
     font-size: 12px;
 }
