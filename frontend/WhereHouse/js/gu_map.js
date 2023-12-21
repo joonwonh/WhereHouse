@@ -123,6 +123,9 @@ window.onload = function () {
                 }
             }
 
+            var latLng = { lat: mouseEvent.latLng.La, lng: mouseEvent.latLng.Ma };
+            localStorage.setItem("latLng", JSON.stringify(latLng));
+
             customOverlay = new kakao.maps.CustomOverlay({
                 content: content,
                 map: map,
@@ -241,7 +244,7 @@ function initInfo(selected_name) {
     for (var i = 0; i < guInfo.length; i++) {
         if (guInfo[i].name === selected_name) {
             for (var j = 1; j <= 3; j++) {
-                document.getElementById("carousel-img" + j).src = "/" + imgPath + "/img" + j + ".jpg";
+                document.getElementById("carousel-img" + j).src = imgPath + "/img" + j + ".jpg";
                 document.getElementById("carousel-caption" + j).innerText = guInfo[i].place_name[j - 1];
             }
             break;

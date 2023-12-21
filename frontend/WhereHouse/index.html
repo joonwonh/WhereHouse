@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/home_icon.png">
-    <link rel="stylesheet" href="/css/index.css">
-    <script src="/js/index.js"></script>
+    <link rel="icon" href="./images/home_icon.png">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/index.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
@@ -42,11 +42,11 @@
                                 거주지 추천
                             </a>
                             <ul class="dropdown-menu me-5 dropdown-menu-end text-end nav_btn_house_rec_dropdown" id="">
-                                <li><a class="dropdown-item nav_choose nav_item" href="pages/main.html">직접 입력 추천</a>
+                                <li><a class="dropdown-item nav_choose nav_item" href="./pages/main.html">직접 입력 추천</a>
                                 </li>
-                                <li><a class="dropdown-item nav_choose" href="pages/main.html">가격 중심 추천</a></li>
-                                <li><a class="dropdown-item nav_choose" href="pages/main.html">생활 안전 중심 추천</a></li>
-                                <li><a class="dropdown-item nav_choose" href="pages/main.html">생활 편의 중심 추천</a></li>
+                                <li><a class="dropdown-item nav_choose" href="./pages/main.html">가격 중심 추천</a></li>
+                                <li><a class="dropdown-item nav_choose" href="./pages/main.html">생활 안전 중심 추천</a></li>
+                                <li><a class="dropdown-item nav_choose" href="./pages/main.html">생활 편의 중심 추천</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -55,8 +55,11 @@
                                 지도
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end me-4 text-end" id="nav_btn_gu_map_dropdown">
-                                <li><a class="dropdown-item nav_choose" href="pages/main.html">지역구 지도</a></li>
-                                <li><a class="dropdown-item nav_choose" href="#">상세 지도</a></li>
+                                <li><a class="dropdown-item nav_choose" href="./pages/main.html" id="gu_btn">지역구 지도</a>
+                                </li>
+                                <li><a class="dropdown-item nav_choose" href="./pages/main.html" id="detail_btn">상세
+                                        지도</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -65,18 +68,21 @@
                                 데이터 분석
                             </a>
                             <ul class="dropdown-menu me-5 dropdown-menu-end text-end nav_btn_house_rec_dropdown" id="">
-                                <li><a class="dropdown-item nav_choose" href="pages/description.html">분석 적용 방식 페이지</a>
+                                <li><a class="dropdown-item nav_choose" href="./pages/description.html">분석 적용 방식 페이지</a>
                                 </li>
                                 <hr id="navbar_hr">
-                                <li><a class="dropdown-item nav_choose" href="pages/description.html#first_page">생활 안전
+                                <li><a class="dropdown-item nav_choose" href="./pages/description.html#first_page">생활 안전
                                         관련</a></li>
-                                <li><a class="dropdown-item nav_choose" href="pages/description.html#second_page">생활 편의
+                                <li><a class="dropdown-item nav_choose" href="./pages/description.html#second_page">생활
+                                        편의
                                         관련</a></li>
-                                <li><a class="dropdown-item nav_choose" href="pages/description.html#third_page">가격
+                                <li><a class="dropdown-item nav_choose" href="./pages/description.html#third_page">가격
                                         관련</a></li>
-                                <li><a class="dropdown-item nav_choose" href="pages/description.html#fourth_page">추천 결과
+                                <li><a class="dropdown-item nav_choose" href="./pages/description.html#fourth_page">추천
+                                        결과
                                         관련</a></li>
-                                <li><a class="dropdown-item nav_choose" href="pages/description.html#fifth_page">인구 밀집도
+                                <li><a class="dropdown-item nav_choose" href="./pages/description.html#fifth_page">인구
+                                        밀집도
                                         관련</a></li>
                             </ul>
                         </li>
@@ -91,19 +97,19 @@
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner main-carousel">
                 <div class="carousel-item active main-carousel-img">
-                    <img src="images/city9.jpg" class="d-block w-100" alt="...">
+                    <img src="./images/city9.jpg" class="d-block w-100" alt="...">
                     <div id="" class="carousel-caption mb-5 text-end inner_text">
                         <h1>MZ에게 딱 맞는 거주지가 필요할 때</h1>
                     </div>
                 </div>
                 <div class="carousel-item main-carousel-img">
-                    <img src="images/city10.jpg" class="d-block w-100" alt="...">
+                    <img src="./images/city10.jpg" class="d-block w-100" alt="...">
                     <div id="" class="carousel-caption mb-5 text-end inner_text">
                         <h1>오늘도 거주지를 찾아다니는 MZ에게</h1>
                     </div>
                 </div>
                 <div class="carousel-item main-carousel-img">
-                    <img src="images/city11.jpg" class="d-block w-100" alt="...">
+                    <img src="./images/city11.jpg" class="d-block w-100" alt="...">
                     <div id="" class="carousel-caption mb-5 text-end inner_text">
                         <h1>안전한 거주지를 찾고 싶은 당신에게</h1>
                     </div>
@@ -218,7 +224,7 @@
                 <div id="first_rec_intro">
                     <div class="row">
                         <div class="col-md-8 mb-5 img_content" id="">
-                            <img src="images/intro3.png" id=""
+                            <img src="./images/intro3.png" id=""
                                 class="w-100 rounded-4 border border-secondary border-opacity-50 ani_left_to_right"
                                 alt="">
                         </div>
@@ -234,7 +240,8 @@
                 </div>
                 <div id="second_rec_intro">
                     <div class="row">
-                        <div class="col-md-8 mb-5 img_content" id=""><img src="../images/intro4.png" id=""
+                        <div class="col-md-8 mb-5 img_content" id="">
+                            <img src="./images/intro4.png" id=""
                                 class="w-100 rounded-4 border border-secondary border-opacity-50 ani_left_to_right"
                                 alt="">
                         </div>
@@ -254,7 +261,7 @@
                 <div id="third_rec_intro">
                     <div class="row">
                         <div class="col-md-8 mb-5 img_content" id="">
-                            <img src="../images/intro5.png" id=""
+                            <img src="./images/intro5.png" id=""
                                 class="w-100 rounded-4 border border-secondary border-opacity-50 ani_left_to_right"
                                 alt="">
                         </div>
@@ -329,7 +336,7 @@
                             </div>
                         </div>
                         <div class="col-md-8 mb-5 img_content" id="">
-                            <img src="images/intro1.png" id=""
+                            <img src="./images/intro1.png" id=""
                                 class="w-100 rounded-4 border border-secondary border-opacity-50 ani_left_to_right"
                                 alt="">
                         </div>
@@ -350,7 +357,7 @@
                             </div>
                         </div>
                         <div class="col-md-8 mb-5 img_content" id="">
-                            <img src="images/intro2.png" id=""
+                            <img src="./images/intro2.png" id=""
                                 class="w-100 rounded-4 border border-secondary border-opacity-50 ani_left_to_right"
                                 alt="">
                         </div>
@@ -371,7 +378,7 @@
                             </div>
                         </div>
                         <div class="col-md-8 mb-5 img_content" id="">
-                            <img src="images/intro7.png" id=""
+                            <img src="./images/intro7.png" id=""
                                 class="w-100 rounded-4 border border-secondary border-opacity-50 ani_left_to_right"
                                 alt="">
                         </div>
@@ -386,7 +393,7 @@
                 <h2 id="score_link_text">점수 산정 방식이 궁금하다면?</h2>
             </div>
             <div class="col-md-2">
-                <a href="pages/description.html" class="btn btn-outline-dark rounded-pill">
+                <a href="./pages/description.html" class="btn btn-outline-dark rounded-pill">
                     <h3 id="score_link_btn">click!</h3>
                 </a>
             </div>
@@ -419,7 +426,8 @@
                             저희 WhereHouse가 <br>
                             딱맞는 거주지 총 3곳을 추천해드릴게요.
                         </p>
-                        <a href="./pages/main.html" class="mt-3 pt-2 btn btn-light card_btn border rounded-pill">
+                        <a href="./pages/main.html" class="mt-3 pt-2 btn btn-light card_btn border rounded-pill"
+                            id="do_suggest_btn">
                             <h4>추천 받으러 가기!</h4>
                         </a>
                     </div>
@@ -436,7 +444,8 @@
                             핫플레이스도 알려드릴게요! <br>
                             <br>
                         </p>
-                        <a href="./pages/main.html" class="mt-3 pt-2 btn btn-light card_btn border rounded-pill">
+                        <a href="./pages/main.html" class="mt-3 pt-2 btn btn-light card_btn border rounded-pill"
+                            id="do_map_btn">
                             <h4>지역구 정보 보러가기!</h4>
                         </a>
                     </div>
@@ -546,7 +555,7 @@
                         </ul>
                     </div>
                     <div class="col-md-4 mb-3 text-center">
-                        <img src="images/home_icon.png" alt="" class="w-50 h-75 mt-3">
+                        <img src="./images/home_icon.png" alt="" class="w-50 h-75 mt-3">
                     </div>
                 </div>
             </footer>

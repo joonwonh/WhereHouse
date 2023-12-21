@@ -34,7 +34,7 @@ window.onload = function () {
             iframeSection.src = "gu_map.html";
         } else if (sel === 3) {
             menu_detail_icon.style.backgroundColor = "rgba(34, 34, 34, 0.3)";
-            //상세 지도 ifram 로직
+            iframeSection.src = "../../team_2/informationPage.html";
         }
     }
 }
@@ -52,7 +52,9 @@ function initIframe() {
         menu_gu_icon.style.backgroundColor = "rgba(34, 34, 34, 0.3)";
     } else if (iframe_target === "detail_map") {
         menu_detail_icon.style.backgroundColor = "rgba(34, 34, 34, 0.3)";
+        iframe_target = "../../team_2/informationPage";
     }
     iframeSection.src = iframe_target + ".html";
+    console.log(iframe_target);
 }
 

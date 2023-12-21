@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../images/home_icon.png">
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/description.css">
-    <script src="/js/description.js"></script>
+    <link rel="icon" href="./../images/home_icon.png">
+    <link rel="stylesheet" href="./../css/index.css">
+    <link rel="stylesheet" href="./../css/description.css">
+    <script src="./../js/description.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
@@ -29,7 +29,7 @@
     <header>
         <nav class="navbar navbar-expand-lg fixed-top bg-light border-bottom">
             <div class="container-fluid">
-                <a id="logo" class="navbar-brand ms-4 py-3" href="../index.html">Where House</a>
+                <a id="logo" class="navbar-brand ms-4 py-3" href="./../index.html">Where House</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                     aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -42,10 +42,10 @@
                                 거주지 추천
                             </a>
                             <ul class="nav_btn_house_rec_dropdown dropdown-menu me-5 dropdown-menu-end text-end" id="">
-                                <li><a class="dropdown-item nav_choose" href="main.html">직접 입력 추천</a></li>
-                                <li><a class="dropdown-item nav_choose" href="main.html">가격 중심 추천</a></li>
-                                <li><a class="dropdown-item nav_choose" href="main.html">생활 안전 중심 추천</a></li>
-                                <li><a class="dropdown-item nav_choose" href="main.html">생활 편의 중심 추천</a></li>
+                                <li><a class="dropdown-item nav_choose" href="./main.html">직접 입력 추천</a></li>
+                                <li><a class="dropdown-item nav_choose" href="./main.html">가격 중심 추천</a></li>
+                                <li><a class="dropdown-item nav_choose" href="./main.html">생활 안전 중심 추천</a></li>
+                                <li><a class="dropdown-item nav_choose" href="./main.html">생활 편의 중심 추천</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -54,8 +54,9 @@
                                 지도
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end me-4 text-end" id="nav_btn_gu_map_dropdown">
-                                <li><a class="dropdown-item nav_choose" href=" main.html">지역구 지도</a></li>
-                                <li><a class="dropdown-item nav_choose" href="#">상세 지도</a></li>
+                                <li><a class="dropdown-item nav_choose" href="./main.html" id="gu_btn">지역구 지도</a></li>
+                                <li><a class="dropdown-item nav_choose" href="./main.html" id="detail_btn">상세 지도</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -64,17 +65,21 @@
                                 데이터 분석
                             </a>
                             <ul class="nav_btn_house_rec_dropdown dropdown-menu me-5 dropdown-menu-end text-end" id="">
-                                <li><a class="dropdown-item nav_choose" href="description.html">분석 적용 방식 페이지</a></li>
+                                <li><a class="dropdown-item nav_choose" href="./description.html">분석 적용 방식 페이지</a></li>
                                 <hr id="navbar_hr">
-                                <li><a class="dropdown-item nav_choose" href="description.html#first_page">생활 안전 관련</a>
+                                <li><a class="dropdown-item nav_choose" href="./description.html#first_page">생활 안전
+                                        관련</a>
                                 </li>
-                                <li><a class="dropdown-item nav_choose" href="description.html#second_page">생활 편의 관련</a>
+                                <li><a class="dropdown-item nav_choose" href="./description.html#second_page">생활 편의
+                                        관련</a>
                                 </li>
-                                <li><a class="dropdown-item nav_choose" href="description.html#third_page">가격 관련</a>
+                                <li><a class="dropdown-item nav_choose" href="./description.html#third_page">가격 관련</a>
                                 </li>
-                                <li><a class="dropdown-item nav_choose" href="description.html#fourth_page">추천 결과 관련</a>
+                                <li><a class="dropdown-item nav_choose" href="./description.html#fourth_page">추천 결과
+                                        관련</a>
                                 </li>
-                                <li><a class="dropdown-item nav_choose" href="description.html#fifth_page">인구 밀집도 관련</a>
+                                <li><a class="dropdown-item nav_choose" href="./description.html#fifth_page">인구 밀집도
+                                        관련</a>
                                 </li>
                             </ul>
                         </li>
@@ -207,7 +212,7 @@
                 <div class="mt-5"></div>
                 <div class="col-md-7 ps-5 w-50">
                     <div class="img_section ps-5">
-                        <img src="/images/description1.png" alt="">
+                        <img src="./../images/description1.png" alt="">
                     </div>
                 </div>
                 <div class="col-md-5 img_text">
@@ -218,7 +223,7 @@
                             해당 지역구의 범죄 검거율을 구한 다음,<br>
                             지표 별 가중치를 다르게 두어 안전성 점수를 산정합니다.</span>
                     </p>
-                    
+
                 </div>
             </div>
 
@@ -238,7 +243,7 @@
                 <div class="mt-5"></div>
                 <div class="col-md-7 ps-5 w-50">
                     <div class="img_section ps-5">
-                        <img src="/images/description2.png" alt="">
+                        <img src="./../images/description2.png" alt="">
                     </div>
                 </div>
                 <div class="col-md-5 img_text">
@@ -267,13 +272,15 @@
                 <div class="mt-5"></div>
                 <div class="col-md-7 ps-5 w-50">
                     <div class="img_section ps-5">
-                        <img src="/images/description_sample.png" alt="">
+                        <img src="./../images/description_sample.png" alt="">
                     </div>
                 </div>
                 <div class="col-md-5 img_text">
                     <p class="text-center first_background">
                         평균가 산정 방식 + 순위<br><br>
-                        <span class="descript_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, eos. Nostrum repellat facilis dolores quia aspernatur cumque alias maxime similique dolorum impedit. Quaerat consequatur maxime, sit reprehenderit hic necessitatibus aliquam.</span>
+                        <span class="descript_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
+                            eos. Nostrum repellat facilis dolores quia aspernatur cumque alias maxime similique dolorum
+                            impedit. Quaerat consequatur maxime, sit reprehenderit hic necessitatibus aliquam.</span>
                     </p>
                 </div>
             </div>
@@ -294,7 +301,7 @@
                 <div class="mt-5"></div>
                 <div class="col-md-7 ps-5 w-50">
                     <div class="img_section ps-5">
-                        <img src="/images/description_sample.png" alt="">
+                        <img src="./../images/description_sample.png" alt="">
                     </div>
                 </div>
                 <div class="col-md-5 img_text">
@@ -323,13 +330,15 @@
                 <div class="mt-5"></div>
                 <div class="col-md-7 ps-5 w-50">
                     <div class="img_section ps-5">
-                        <img src="/images/description_sample.png" alt="">
+                        <img src="./../images/description_sample.png" alt="">
                     </div>
                 </div>
                 <div class="col-md-5 img_text">
                     <p class="text-center first_background">
                         점수 산정 방식<br><br>
-                        <span class="descript_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, eos. Nostrum repellat facilis dolores quia aspernatur cumque alias maxime similique dolorum impedit. Quaerat consequatur maxime, sit reprehenderit hic necessitatibus aliquam.</span>
+                        <span class="descript_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
+                            eos. Nostrum repellat facilis dolores quia aspernatur cumque alias maxime similique dolorum
+                            impedit. Quaerat consequatur maxime, sit reprehenderit hic necessitatibus aliquam.</span>
                     </p>
                 </div>
             </div>
@@ -418,7 +427,7 @@
                     </ul>
                 </div>
                 <div class="col-md-4 mb-3 text-center">
-                    <img src="../images/home_icon.png" alt="" class="w-50 h-75 mt-3">
+                    <img src="./../images/home_icon.png" alt="" class="w-50 h-75 mt-3">
                 </div>
             </div>
         </footer>
