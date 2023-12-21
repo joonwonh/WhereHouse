@@ -34,102 +34,57 @@
             </div>
             <div class="modal-body">
                 <div class="modal-content">
-                    <div class="modal-desc">
-                        &lt;생활 안전&gt;
+                    <div class="modal-select">
+                        <button type="button" id="btn_safety">생활 안전</button>
+                        <button type="button" id="btn_convenience">생활 편의</button>
                     </div>
-                    <div id="policeOffice" class="modal-content-graph">
-                        <div id="policeOffice_title" class="bar_title">파출소 수</div>
-                        <div id="policeOffice_graph first_wrap" class="container-graph">
-                            <div class="policeOffice_graph_wrap first_wrap" id="policeOffice_graph_gu1">
-                                <div class="policeOffice_graph">
-                                    <div id="polliceOffice_bar1" class="policeOffice_bar graph_bar">
-                                        <div id="polliceOffice_value1" class="graph_value"></div>
-                                    </div>
-                                </div>
-                                <div class="label_gu1"></div>
-                            </div>
-                            <div class="policeOffice_graph_wrap second_wrap" id="policeOffice_graph_gu2">
-                                <div class="policeOffice_graph">
-                                    <div id="polliceOffice_bar2" class="policeOffice_bar graph_bar">
-                                        <div id="polliceOffice_value2" class="graph_value"></div>
-                                    </div>
-                                </div>
-                                <div class="label_gu2"></div>
-                            </div>
-                            <div class="policeOffice_graph_wrap third_wrap" id="policeOffice_graph_gu3">
-                                <div class="policeOffice_graph">
-                                    <div id="polliceOffice_bar3" class="policeOffice_bar graph_bar">
-                                        <div id="polliceOffice_value3" class="graph_value"></div>
-                                    </div>
-                                </div>
-                                <div class="label_gu3"></div>
-                            </div>
-                        </div>
+                    <div class="modal-select-content" id="modal-select-safety">
+                        <button type="button" id="pollice_content_btn">파출소</button>
+                        <button type="button" id="cctv_content_btn">CCTV</button>
+                        <button type="button" id="arrest_content_btn">검거율</button>
                     </div>
-                    <div id="cctv" class="modal-content-graph">
-                        <div id="cctv_title" class="bar_title">CCTV 수</div>
-                        <div id="cctv_graph" class="container-graph">
-                            <div class="cctv_graph_wrap first_wrap" id="cctv_graph_gu1">
-                                <div class="cctv_graph">
-                                    <div id="cctv_bar1" class="cctv_bar graph_bar">
-                                        <div id="cctv_value1" class="graph_value"></div>
-                                    </div>
-                                </div>
-                                <div class="label_gu1"></div>
-                            </div>
-                            <div class="cctv_graph_wrap second_wrap" id="cctv_graph_gu2">
-                                <div class="cctv_graph">
-                                    <div id="cctv_bar2" class="cctv_bar graph_bar">
-                                        <div id="cctv_value2" class="graph_value"></div>
-                                    </div>
-                                </div>
-                                <div class="label_gu2"></div>
-                            </div>
-                            <div class="cctv_graph_wrap third_wrap" id="cctv_graph_gu3">
-                                <div class="cctv_graph">
-                                    <div id="cctv_bar3" class="cctv_bar graph_bar">
-                                        <div id="cctv_value3" class="graph_value"></div>
-                                    </div>
-                                </div>
-                                <div class="label_gu3"></div>
-                            </div>
-                        </div>
+                    <div class="modal-select-content" id="modal-select-conv">
+                        <button type="button" id="convStore_content_btn">편의점</button>
+                        <button type="button" id="restaurant_content_btn">음식점</button>
+                        <button type="button" id="cafe_content_btn">카페</button>
+                        <button type="button" id="olive_content_btn">올리브영</button>
+                        <button type="button" id="daiso_content_btn">다이소</button>
                     </div>
-                </div>
-                <div class="modal-content">
-                    <div class="modal-desc">
-                        &lt;생활 편의&gt;
-                    </div>
-                    <div id="convStore" class="modal-content-graph">
-                        <div id="convStore_title" class="bar_title">편의점 수</div>
-                        <div id="convStore_graph" class="container-graph">
-                            <div class="conv_graph_wrap first_wrap" id="convStore_graph_gu1">
-                                <div class="conv_graph">
-                                    <div id="conv_bar1" class="conv_bar graph_bar">
-                                        <div id="conv_value1" class="graph_value"></div>
+                    <div id="modal-graph-wrap">
+                        <div id="content_graph_container" class="container-graph">
+
+                            <div id="content_graph_title" class="bar_title">편의점 수</div>
+                            <div class="container_content_graph">
+                                <div class="content_graph_wrap first_wrap" id="content_graph_gu1">
+                                    <div class="content_graph">
+                                        <div id="content_bar1" class="content_bar graph_bar">
+                                            <div id="content_value1" class="graph_value"></div>
+                                        </div>
                                     </div>
+                                    <div class="label_gu1"></div>
                                 </div>
-                                <div class="label_gu1"></div>
-                            </div>
-                            <div class="conv_graph_wrap second_wrap" id="convStore_graph_gu2">
-                                <div class="conv_graph">
-                                    <div id="conv_bar2" class="conv_bar graph_bar">
-                                        <div id="conv_value2" class="graph_value"></div>
+                                <div class="content_graph_wrap second_wrap" id="content_graph_gu2">
+                                    <div class="content_graph">
+                                        <div id="content_bar2" class="content_bar graph_bar">
+                                            <div id="content_value2" class="graph_value"></div>
+                                        </div>
                                     </div>
                                     <div class="label_gu2"></div>
                                 </div>
-                            </div>
-                            <div class="conv_graph_wrap third_wrap" id="convStore_graph_gu3">
-                                <div class="conv_graph">
-                                    <div id="conv_bar3" class="conv_bar graph_bar">
-                                        <div id="conv_value3" class="graph_value"></div>
+                                <div class="content_graph_wrap third_wrap" id="content_graph_gu3">
+                                    <div class="content_graph">
+                                        <div id="content_bar3" class="content_bar graph_bar">
+                                            <div id="content_value3" class="graph_value"></div>
+                                        </div>
                                     </div>
+                                    <div class="label_gu3"></div>
                                 </div>
-                                <div class="label_gu3"></div>
                             </div>
+
                         </div>
                     </div>
-                    <div id="cafe" class="modal-content-graph">
+                </div>
+                <!-- <div id="cafe" class="modal-content-graph">
                         <div id="cafe_title" class="bar_title">카페 수</div>
                         <div id="cafe_graph" class="container-graph">
                             <div class="cafe_graph_wrap first_wrap" id="cafe_graph_gu1">
@@ -186,10 +141,10 @@
                                 <div class="label_gu3"></div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </div> -->
             </div>
         </div>
+    </div>
     </div>
 
     <!-- 상세 비교 모달 창 끝 -->
