@@ -172,8 +172,98 @@ window.onload = function () {
     check_third_info.addEventListener("change", function () {
         check_third.checked = check_third_info.checked;
     });
+
+    // 모달창 이벤트
+    var btn_safety = document.getElementById("btn_safety");
+    var btn_conv = document.getElementById("btn_convenience");
+
+    btn_safety.addEventListener("click", () => selectModal(1, btn_safety, btn_conv));
+    btn_conv.addEventListener("click", () => selectModal(2, btn_safety, btn_conv));
+
+    // 모달창 안전시설 버튼
+    var pollice_content_btn = document.getElementById("pollice_content_btn");
+    var cctv_content_btn = document.getElementById("cctv_content_btn");
+    var arrest_content_btn = document.getElementById("arrest_content_btn");
+
+    pollice_content_btn.addEventListener("click", () => { initSafety(1); });
+    cctv_content_btn.addEventListener("click", () => { initSafety(2); });
+    arrest_content_btn.addEventListener("click", () => { initSafety(3); });
+
+    // 모달창 편의시설 버튼
+    var convStore_content_btn = document.getElementById("convStore_content_btn");
+    var restaurant_content_btn = document.getElementById("restaurant_content_btn");
+    var cafe_content_btn = document.getElementById("cafe_content_btn");
+    var olive_content_btn = document.getElementById("olive_content_btn");
+    var daiso_content_btn = document.getElementById("daiso_content_btn");
+
+    convStore_content_btn.addEventListener("click", () => { initConv(1); });
+    restaurant_content_btn.addEventListener("click", () => { initConv(2); });
+    cafe_content_btn.addEventListener("click", () => { initConv(3); });
+    olive_content_btn.addEventListener("click", () => { initConv(4); });
+    daiso_content_btn.addEventListener("click", () => { initConv(5); });
+
 }
 // window.onload 끝
+function initSafety(num) {
+    var pollice_content_btn = document.getElementById("pollice_content_btn");
+    var cctv_content_btn = document.getElementById("cctv_content_btn");
+    var arrest_content_btn = document.getElementById("arrest_content_btn");
+
+    pollice_content_btn.style.color = "#7b7b7b";
+    cctv_content_btn.style.color = "#7b7b7b";
+    arrest_content_btn.style.color = "#7b7b7b";
+
+    // 파출소
+    if (num === 1) {
+        pollice_content_btn.style.color = "#000";
+    } else if (num === 2) { //CCTV
+        cctv_content_btn.style.color = "#000";
+    } else { //검거율
+        arrest_content_btn.style.color = "#000";
+    }
+}
+
+function initConv(num) {
+    var convStore_content_btn = document.getElementById("convStore_content_btn");
+    var restaurant_content_btn = document.getElementById("restaurant_content_btn");
+    var cafe_content_btn = document.getElementById("cafe_content_btn");
+    var olive_content_btn = document.getElementById("olive_content_btn");
+    var daiso_content_btn = document.getElementById("daiso_content_btn");
+
+    convStore_content_btn.style.color = "#7b7b7b";
+    restaurant_content_btn.style.color = "#7b7b7b";
+    cafe_content_btn.style.color = "#7b7b7b";
+    olive_content_btn.style.color = "#7b7b7b";
+    daiso_content_btn.style.color = "#7b7b7b";
+
+    // 편의점
+    if (num === 1) {
+        convStore_content_btn.style.color = "#000";
+    } else if (num === 2) { //음식점
+        restaurant_content_btn.style.color = "#000";
+    } else if (num === 3) { //카페
+        cafe_content_btn.style.color = "#000";
+    } else if (num === 4) { //올리브영
+        olive_content_btn.style.color = "#000";
+    } else { //다이소
+        daiso_content_btn.style.color = "#000";
+    }
+}
+
+function selectModal(num, btn_safety, btn_conv) {
+    if (num === 1) {
+        document.getElementById("modal-select-conv").style.display = "none";
+        document.getElementById("modal-select-safety").style.display = "flex";
+        btn_safety.style.color = "#000";
+        btn_conv.style.color = "#7b7b7b";
+    } else {
+        document.getElementById("modal-select-conv").style.display = "flex";
+        document.getElementById("modal-select-safety").style.display = "none";
+        btn_safety.style.color = "#7b7b7b";
+        btn_conv.style.color = "#000";
+    }
+}
+
 
 function displayArea(area, population, isRecommend) {
     var polygon = new kakao.maps.Polygon({
@@ -403,7 +493,7 @@ function showThirdMonthlyFee() {
 
 
 // 상세비교창 띄우기
-function showComparison() {
+function showComparison(selMenu) {
     var check_first = document.getElementById("check_first");
     var check_second = document.getElementById("check_second");
     var check_third = document.getElementById("check_third");
@@ -447,7 +537,6 @@ function showComparison() {
     // 체크박스 선택에 따른 동적 화면 변경
     var preLeft = -increaseLeft;
     for (var i = 0; i < 3; i++) {
-        // initGraphWrap(isChecked[i], i, recommend_names[i], 0, increaseLeft);
         var wraps = document.querySelectorAll("." + orders[i] + "_wrap");
 
         if (isChecked[i]) {
@@ -482,30 +571,28 @@ function showComparison() {
     modal.style.display = "flex";
     modal.style.zIndex = 2;
 
-    // 그래프 길이 및 값 초기화
-    for (var i = 0; i < guSpec.length; i++) {
-        if (check_first.checked && guSpec[i].name === recommend_first_name) {
-            graphInit(guSpec[i], 1);
-            continue;
-        }
-        if (check_second.checked && guSpec[i].name === recommend_second_name) {
-            graphInit(guSpec[i], 2);
-            continue;
-        }
-        if (check_third.checked && guSpec[i].name === recommend_third_name) {
-            graphInit(guSpec[i], 3);
-            continue;
-        }
-    }
+    // // 그래프 길이 및 값 초기화
+    // for (var i = 0; i < guSpec.length; i++) {
+    //     if (check_first.checked && guSpec[i].name === recommend_first_name) {
+    //         graphInit(selMenu, guSpec[i], 1);
+    //         continue;
+    //     }
+    //     if (check_second.checked && guSpec[i].name === recommend_second_name) {
+    //         graphInit(selMenu, guSpec[i], 2);
+    //         continue;
+    //     }
+    //     if (check_third.checked && guSpec[i].name === recommend_third_name) {
+    //         graphInit(selMenu, guSpec[i], 3);
+    //         continue;
+    //     }
+    // }
+    // 그래프 관련 함수 새로 만들고 버튼 누를 때 마다 값 변화하게 설정
 }
 
-function initGraphWrap(check_value, idx, recommend_name, preLeft, increaseLeft) {
+function graphInit(selMenu) {
 
-}
-
-function graphInit(spec, num) {
-    var graph_name = ["conv_bar", "cafe_bar", "cinema_bar", "polliceOffice_bar", "cctv_bar"];
-    var graph_value = ["conv_value", "cafe_value", "cinema_value", "polliceOffice_value", "cctv_value"];
+    document.getElementById("content_bar" + num).style.height = spec.convenienceStore + "px";
+    document.getElementById("content_value" + num).innerText = spec.convenienceStore;
 
     document.getElementById("conv_bar" + num).style.height = spec.convenienceStore + "px";
     document.getElementById("cafe_bar" + num).style.height = spec.cafe + "px";
