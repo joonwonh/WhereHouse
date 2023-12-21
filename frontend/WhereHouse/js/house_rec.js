@@ -25,9 +25,12 @@ function initGuSpec() {
             convenience: Math.floor(Math.random() * 10) + 1,
             convenienceStore: Math.floor(Math.random() * 50) + 100,
             cafe: Math.floor(Math.random() * 50) + 100,
-            cinema: Math.floor(Math.random() * 50) + 100,
+            restaurant: Math.floor(Math.random() * 50) + 100,
+            olive: Math.floor(Math.random() * 50) + 100,
+            daiso: Math.floor(Math.random() * 50) + 100,
             polliceOffice: Math.floor(Math.random() * 50) + 100,
             cctv: Math.floor(Math.random() * 50) + 100,
+            arrest: Math.floor(Math.random() * 50) + 50
         });
     })
 }
@@ -185,9 +188,9 @@ window.onload = function () {
     var cctv_content_btn = document.getElementById("cctv_content_btn");
     var arrest_content_btn = document.getElementById("arrest_content_btn");
 
-    pollice_content_btn.addEventListener("click", () => { initSafety(1); });
-    cctv_content_btn.addEventListener("click", () => { initSafety(2); });
-    arrest_content_btn.addEventListener("click", () => { initSafety(3); });
+    pollice_content_btn.addEventListener("click", () => { initSafety(1); searchGu("safety", "pollice"); });
+    cctv_content_btn.addEventListener("click", () => { initSafety(2); searchGu("safety", "cctv"); });
+    arrest_content_btn.addEventListener("click", () => { initSafety(3); searchGu("safety", "arrest"); });
 
     // 모달창 편의시설 버튼
     var convStore_content_btn = document.getElementById("convStore_content_btn");
@@ -196,11 +199,11 @@ window.onload = function () {
     var olive_content_btn = document.getElementById("olive_content_btn");
     var daiso_content_btn = document.getElementById("daiso_content_btn");
 
-    convStore_content_btn.addEventListener("click", () => { initConv(1); });
-    restaurant_content_btn.addEventListener("click", () => { initConv(2); });
-    cafe_content_btn.addEventListener("click", () => { initConv(3); });
-    olive_content_btn.addEventListener("click", () => { initConv(4); });
-    daiso_content_btn.addEventListener("click", () => { initConv(5); });
+    convStore_content_btn.addEventListener("click", () => { initConv(1); searchGu("conv", "convStore"); });
+    restaurant_content_btn.addEventListener("click", () => { initConv(2); searchGu("conv", "restaurant"); });
+    cafe_content_btn.addEventListener("click", () => { initConv(3); searchGu("conv", "cafe"); });
+    olive_content_btn.addEventListener("click", () => { initConv(4); searchGu("conv", "olive"); });
+    daiso_content_btn.addEventListener("click", () => { initConv(5); searchGu("conv", "daiso"); });
 
 }
 // window.onload 끝
@@ -514,15 +517,15 @@ function showComparison(selMenu) {
         return;
     } else if (cnt == 1) {
         $(".graph_bar").each((index, element) => {
-            element.style.left = "47.5%";
+            element.style.left = "48.7%";
         });
     } else if (cnt == 2) {
         $(".graph_bar").each((index, element) => {
-            element.style.left = "45%";
+            element.style.left = "47.5%";
         });
     } else {
         $(".graph_bar").each((index, element) => {
-            element.style.left = "42.5%";
+            element.style.left = "46.5%";
         });
     }
 
@@ -571,40 +574,72 @@ function showComparison(selMenu) {
     modal.style.display = "flex";
     modal.style.zIndex = 2;
 
-    // // 그래프 길이 및 값 초기화
-    // for (var i = 0; i < guSpec.length; i++) {
-    //     if (check_first.checked && guSpec[i].name === recommend_first_name) {
-    //         graphInit(selMenu, guSpec[i], 1);
-    //         continue;
-    //     }
-    //     if (check_second.checked && guSpec[i].name === recommend_second_name) {
-    //         graphInit(selMenu, guSpec[i], 2);
-    //         continue;
-    //     }
-    //     if (check_third.checked && guSpec[i].name === recommend_third_name) {
-    //         graphInit(selMenu, guSpec[i], 3);
-    //         continue;
-    //     }
-    // }
-    // 그래프 관련 함수 새로 만들고 버튼 누를 때 마다 값 변화하게 설정
+    searchGu("safety", "pollice");
 }
 
-function graphInit(selMenu) {
+function searchGu(selMenu, selContent) {
+    var check_first = document.getElementById("check_first");
+    var check_second = document.getElementById("check_second");
+    var check_third = document.getElementById("check_third");
 
-    document.getElementById("content_bar" + num).style.height = spec.convenienceStore + "px";
-    document.getElementById("content_value" + num).innerText = spec.convenienceStore;
+    var recommend_first_name = $("#recommend_first_result").text();
+    var recommend_second_name = $("#recommend_second_result").text();
+    var recommend_third_name = $("#recommend_third_result").text();
 
-    document.getElementById("conv_bar" + num).style.height = spec.convenienceStore + "px";
-    document.getElementById("cafe_bar" + num).style.height = spec.cafe + "px";
-    document.getElementById("cinema_bar" + num).style.height = spec.cinema + "px";
-    document.getElementById("polliceOffice_bar" + num).style.height = spec.polliceOffice + "px";
-    document.getElementById("cctv_bar" + num).style.height = spec.cctv + "px";
+    for (var i = 0; i < guSpec.length; i++) {
+        if (check_first.checked && guSpec[i].name === recommend_first_name) {
+            graphInit(guSpec[i], 1, selMenu, selContent);
+            continue;
+        }
+        if (check_second.checked && guSpec[i].name === recommend_second_name) {
+            graphInit(guSpec[i], 2, selMenu, selContent);
+            continue;
+        }
+        if (check_third.checked && guSpec[i].name === recommend_third_name) {
+            graphInit(guSpec[i], 3, selMenu, selContent);
+            continue;
+        }
+    }
+}
 
-    document.getElementById("conv_value" + num).innerText = spec.convenienceStore;
-    document.getElementById("cafe_value" + num).innerText = spec.cafe;
-    document.getElementById("cinema_value" + num).innerText = spec.cinema;
-    document.getElementById("polliceOffice_value" + num).innerText = spec.polliceOffice;
-    document.getElementById("cctv_value" + num).innerText = spec.cctv;
+function graphInit(spec, num, selMenu, selContent) {
+    if (selMenu === "safety") {
+        if (selContent === "pollice") {
+            document.getElementById("content_graph_title").innerText = "파출소";
+            document.getElementById("content_bar" + num).style.height = spec.polliceOffice + 100 + "px";
+            document.getElementById("content_value" + num).innerText = spec.polliceOffice;
+        } else if (selContent === "cctv") {
+            document.getElementById("content_graph_title").innerText = "CCTV";
+            document.getElementById("content_bar" + num).style.height = spec.cctv + 100 + "px";
+            document.getElementById("content_value" + num).innerText = spec.cctv;
+        } else {
+            document.getElementById("content_graph_title").innerText = "검거율";
+            document.getElementById("content_bar" + num).style.height = spec.arrest + 100 + "px";
+            document.getElementById("content_value" + num).innerText = spec.arrest;
+        }
+    } else {
+        if (selContent === "convStore") {
+            document.getElementById("content_graph_title").innerText = "편의점";
+            document.getElementById("content_bar" + num).style.height = spec.convenienceStore + 100 + "px";
+            document.getElementById("content_value" + num).innerText = spec.convenienceStore;
+        } else if (selContent === "restaurant") {
+            document.getElementById("content_graph_title").innerText = "음식점";
+            document.getElementById("content_bar" + num).style.height = spec.restaurant + 100 + "px";
+            document.getElementById("content_value" + num).innerText = spec.restaurant;
+        } else if (selContent === "cafe") {
+            document.getElementById("content_graph_title").innerText = "카페";
+            document.getElementById("content_bar" + num).style.height = spec.cafe + 100 + "px";
+            document.getElementById("content_value" + num).innerText = spec.cafe;
+        } else if (selContent === "olive") {
+            document.getElementById("content_graph_title").innerText = "올리브영";
+            document.getElementById("content_bar" + num).style.height = spec.olive + 100 + "px";
+            document.getElementById("content_value" + num).innerText = spec.olive;
+        } else {
+            document.getElementById("content_graph_title").innerText = "다이소";
+            document.getElementById("content_bar" + num).style.height = spec.daiso + 100 + "px";
+            document.getElementById("content_value" + num).innerText = spec.daiso;
+        }
+    }
 }
 
 /**
