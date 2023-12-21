@@ -231,10 +231,11 @@ function initInfo(selected_name) {
         var safety_barChart = document.getElementById("safety_barChart");
         var conv_barChart = document.getElementById("convenience_barChart");
 
-        var tmp1 = (Math.random() * 100 + 0);
-        var tmp2 = (Math.random() * 100 + 0);
-        document.getElementById("safety_value").innerText = Math.round(tmp1);
-        document.getElementById("convenience_value").innerText = Math.round(tmp2);
+        var tmp1 = (Math.random() * 70 + 0);
+        var tmp2 = (Math.random() * 70 + 0);
+
+        document.getElementById("safety_value").innerText = Math.round(tmp1*10/7);
+        document.getElementById("convenience_value").innerText = Math.round(tmp2*10/7);
         safety_barChart.style.height = (tmp1 + 15) + "px";
         conv_barChart.style.height = (tmp2 + 15) + "px";
     }

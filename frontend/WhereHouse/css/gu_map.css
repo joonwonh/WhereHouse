@@ -133,6 +133,21 @@ body {
     display: flex;
     font-size: 17px;
 }
+.gu_name_hr {
+    background: rgba(11, 94, 215, 0.50);
+    height: 2px;
+    border: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#charter-deposit-fee,
+#monthly-deposit-fee,
+#monthly-month-fee  {
+    color: #0b5dd7db;
+
+
+}
 
 /* 평균 전세 가격 */
 #average-charter {
@@ -148,6 +163,7 @@ body {
     text-align: center;
     line-height: 50px;
     display: none;
+    font-size: 1.7rem;
 }
 
 
@@ -162,14 +178,17 @@ body {
     margin-top: 10px;
     margin-left: 12px;
     margin-right: 10px;
-    text-align: center;
     line-height: 50px;
+    font-size: 1.7rem;
 }
 
-#monthly-deposit,
+#monthly-deposit {
+    position: absolute;
+    margin-left: 82px;
+}
+
 #monthly-month {
-    width: 100%;
-    height: 50%;
+    width: 93%;
     text-align: center;
     position: absolute;
 }
@@ -190,14 +209,14 @@ body {
     margin-left: 12px;
     margin-right: 10px;
     text-align: center;
-    line-height: 40px;
+
     /* 초기에 안보이도록 */
     display: none;
 }
 
 #total_title {
     position: absolute;
-    height: 15%;
+    height: 20%;
     width: 100%;
     text-align: center;
 }
@@ -209,7 +228,7 @@ body {
 #average-score-inner {
     position: absolute;
     width: 100%;
-    height: 70%;
+    height: 65%;
     top: 15%;
 }
 
@@ -347,7 +366,7 @@ body {
     width: 100%;
     height: 70%;
     opacity: 0.9;
-    top: 20%;
+    top: 27%;
     margin: 0;
 }
 
@@ -387,6 +406,6 @@ body {
 #logo-img img {
     width: 110px;
     position: absolute;
-    top: 840px;
+    top: 820px;
     left: 110px;
 }
