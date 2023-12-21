@@ -204,6 +204,7 @@
                 </div>
                 <div class="select_need">
                     <p>전세 / 월세</p>
+                    <hr class="gu_name_hr" id="char_month_hr">
                     <div class="btn-group check_need" role="group" aria-label="Basic radio toggle button group">
                         <input type="radio" name="rentalType" class="btn-check" id="btn_charter" autocomplete="off">
                         <label for="btn_charter" class="btn btn-outline-primary">전세</label>
@@ -217,7 +218,7 @@
                         <div id="charterInput">
                             <div>
                                 전세금(최대):
-                                <input type="text" name="charterDeposit" placeholder="ex) 10000" class="inputPrice"> 만원
+                                <input type="text" name="charterDeposit" placeholder="" class="inputPrice"> 만원
                             </div>
                         </div>
 
@@ -225,11 +226,11 @@
                         <div id="monthlyInput">
                             <div>
                                 보증금(최대):
-                                <input type="text" name="monthlyDeposit" placeholder="ex) 10000" class="inputPrice"> 만원
+                                <input type="text" name="monthlyDeposit" placeholder="" class="inputPrice"> 만원
                             </div>
                             <div>
                                 월세금(최대):
-                                <input type="text" name="monthlyMonth" placeholder="ex) 40" class="inputPrice"> 만원
+                                <input type="text" name="monthlyMonth" placeholder="" class="inputPrice"> 만원
                             </div>
                         </div>
                     </div>
@@ -237,7 +238,8 @@
 
                 <!-- 치안 편의 선택창 -->
                 <div class="safety_convenience">
-                    <p>생활 안전 / 편의</p>
+                    <p style="margin: 0;">생활 안전 / 편의</p>
+                    <hr class="gu_name_hr">
                     <div class="slider">
                         안전
                         <input type="range" min="0" max="9" value="0" id="myRange_safety"> <span id="safety_f"> 0
@@ -269,7 +271,6 @@
                 <div id="recommend_result_title">
                     <p onclick="showRecommend()">◀</p> 거주지 추천 결과
                 </div>
-
                 <div id="recommend_first">
                     <div class="recommend_inner_text">
                         1. <span id="recommend_first_result">ex1</span>
@@ -283,13 +284,15 @@
                         <input type="checkbox" name="first" value="first" id="check_first_info">
                         <span id="recommend_first_btn" onclick="hideDetailFirst()">▲</span>
                     </div>
+                    <hr class="gu_name_hr">
                     <div id="select_first_charter" class="select_price">
-                        평균 전세금 : <span id="first_charter_fee">ex</span> 만원
+                        평균 전세금 : <span id="first_charter_fee" class="average_money">ex</span> 만원
                     </div>
                     <div id="select_first_monthly" class="select_price">
-                        평균 보증금 : <span id="first_deposit_fee">ex</span> 만원<br>
-                        평균 월세금 : <span id="first_monthly_fee">ex</span> 만원
+                        평균 보증금 : <span id="first_deposit_fee" class="average_money">ex</span> 만원<br>
+                        평균 월세금 : <span id="first_monthly_fee" class="average_money">ex</span> 만원
                     </div>
+                    <hr class="price_hr">
                     <div class="result_graph_wrap">
                         <div class="safety_wrap">
                             <div class="result_label_safety">생활 안전</div>
@@ -319,13 +322,15 @@
                         <input type="checkbox" name="second" value="second" id="check_second_info">
                         <span id="recommend_second_btn" onclick="hideDetailSecond()">▲</span>
                     </div>
+                    <hr class="gu_name_hr">
                     <div id="select_second_charter" class="select_price">
-                        평균 전세금 : <span id="second_charter_fee">ex</span> 만원
+                        평균 전세금 : <span id="second_charter_fee" class="average_money">ex</span> 만원
                     </div>
                     <div id="select_second_monthly" class="select_price">
-                        평균 보증금 : <span id="second_deposit_fee">ex</span> 만원<br>
-                        평균 월세금 : <span id="second_monthly_fee">ex</span> 만원
+                        평균 보증금 : <span id="second_deposit_fee" class="average_money">ex</span> 만원<br>
+                        평균 월세금 : <span id="second_monthly_fee" class="average_money">ex</span> 만원
                     </div>
+                    <hr class="price_hr">
                     <div class="result_graph_wrap">
                         <div class="safety_wrap">
                             <div class="result_label_safety">생활 안전</div>
@@ -354,13 +359,15 @@
                         <input type="checkbox" name="third" value="third" id="check_third_info">
                         <span id="recommend_third_btn" onclick="hideDetailThird()">▲</span>
                     </div>
+                    <hr class="gu_name_hr">
                     <div id="select_third_charter" class="select_price">
-                        평균 전세금 : <span id="third_charter_fee">ex</span> 만원
+                        평균 전세금 : <span id="third_charter_fee" class="average_money">ex</span> 만원
                     </div>
                     <div id="select_third_monthly" class="select_price">
-                        평균 보증금 : <span id="third_deposit_fee">ex</span> 만원<br>
-                        평균 월세금 : <span id="third_monthly_fee">ex</span> 만원
+                        평균 보증금 : <span id="third_deposit_fee" class="average_money">ex</span> 만원<br>
+                        평균 월세금 : <span id="third_monthly_fee" class="average_money">ex</span> 만원
                     </div>
+                    <hr class="price_hr">
                     <div class="result_graph_wrap">
                         <div class="safety_wrap">
                             <div class="result_label_safety">생활 안전</div>

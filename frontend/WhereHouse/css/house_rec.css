@@ -71,6 +71,9 @@ body {
 }
 
 /* 전세/월세 선택 */
+#char_month_hr  {
+    margin-bottom: 10px;
+}
 .select_need {
     width: 300px;
     border: rgba(11, 94, 215, 0.50) 2px solid;
@@ -79,7 +82,7 @@ body {
     margin-left: 12px;
     margin-right: 10px;
     text-align: center;
-    height: 200px;
+    height: 230px;
     line-height: 50px;
 }
 
@@ -92,11 +95,12 @@ body {
     display: flex;
     font-size: 17px;
     justify-content: space-around;
+
 }
 
 #rentInput input[type=text] {
     width: 100px;
-    border-radius: 3px;
+
     border: 2px solid #dfdfdf;
 }
 
@@ -116,8 +120,24 @@ body {
     display: none;
 }
 
+#charterInput input[type=text] {
+    border: 1.5px solid black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+}
+
 #monthlyInput {
     display: block;
+}
+
+#monthlyInput input[type=text] {
+    border: 1.5px solid black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
 }
 
 .inputPrice {
@@ -229,6 +249,7 @@ body {
     cursor: pointer;
 }
 
+/* 결과 창 */
 #recommend_first {
     width: 300px;
     height: 50px;
@@ -304,6 +325,19 @@ body {
     font-size: 17px;
 }
 
+.gu_name_hr {
+    background: rgba(11, 94, 215, 0.50);
+    height: 2px;
+    border: 0;
+}
+
+.price_hr {
+    background: rgba(11, 94, 215, 0.50);
+    height: 0.1px;
+    border: 0;
+}
+
+
 /* 추천 결과 전세, 월세금 스타일 */
 .select_price {
     text-align: center;
@@ -313,6 +347,18 @@ body {
 #select_second_charter,
 #select_third_charter {
     display: none;
+
+}
+
+#select_first_monthly,
+#select_second_monthly,
+#select_third_monthly {
+    text-align: left;
+    margin-left: 60px;
+}
+
+.average_money {
+    color: #0b5dd7db;
 }
 
 #logo-img {
