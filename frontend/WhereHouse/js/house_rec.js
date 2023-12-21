@@ -219,6 +219,9 @@ function displayArea(area, population, isRecommend) {
                 infoClose();
             }
 
+            var latLng = { lat: mouseEvent.latLng.La, lng: mouseEvent.latLng.Ma };
+            localStorage.setItem("latLng", JSON.stringify(latLng));
+
 
             customOverlay = new kakao.maps.CustomOverlay({
                 content: content,
