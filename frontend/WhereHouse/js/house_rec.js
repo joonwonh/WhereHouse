@@ -255,11 +255,15 @@ function initConv(num) {
 
 function selectModal(num) {
     if (num === 1) {
+        initSafety(1);
+        searchGu("safety", "pollice");
         document.getElementById("modal-select-conv").style.display = "none";
         document.getElementById("modal-select-safety").style.display = "flex";
         document.getElementById("btn_safety").style.color = "#000";
         document.getElementById("btn_convenience").style.color = "#7b7b7b";
     } else {
+        initConv(1);
+        searchGu("conv", "convStore");
         document.getElementById("modal-select-conv").style.display = "flex";
         document.getElementById("modal-select-safety").style.display = "none";
         document.getElementById("btn_safety").style.color = "#7b7b7b";
@@ -605,43 +609,53 @@ function searchGu(selMenu, selContent) {
 }
 
 function graphInit(spec, num, selMenu, selContent) {
+    var selColor = "#000";
     if (selMenu === "safety") {
         if (selContent === "pollice") {
+            selColor = "#33BBC5";
             document.getElementById("content_graph_title").innerText = "파출소";
             document.getElementById("content_bar" + num).style.height = spec.polliceOffice + 100 + "px";
             document.getElementById("content_value" + num).innerText = spec.polliceOffice;
         } else if (selContent === "cctv") {
+            selColor = "#F6635C";
             document.getElementById("content_graph_title").innerText = "CCTV";
             document.getElementById("content_bar" + num).style.height = spec.cctv + 100 + "px";
             document.getElementById("content_value" + num).innerText = spec.cctv;
         } else {
+            selColor = "#85E6C5";
             document.getElementById("content_graph_title").innerText = "검거율";
             document.getElementById("content_bar" + num).style.height = spec.arrest + 100 + "px";
             document.getElementById("content_value" + num).innerText = spec.arrest;
         }
     } else {
         if (selContent === "convStore") {
+            selColor = "#CDB2DB";
             document.getElementById("content_graph_title").innerText = "편의점";
             document.getElementById("content_bar" + num).style.height = spec.convenienceStore + 100 + "px";
             document.getElementById("content_value" + num).innerText = spec.convenienceStore;
         } else if (selContent === "restaurant") {
+            selColor = "#FFC8DD";
             document.getElementById("content_graph_title").innerText = "음식점";
             document.getElementById("content_bar" + num).style.height = spec.restaurant + 100 + "px";
             document.getElementById("content_value" + num).innerText = spec.restaurant;
         } else if (selContent === "cafe") {
+            selColor = "#FFAFCD";
             document.getElementById("content_graph_title").innerText = "카페";
             document.getElementById("content_bar" + num).style.height = spec.cafe + 100 + "px";
             document.getElementById("content_value" + num).innerText = spec.cafe;
         } else if (selContent === "olive") {
+            selColor = "#A3D2FF";
             document.getElementById("content_graph_title").innerText = "올리브영";
             document.getElementById("content_bar" + num).style.height = spec.olive + 100 + "px";
             document.getElementById("content_value" + num).innerText = spec.olive;
         } else {
+            selColor = "#BCE0FD";
             document.getElementById("content_graph_title").innerText = "다이소";
             document.getElementById("content_bar" + num).style.height = spec.daiso + 100 + "px";
             document.getElementById("content_value" + num).innerText = spec.daiso;
         }
     }
+    document.getElementById("content_bar" + num).style.backgroundColor = selColor;
 }
 
 /**
